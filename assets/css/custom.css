@@ -2,7 +2,141 @@
  *
  * You can write your CSS code here, DO NOT touch the default JavaScript file
  * because it will make it harder for you to update.
- * 
+ *
  */
 
 /*# sourceMappingURL=custom.css.map */
+.navbar-bg{
+  background: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+}
+
+.header-button-1{
+  background: #B1DE5B;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+}
+margin-right: 20px;
+.header-button-2{
+  background: #0B2F37;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+}
+
+.section .section-header-custom{
+  height: 60px !important;
+}
+
+.section .section-header-custom h1{
+  color: #0B2F37 !important;
+  border: 0px !important;
+}
+
+.user-basic-info{
+  background: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+  padding: 10px;
+}
+.user-basic-info h4{
+  color: white;
+  font-weight: bold;
+}
+.user-basic-info p{
+  color: white;
+  font-weight: lighter;
+}
+
+.rounded-button{
+  text-decoration: none;
+  padding: 5px;
+  width: 100px;
+  border-radius: 50px;
+  border: none;
+  background: #0B2F37;
+  box-shadow: none;
+  margin-top: 50px;
+}
+
+.account-summary-row{
+  margin-top: 0px;
+}
+.account-summary-1{
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.account-summary-2{
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.left{
+  position: absolute;
+  left: 0;
+}
+
+.top{
+  float: right;
+  top: 0;
+  height: 111px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+  color: #fff;
+}
+.top h1{
+  float: right;
+  margin-right: 30px;
+  margin-top: 50px;
+  font-size-adjust: auto;
+}
+
+.bottom1{
+  float: left;
+  height: 50px;
+  width: 100%;
+  background: #1297C1;
+  color: #fff;
+}
+.bottom1 h6{
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+
+.bottom2{
+  float: left;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: #B1DE5B;
+  color: #fff;
+}
+.bottom2 h6{
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+
+.icon-container{
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 30px;
+}
+
+.affiliate-program-card{
+  margin-top: 20px;
+  border-top: 10px solid;
+  border-image-source: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+  border-image-slice: 1;
+  background: #0B2F37;
+  color: #fff;
+}
+
+.affiliate-link-alert{
+  background: #fff;
+  color: #000;
+}
