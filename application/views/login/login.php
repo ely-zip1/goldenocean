@@ -15,9 +15,9 @@
                                        <div class="card-body">
                                          <div class="row">
                                            <div class="col-12 text-center">
-                                               <a href="<?= base_url();?>"><img src="<?= base_url();?>assets/img/goldenocean_logo_2.png" alt="logo" width="120"></a> <br>
-                                               <h6 class="logo-header">Golden Ocean</h6> <br>
-                                               <h1>Login</h1> <br>
+                                               <a href="<?= base_url();?>"><img src="<?= base_url();?>assets/img/goldenocean_logo_2.png" alt="logo" width="80"></a> <br>
+                                               <h6 class="logo-header">Golden Ocean</h6>
+                                               <h3>Login</h3> <br>
                                            </div>
                                          </div>
 

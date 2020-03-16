@@ -12,18 +12,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="col-12">
                                 <div class="login-brand">
-                                                <a href="<?= base_url();?>"><img src="<?= base_url();?>assets/img/MPD_Logo.png" alt="logo" width="200"></a>
-                                          </div>             
+                                </div>
                             </div>
                         </div>
 
                         <div class="card card-primary">
-                            <div class="card-header">
-                                <h4>Forgot Password</h4>
-                            </div>
 
                             <div class="card-body">
-                                
+
+                                <div class="row">
+                                  <div class="col-12 text-center">
+                                      <a href="<?= base_url();?>"><img src="<?= base_url();?>assets/img/goldenocean_logo_2.png" alt="logo" width="60"></a> <br>
+                                      <h6 class="logo-header">Golden Ocean</h6>
+                                      <h3>Reset Password</h3> <br>
+                                  </div>
+                                </div>
+
                                 <?php if($this->session->flashdata('reset_message') != null){
                                     echo '<div class="alert alert-info">';
                                     echo $this->session->flashdata('reset_message');
@@ -31,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 }?>
                                 <?php echo form_open('Forgot_password'); ?>
                                     <div class="form-group">
-                                        <label for="email">Email</label>
+                                        <label for="email">Email or Username</label>
                                         <input id="email" type="email" class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>"
                                          name="email" tabindex="1" autofocus
                                           value="<?= set_value('email','',true)?>">
@@ -39,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                          <?php echo form_error('email');?>
                                        </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                             Continue
