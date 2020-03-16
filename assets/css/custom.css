@@ -6,8 +6,18 @@
  */
 
 /*# sourceMappingURL=custom.css.map */
+
+
 .navbar-bg{
   background: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+}
+
+.logo-header{
+  color: #b9a154 !important;
+}
+
+.login-button{
+  margin-top: 40px;
 }
 
 .header-button-1{
@@ -15,8 +25,8 @@
   border-radius: 50px;
   text-decoration: none;
   color: white;
+  margin-right: 20px;
 }
-margin-right: 20px;
 .header-button-2{
   background: #0B2F37;
   border-radius: 50px;
@@ -54,6 +64,8 @@ margin-right: 20px;
   border: none;
   background: #0B2F37;
   box-shadow: none;
+}
+.rounded-button-settings{
   margin-top: 50px;
 }
 

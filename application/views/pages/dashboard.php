@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-md-3 text-center">
-              <a href="#" class="btn btn-icon icon-left btn-dark rounded-button"><i class="fas fa-cogs"></i> Settings</a>
+              <a href="#" class="btn btn-icon icon-left btn-dark rounded-button rounded-button-settings"><i class="fas fa-cogs"></i> Settings</a>
             </div>
 
           </div>
@@ -71,10 +71,10 @@
             <div class="card-body">
               <h5 class="card-title">AFFILIATE PROGRAM</h5>
                 <div class="alert alert-has-icon affiliate-link-alert">
-                  <div class="alert-icon"><i class="fas fa-users"></i></div>
+                  <!-- <div class="alert-icon"><i class="fas fa-users"></i></div> -->
                     <div class="alert-body">
-                      <input type="text" name="" value="https://jhgfkj.ajkhsgdjksa"></br>
-                        This is a primary alert.
+                      <input type="text" class="form-control text-center" name="" value="https://jhgfkj.ajkhsgdjksa"></br>
+					              <a href="#" class="btn btn-icon icon-left btn-dark rounded-button"><i class="fas fa-copy"></i> Copy</a>
                     </div>
                 </div>
 
