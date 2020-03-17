@@ -34,7 +34,7 @@
                                              <?php echo form_open('login'); ?>
                                              <div class="form-group">
                                                    <label for="username">Username</label>
-                                                   <input id="username" type="email"
+                                                   <input id="username" type="text"
                                                          class="form-control <?php if(strlen(form_error('username')) > 0){echo "is-invalid";} ?>"
                                                          name="username" tabindex="1" autofocus
                                                          value="<?= set_value('username','',true)?>">

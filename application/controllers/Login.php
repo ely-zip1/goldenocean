@@ -6,16 +6,15 @@ class Login  extends CI_Controller
 		public function __construct()
         {
             parent::__construct();
-			$this->load->model('members');
+						$this->load->model('members');
+						$this->load->model('Referral_codes');
         }
 
 	public function index()
 	{
-		 $this->load->model('Referral_codes');
-
-		 //for($i = 0; $i < 1000; $i++){
-		 //	$this->Referral_codes->add_code(random_string('alnum', 6));
-		 //}
+		 // for($i = 0; $i < 1000; $i++){
+		 // 	$this->Referral_codes->add_code(random_string('alnum', 6));
+		 // }
 
 		if(isset($this->session->email)){
 
@@ -28,13 +27,13 @@ class Login  extends CI_Controller
 			}
 		}else{
 
-		
+
 
 			$data = array(
 				'title' => "Login"
 			);
 
-			$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|callback_is_login_valid');
+			$this->form_validation->set_rules('username', 'Username', 'required|callback_is_login_valid');
 			$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|callback_is_login_valid');
 
 			if ($this->form_validation->run() == FALSE) {
@@ -47,7 +46,7 @@ class Login  extends CI_Controller
 				if($this->is_login_valid()){
 
 					// printf($this->members->get_member($_POST['email']));
-					$member_data = $this->members->get_member($_POST['email']);
+					$member_data = $this->members->get_member($_POST['username']);
 
 					// echo '<pre>';
 					// print_r($member_data);
@@ -55,8 +54,9 @@ class Login  extends CI_Controller
 
 					$userdata = array(
 						'email' => $member_data->email_address,
-						'first_name' => $member_data->first_name,
-						'last_name' => $member_data->last_name
+						'fullname' => $member_data->first_name,
+						'date_registered' => $member_data->date,
+						'username' => $member_data->last_name
 					);
 
 					if($member_data->account_type_id == '1' || $member_data->account_type_id == '3'){
@@ -87,14 +87,14 @@ class Login  extends CI_Controller
 
 				}
 			}
-				
+
 		}
 
 	}
 
 	function is_login_valid(){
 
-		$is_valid = $this->members->verify_member($_POST['email'],$_POST['password']);
+		$is_valid = $this->members->verify_member($_POST['username'],$_POST['password']);
 
 		if($is_valid){
 			return true;
@@ -103,5 +103,5 @@ class Login  extends CI_Controller
 			return false;
 		}
 	}
-	
+
 }

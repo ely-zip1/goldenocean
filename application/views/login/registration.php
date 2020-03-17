@@ -20,38 +20,38 @@
                 </div>
               </div>
 
-            <div class="row">
+            <!-- <div class="row">
               <?php if(isset($_SESSION['success'])){ $this->load->view('templates/hero_registration'); }?>
-            </div>
+            </div> -->
 
             <?php echo form_open('registration'); ?>
 
             <div class="form-group">
-              <label for="email">Your Full Name
+              <label for="fullname">Your Full Name
               </label>
-              <input id="email" type="text" value="<?= set_value('email','',true)?>"
-                     class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>" name="email"
+              <input id="fullname" type="text" value="<?= set_value('fullname','',true)?>"
+                     class="form-control <?php if(strlen(form_error('fullname')) > 0){echo "is-invalid";} ?>" name="fullname"
                      autofocus />
               <div class="invalid-feedback">
-                <?php echo form_error('email');?>
+                <?php echo form_error('fullname');?>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="email">Your Username
+              <label for="username">Your Username
               </label>
-              <input id="email" type="text" value="<?= set_value('email','',true)?>"
-                     class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>" name="email"
+              <input id="username" type="text" value="<?= set_value('username','',true)?>"
+                     class="form-control <?php if(strlen(form_error('username')) > 0){echo "is-invalid";} ?>" name="username"
                      autofocus />
               <div class="invalid-feedback">
-                <?php echo form_error('email');?>
+                <?php echo form_error('username');?>
               </div>
             </div>
 
             <div class="form-group">
               <label for="email">Your Email
               </label>
-              <input id="email" type="text" value="<?= set_value('email','',true)?>"
+              <input id="email" type="email" value="<?= set_value('email','',true)?>"
                      class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>" name="email"
                      autofocus />
               <div class="invalid-feedback">
@@ -60,35 +60,35 @@
             </div>
 
             <div class="form-group">
-              <label for="email">Re-type your Email
+              <label for="confirm_email">Re-type your Email
               </label>
-              <input id="email" type="text" value="<?= set_value('email','',true)?>"
-                     class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>" name="email"
+              <input id="confirm_email" type="email" value="<?= set_value('confirm_email','',true)?>"
+                     class="form-control <?php if(strlen(form_error('confirm_email')) > 0){echo "is-invalid";} ?>" name="confirm_email"
                      autofocus />
               <div class="invalid-feedback">
-                <?php echo form_error('email');?>
+                <?php echo form_error('confirm_email');?>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="email">Your Password
+              <label for="password">Your Password
               </label>
-              <input id="email" type="text" value="<?= set_value('email','',true)?>"
-                     class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>" name="email"
+              <input id="password" type="password" value="<?= set_value('password','',true)?>"
+                     class="form-control <?php if(strlen(form_error('password')) > 0){echo "is-invalid";} ?>" name="password"
                      autofocus />
               <div class="invalid-feedback">
-                <?php echo form_error('email');?>
+                <?php echo form_error('password');?>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="email">Re-type Password
+              <label for="confirm_password">Re-type Password
               </label>
-              <input id="email" type="text" value="<?= set_value('email','',true)?>"
-                     class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>" name="email"
+              <input id="confirm_password" type="password" value="<?= set_value('confirm_password','',true)?>"
+                     class="form-control <?php if(strlen(form_error('confirm_password')) > 0){echo "is-invalid";} ?>" name="confirm_password"
                      autofocus />
               <div class="invalid-feedback">
-                <?php echo form_error('email');?>
+                <?php echo form_error('confirm_password');?>
               </div>
             </div>
 

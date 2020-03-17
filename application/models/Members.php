@@ -8,9 +8,9 @@
             $this->load->database();
         }
 
-        public function get_member($email){
+        public function get_member($username){
 
-            $this->db->where('email_address', $email);
+            $this->db->where('username', $username);
             $query = $this->db->get('td_members',1);
 
             return $query->row();
@@ -25,7 +25,7 @@
         }
 
         public function get_members_offset_limit($offset,$limit){
-            $query = $this->db->get('td_members',$offset,$limit); 
+            $query = $this->db->get('td_members',$offset,$limit);
 
             return $query->result();
         }
@@ -72,7 +72,7 @@
 
         public function verify_member($user,$pass){
 
-            $this->db->where('email_address', $user);
+            $this->db->where('username', $user);
             $query = $this->db->get('td_members');
             $mpassword = $query->row();
 
@@ -112,7 +112,7 @@
               ];
 
             $encrypted_password = password_hash($password, PASSWORD_BCRYPT, $options);
-            
+
             $this->db->set('password', $encrypted_password);
             $this->db->where('email_address', $email);
             $this->db->update('td_members');
