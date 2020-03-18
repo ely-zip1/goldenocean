@@ -200,11 +200,11 @@
 
 .plan-card{
   height: 250px;
-  padding-right: 20px
+  padding-right: 10px
 }
 .plan-card h4{
   text-align: right;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   margin-top: 10px;
 }
 .plan-card-info{
@@ -244,16 +244,19 @@
   font-size: 16px;
 }
 
-.go-table{
-  width: 180px !important;
+/* .go-table{
+  width: 100% !important;
   background: #00beff !important;
 }
+.go-table td{
+  text-align: right;
+} */
 
 .row-deposit{
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 30px;
-  background: linear-gradient(90deg, #00beff, #2E667E);
+  background: linear-gradient(90deg, #00222e, #005579);
   align-items: center;
   border-top: 6px solid;
   border-image-source: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
@@ -268,6 +271,10 @@
   text-align: right;
 }
 
+select option{
+  font-size: 16px;
+}
+
 .submit-deposit{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -277,5 +284,5 @@
 }
 
 footer{
-  height: 50px;
+  height: 100px;
 }

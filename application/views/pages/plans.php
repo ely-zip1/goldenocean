@@ -43,7 +43,8 @@
 							<h6>Up to $799.00</h6>
             </div>
             <div class="bottom1 plan-card">
-							<h4>BASIC PLAN</h4>
+							<h4><?php echo $plan1; ?></h4>
+							<!-- <h4>ULTRAMAX PLAN</h4> -->
 							<p class="plan-card-info">
 								<b>120 Days</b> Contract
 								<br>
@@ -74,7 +75,7 @@
 							<h6>Up to 3,999.00</h6>
             </div>
             <div class="bottom2 plan-card">
-              <h4>PREMIUM PLAN</h4>
+							<h4><?php echo $plan2; ?></h4>
 							<p class="plan-card-info">
 								<b>90 Days</b> Contract
 								<br>
@@ -105,7 +106,7 @@
 							<h6>Up to 8,000.00</h6>
             </div>
             <div class="bottom3 plan-card">
-              <h4>GOLD PLAN</h4>
+							<h4><?php echo $plan3; ?></h4>
 							<p class="plan-card-info">
 								<b>60 Days</b> Contract
 								<br>
@@ -132,17 +133,40 @@
 				<div class="col-md-9">
 					<?php echo form_open('plans'); ?>
 					<div class="form-row">
-            <div class="form-group col-md-6 deposit-form">
-							<label for="plan_option">Choose your Plan</label>
-							<select class="form-control" name="plan_option">
-								<option class="option-1">Basic Plan</option>
-								<option class="option-2">Premium Plan</option>
-								<option class="option-3">Gold Plan</option>
+            <div class="form-group col-md-4 deposit-form">
+							<label for="chosen_plan">Choose your Plan</label>
+							<select class="form-control" name="chosen_plan">
+								<option value="plan1"><?php echo $plan1; ?></option>
+								<option value="plan2"><?php echo $plan2; ?></option>
+								<option value="plan3"><?php echo $plan3; ?></option>
 							</select>
+							<div class="invalid-feedback">
+										<?php echo form_error('chosen_plan');?>
+							</div>
             </div>
-            <div class="form-group col-md-6  deposit-form">
-	            <label for="inputPassword4">Amount</label>
-	            <input type="text" class="form-control" name="deposit_amount" id="deposit-amount" placeholder="Amount">
+
+						<div class="form-group col-md-4 deposit-form">
+							<label for="plan_option">Payment Mode</label>
+							<select class="form-control" name="plan_payment_mode">
+								<option value="mode1">Bitcoin</option>
+								<option value="mode2">Abra</option>
+								<option value="mode3">Neteller</option>
+								<option value="mode4">Paypal</option>
+								<option value="mode5">Mastercard</option>
+								<option value="mode6">Skrill</option>
+							</select>
+							<div class="invalid-feedback">
+										<?php echo form_error('plan_payment_mode');?>
+							</div>
+            </div>
+						
+            <div class="form-group col-md-4  deposit-form">
+	            <label for="deposit_amount">Amount</label>
+	            <input type="text" class="form-control <?php if(strlen(form_error('deposit_amount')) > 0){echo "is-invalid";} ?>"
+								name="deposit_amount" id="deposit-amount" placeholder="Amount" value="<?php set_value('deposit_amount','',true); ?>">
+							<div class="invalid-feedback">
+										<?php echo form_error('deposit_amount');?>
+							</div>
             </div>
           </div>
 				</div>

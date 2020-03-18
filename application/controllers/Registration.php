@@ -28,7 +28,7 @@ class Registration extends CI_Controller{
         }
 
         $this->form_validation->set_rules('fullname', 'Full Name', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('username', 'Username', 'required|callback_is_new_username');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_is_new_email');
         $this->form_validation->set_rules('confirm_email', 'Email Confirmation', 'required|matches[email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
@@ -80,7 +80,11 @@ class Registration extends CI_Controller{
                       $this->ReferralModel->add_referral($new_referral);
 
                       $this->session->set_flashdata("success","yeey");
+
+                      unset($_POST);
+                      unset($_POST);
                       redirect('registration','refresh');
+
                   }else{
                       // echo "failed";
                       $this->load->view('login/header', $data);
@@ -102,8 +106,8 @@ class Registration extends CI_Controller{
 
     function is_new_username(){
 
-    	if($this->Members->has_duplicate_email($_POST['email'])){
-    		$this->form_validation->set_message('is_new_email', 'Email address already exists.');
+    	if($this->Members->has_duplicate_username($_POST['username'])){
+    		$this->form_validation->set_message('is_new_username', 'Username already taken.');
     		return false;
     	}else{
     		return true;

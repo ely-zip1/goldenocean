@@ -22,6 +22,7 @@ if(!isset($this->session->email)){
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/ionicons/css/ionicons.min.css">
+  <script defer src="https://friconix.com/cdn/friconix.js"> </script>
 
   <!-- CSS Libraries -->
   <?php

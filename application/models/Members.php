@@ -105,6 +105,19 @@
             }
         }
 
+        public function has_duplicate_username($username){
+            $this->db->where('username', $username);
+            $query = $this->db->get('td_members',1);
+
+            if(isset($query->row()->username)){
+                if(strlen($query->row()->username) > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+
         public function update_password($email, $password){
 
             $options = [

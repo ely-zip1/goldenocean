@@ -73,7 +73,7 @@
             <div class="form-group">
               <label for="password">Your Password
               </label>
-              <input id="password" type="password" value="<?= set_value('password','',true)?>"
+              <input id="password" type="password"
                      class="form-control <?php if(strlen(form_error('password')) > 0){echo "is-invalid";} ?>" name="password"
                      autofocus />
               <div class="invalid-feedback">
@@ -84,7 +84,7 @@
             <div class="form-group">
               <label for="confirm_password">Re-type Password
               </label>
-              <input id="confirm_password" type="password" value="<?= set_value('confirm_password','',true)?>"
+              <input id="confirm_password" type="password"
                      class="form-control <?php if(strlen(form_error('confirm_password')) > 0){echo "is-invalid";} ?>" name="confirm_password"
                      autofocus />
               <div class="invalid-feedback">
