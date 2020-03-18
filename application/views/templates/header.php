@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// if(!isset($this->session->email)){
-//   redirect('login');
-// }
+if(!isset($this->session->email)){
+  redirect('login');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -12,7 +12,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<ul class="sidebar-menu">
 			<!-- <li class="menu-header">Dashboard</li> -->
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'dashboard' ? 'active' : ''; ?>"> <a
-					href="dashboard" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a> </li>
+					href="dashboard" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+			</li>
+			<li class="dropdown <?php echo $this->uri->segment(1) == 'plans' ? 'active' : ''; ?>"> <a
+					href="plans" class="nav-link"><i class="fas fa-piggy-bank"></i><span>Make Deposit</span></a> 
+			</li>
 		</ul>
 	</aside>
 </div>

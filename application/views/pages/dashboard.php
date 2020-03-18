@@ -14,10 +14,10 @@
             </div>
 
             <div class="col-md-7">
-              <h4>WELCOME BACK, </h4>
+              <h4>WELCOME BACK, <?php echo strtoupper($this->session->userdata('username')); ?></h4>
               <p>
-                Signup Date: <br>
-                Last Access:
+                Signup Date: <span class="bold-text"> <?php echo strtoupper($this->session->userdata('date_registered')); ?></span><br>
+                <!-- Last Access: <?php echo strtoupper($this->session->userdata('username')); ?> -->
               </p>
             </div>
 
@@ -38,16 +38,17 @@
             </div>
           </div>
           <div class="right">
-            <div class="top">
+            <div class="top-dash">
               <h1>$0.00</h1>
             </div>
-            <div class="bottom1">
+            <div class="bottom1-dash">
               <h6>ACCOUNT BALANCE</h6>
             </div>
           </div>
         </div>
 
         <div class="col-md-6 account-summary-2">
+
           <div class="left">
             <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
             <div class="icon-container">
@@ -55,7 +56,7 @@
             </div>
           </div>
           <div class="right">
-            <div class="top">
+            <div class="top-dash">
                 <h1>$0.00</h1>
             </div>
             <div class="bottom2">
@@ -65,18 +66,60 @@
         </div>
       </div>
 
+      <div class="row account-summary-row ">
+        <div class="col-md-6 account-summary-3">
+					<div class="table-responsive">
+						<table class="table go-table table-striped table-info">
+							<tr>
+		          	<th class="table-rowheader">Pending Withdrawal: </th>
+								<td></td>
+		          </tr>
+							<tr>
+		          	<th class="table-rowheader">Total Withdrawal: </th>
+								<td></td>
+		          </tr>
+							<tr>
+		          	<th class="table-rowheader">Total Earned: </th>
+								<td></td>
+		          </tr>
+						</table>
+					</div>
+        </div>
+
+        <div class="col-md-6 account-summary-4">
+					<div class="table-responsive">
+						<table class="table go-t able table-striped table-success">
+							<tr>
+		          	<th class="table-rowheader">Last Deposit: </th>
+								<td></td>
+		          </tr>
+							<tr>
+		          	<th class="table-rowheader">Total Deposit: </th>
+								<td></td>
+		          </tr>
+							<tr>
+		          	<th class="table-rowheader">Last Withdrawal: </th>
+								<td></td>
+		          </tr>
+						</table>
+					</div>
+				</div>
+
+      </div>
+
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 affiliate-row">
           <div class="card card-primary text-center affiliate-program-card">
             <div class="card-body">
               <h5 class="card-title">AFFILIATE PROGRAM</h5>
-                <div class="alert alert-has-icon affiliate-link-alert">
-                  <!-- <div class="alert-icon"><i class="fas fa-users"></i></div> -->
-                    <div class="alert-body">
-                      <input type="text" class="form-control text-center" name="" value="https://jhgfkj.ajkhsgdjksa"></br>
-					              <a href="#" class="btn btn-icon icon-left btn-dark rounded-button"><i class="fas fa-copy"></i> Copy</a>
-                    </div>
-                </div>
+                <!-- <div class="alert alert-has-icon affiliate-link-alert">
+                    <div class="alert-body"> -->
+                      <input type="text" class="form-control text-center bold-text" name=""
+											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>">
+											<!-- </br> -->
+					              <!-- <a href="#" class="btn btn-icon icon-left btn-dark rounded-button" id="copy_button" onclick="copyTextFunction()"><i class="fas fa-copy"></i> Copy</a> -->
+                    <!-- </div>
+                </div> -->
 
             </div>
           </div>
@@ -86,3 +129,20 @@
 
 	</section>
 </div>
+
+<script type="text/javascript">
+	function copyTextFunction() {
+	/* Get the text field */
+	var copyText = document.getElementById("copy_button");
+
+	/* Select the text field */
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+	/* Copy the text inside the text field */
+	document.execCommand("copy");
+
+	/* Alert the copied text */
+	alert("Copied the text: " + copyText.value);
+	}
+</script>

@@ -21,17 +21,11 @@
 }
 
 .header-button-1{
-  background: #B1DE5B;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
+  background: #B1DE5B !important;
   margin-right: 20px;
 }
 .header-button-2{
   background: #0B2F37;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
 }
 
 .section .section-header-custom{
@@ -58,12 +52,15 @@
 
 .rounded-button{
   text-decoration: none;
-  padding: 5px;
-  width: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 50px;
   border: none;
   background: #0B2F37;
   box-shadow: none;
+  color: #fff;
 }
 .rounded-button-settings{
   margin-top: 50px;
@@ -71,21 +68,52 @@
 
 .account-summary-row{
   margin-top: 0px;
+  padding: 0px;
 }
 .account-summary-1{
   margin-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 .account-summary-2{
   margin-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 0px;
+}
+.account-summary-3{
+  margin-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.account-summary-4{
+  margin-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.affiliate-row{
+  padding: 0px;
+  margin-top: 0px;
 }
 
 .left{
   position: absolute;
   left: 0;
+}
+
+.top-dash{
+  float: right;
+  top: 0;
+  height: 111px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+  color: #fff;
+}
+.top-dash h1{
+  position: absolute;
+  right: 0px;
+  bottom: 60px;
+  margin-right: 30px;
+  margin-top: 50px;
 }
 
 .top{
@@ -97,10 +125,31 @@
   color: #fff;
 }
 .top h1{
-  float: right;
+  position: absolute;
+  right: 0px;
+  bottom: 290px;
   margin-right: 30px;
   margin-top: 50px;
-  font-size-adjust: auto;
+}
+.top h6{
+  position: absolute;
+  right: 0px;
+  bottom: 270px;
+  margin-right: 30px;
+  margin-top: 50px;
+}
+
+.bottom1-dash{
+  float: left;
+  height: 50px;
+  width: 100%;
+  background: #1297C1;
+  color: #fff;
+}
+.bottom1-dash h6{
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
 }
 
 .bottom1{
@@ -111,7 +160,6 @@
   color: #fff;
 }
 .bottom1 h6{
-  float: right;
   margin-right: 30px;
   margin-top: 10px;
   vertical-align: middle;
@@ -122,7 +170,8 @@
   bottom: 0;
   height: 50px;
   width: 100%;
-  background: #B1DE5B;
+  /* background: #B1DE5B; */
+  background: #D169FF;
   color: #fff;
 }
 .bottom2 h6{
@@ -130,6 +179,42 @@
   margin-right: 30px;
   margin-top: 10px;
   vertical-align: middle;
+}
+
+.bottom3{
+  float: left;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(90deg, #D9A91A, #F2D230);
+  /* background: #F2D230; */
+  /* background: #D169FF; */
+  color: #fff;
+}
+.bottom3 h6{
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+
+.plan-card{
+  height: 250px;
+  padding-right: 20px
+}
+.plan-card h4{
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.plan-card-info{
+  font-size: 17px !important;
+  text-align: center;
+  padding-top: 10px;
+}
+.interest-info{
+  /* font-weight: bolder; */
+  /* margin-bottom: 10px !important; */
 }
 
 .icon-container{
@@ -141,7 +226,7 @@
 
 .affiliate-program-card{
   margin-top: 20px;
-  border-top: 10px solid;
+  border-top: 6px solid;
   border-image-source: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
   border-image-slice: 1;
   background: #0B2F37;
@@ -151,4 +236,46 @@
 .affiliate-link-alert{
   background: #fff;
   color: #000;
+}
+
+.bold-text{
+  font-weight: bold;
+  /* font-family: monospace; */
+  font-size: 16px;
+}
+
+.go-table{
+  width: 180px !important;
+  background: #00beff !important;
+}
+
+.row-deposit{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #00beff, #2E667E);
+  align-items: center;
+  border-top: 6px solid;
+  border-image-source: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+  border-image-slice: 1;
+}
+
+.deposit-form label{
+  color: white;
+}
+
+.deposit-form input{
+  text-align: right;
+}
+
+.submit-deposit{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: linear-gradient(90deg, rgba(19,152,192,1) 0%, rgba(57,216,179,1) 100%);
+}
+
+footer{
+  height: 50px;
 }

@@ -16,7 +16,7 @@ class Login  extends CI_Controller
 		 // 	$this->Referral_codes->add_code(random_string('alnum', 6));
 		 // }
 
-		if(isset($this->session->email)){
+		if(isset($this->session->username)){
 
 			if($this->session->is_admin){
 
@@ -26,9 +26,6 @@ class Login  extends CI_Controller
 				redirect('dashboard', 'refresh');
 			}
 		}else{
-
-
-
 			$data = array(
 				'title' => "Login"
 			);
@@ -54,9 +51,9 @@ class Login  extends CI_Controller
 
 					$userdata = array(
 						'email' => $member_data->email_address,
-						'fullname' => $member_data->first_name,
+						'fullname' => $member_data->fullname,
 						'date_registered' => $member_data->date,
-						'username' => $member_data->last_name
+						'username' => $member_data->username
 					);
 
 					if($member_data->account_type_id == '1' || $member_data->account_type_id == '3'){
