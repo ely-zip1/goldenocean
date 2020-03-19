@@ -159,12 +159,12 @@
 										<?php echo form_error('plan_payment_mode');?>
 							</div>
             </div>
-						
+
             <div class="form-group col-md-4  deposit-form">
 	            <label for="deposit_amount">Amount</label>
 	            <input type="text" class="form-control <?php if(strlen(form_error('deposit_amount')) > 0){echo "is-invalid";} ?>"
 								name="deposit_amount" id="deposit-amount" placeholder="Amount" value="<?php set_value('deposit_amount','',true); ?>">
-							<div class="invalid-feedback">
+							<div class="invalid-feedback deposit-error">
 										<?php echo form_error('deposit_amount');?>
 							</div>
             </div>

@@ -47,9 +47,7 @@ class Plans extends CI_Controller
 
 		$this->form_validation->set_rules('chosen_plan', 'Plan', 'required');
 		$this->form_validation->set_rules('plan_payment_mode', 'Payment Mode', 'required');
-		$this->form_validation->set_rules('deposit_amount', 'Deposit Amount', 'required|
-			regex_match[/^(\d*\.)?\d+$/]|
-			callback_valid_deposit');
+		$this->form_validation->set_rules('deposit_amount', 'Deposit Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_deposit');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);
@@ -100,7 +98,7 @@ class Plans extends CI_Controller
 			if($_POST['deposit_amount'] >= 80 && $_POST['deposit_amount'] <= 799){
 				return true;
 			}else {
-    		$this->form_validation->set_message('valid_deposit', 'username already exists.');
+    		$this->form_validation->set_message('valid_deposit', 'Deposit Amount does not match your selected plan.');
 				return false;
 			}
 		}
@@ -108,7 +106,7 @@ class Plans extends CI_Controller
 			if($_POST['deposit_amount'] >= 800 && $_POST['deposit_amount'] <= 3999){
 				return true;
 			}else {
-    		$this->form_validation->set_message('valid_deposit', 'username already exists.');
+    		$this->form_validation->set_message('valid_deposit', 'Deposit Amount does not match your selected plan.');
 				return false;
 			}
 		}
@@ -116,7 +114,7 @@ class Plans extends CI_Controller
 			if($_POST['deposit_amount'] >= 4000 && $_POST['deposit_amount'] <= 8000){
 				return true;
 			}else {
-    		$this->form_validation->set_message('valid_deposit', 'username already exists.');
+    		$this->form_validation->set_message('valid_deposit', 'Deposit Amount does not match your selected plan.');
 				return false;
 			}
 		}
