@@ -31,6 +31,25 @@ class Dashboard extends CI_Controller {
 		$data['fullname'] = $this->session->userdata('fullname');
 		$data['date_registered'] = $this->session->userdata('date_registered');
 
+		if(isset($member_data)){
+			$pending_withdrawal = $this->WithdrawalModel->get_pending_withdrawal($member_data->id);
+			$total_withdrawal = $this->WithdrawalModel->get_total_withdrawal_per_member($member_data->id);
+			$last_withdrawal = $this->WithdrawalModel->get_latest_withdrawal_amount($member_data->id);
+			$total_growth = $this->DepositModel->get_total_growth($member_data->id);
+			$last_deposit = $this->DepositModel->get_latest_deposit_amount($member_data->id);
+			$total_deposit = $this->DepositModel->get_total_deposit($member_data->id);
+
+
+			$data['pending_withdrawals'] = '$ '.number_format($pending_withdrawal->total, 2, '.', ',');
+			$data['total_withdrawals'] = '$ '.number_format($total_withdrawal->amount, 2, '.', ',');
+			$data['last_withdrawal'] = '$ '.number_format($last_withdrawal->amount, 2, '.', ',');
+			$data['total_growth'] = '$ '.number_format($total_growth, 2, '.', ',');
+			$data['last_deposit'] = '$ '.number_format($last_deposit->amount, 2, '.', ',');
+			$data['total_deposit'] = '$ '.number_format($total_deposit->amount, 2, '.', ',');
+			// '$'.number_format($_POST['deposit_amount'], 2, '.', ',');
+
+			// print_r($this->WithdrawalModel->get_pending_withdrawal($member_data->id));
+		}
 		$data['referral_code'] = $this->Referral_codes->get_members_code($member_data->referral_code_id)->code;
 
 		$this->load->view('templates/header', $data);

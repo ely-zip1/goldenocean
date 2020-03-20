@@ -17,8 +17,9 @@ class Deposit_details extends CI_Controller {
 	public function index() {
 
 		$data = array(
-			'title' => "Deposit"
+			'title' => "Plans"
 		);
+
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/deposit_details', $data);

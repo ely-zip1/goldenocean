@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-if(!isset($this->session->email)){
+if(!isset($this->session->username)){
   redirect('login');
 }
 ?>

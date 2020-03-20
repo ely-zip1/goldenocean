@@ -15,6 +15,15 @@
             return $query->result();
         }
 
+        public function get_total_withdrawal_per_member($member_id){
+          $this->db->select_sum('amount');
+          $this->db->where('member_id',$member_id);
+          $this->db->where('is_pending','0');
+          $query = $this->db->get('td_withdrawals');
+
+          return $query->row();
+        }
+
         public function has_deposit($member_id){
             $this->db->where('member_id',$member_id);
             $query = $this->db->get('td_withdrawals',1);
@@ -66,7 +75,7 @@
         }
 
         public function add_new_withdrawal($withdrawal){
-            
+
             $this->db->insert('td_withdrawals',$withdrawal);
         }
 
@@ -77,13 +86,30 @@
         }
 
         public function Approve_pending($withdrawal_id){
-            
+
             date_default_timezone_set('Asia/Manila');
 
             $this->db->set('is_pending', '0');
             $this->db->set('date_approved', date('Y-m-d H:i:s'));
             $this->db->where('id', $withdrawal_id);
             $this->db->update('td_withdrawals');
+        }
+
+        public function get_pending_withdrawal($member_id){
+          $query = $this->db->query('SELECT sum(amount) as total FROM `td_withdrawals`
+          WHERE member_id = '.$member_id.' and is_pending = 1
+          GROUP BY member_id');
+
+          return $query->row();
+        }
+
+        public function get_latest_withdrawal_amount($member_id){
+          $this->db->select('max(id), amount');
+          $this->db->where('member_id', $member_id);
+          $this->db->where('is_pending', 0);
+          $query = $this->db->get('td_withdrawals');
+
+          return $query->row();
         }
     }
 

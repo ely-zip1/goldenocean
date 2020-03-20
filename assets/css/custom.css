@@ -248,11 +248,6 @@
   color: #fff;
 }
 
-.affiliate-link-alert {
-  background: #fff;
-  color: #000;
-}
-
 .bold-text {
   font-weight: bold;
   /* font-family: monospace; */
@@ -266,6 +261,11 @@
 .go-table td{
   text-align: right;
 } */
+
+.dash-table-1 table td{
+  text-align: right ;
+}
+
 .row-deposit {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -299,6 +299,35 @@ select option {
 
 .deposit-error {
   color: #ff8282;
+}
+
+.deposit-details table{
+  margin-top: 20px;
+  width: 100%;
+  color: white;
+}
+.deposit-details table th{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  background: rgba(19, 152, 192, 1) !important;
+  border-bottom: 1px solid white;
+  text-align: right;
+}
+.deposit-details table td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  background: rgba(57, 216, 179, 1) !important;
+  width: 70%;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+}
+
+.affiliate-alert{
+  text-decoration:none !important;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 footer {

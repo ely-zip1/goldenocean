@@ -17,6 +17,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'plans' ? 'active' : ''; ?>"> <a
 					href="plans" class="nav-link"><i class="fas fa-piggy-bank"></i><span>Make Deposit</span></a>
 			</li>
+			<li class="dropdown <?php echo $this->uri->segment(1) == 'account_settings' ? 'active' : ''; ?>"> <a
+					href="account_settings" class="nav-link"><i class="fas fa-edit"></i><span>Edit Account</span></a>
+			</li>
 		</ul>
 	</aside>
 </div>

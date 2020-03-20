@@ -6,7 +6,7 @@
         {
             parent::__construct();
             $this->load->database();
-            
+
             date_default_timezone_set('Asia/Manila');
         }
 
@@ -53,16 +53,16 @@
             return $query->result();
         }
 
-        public function get_total_growth($email){
-            
+        public function get_total_growth($member_id){
+
             date_default_timezone_set('Asia/Manila');
 
-            $this->db->where('email_address',$email);
-            $query = $this->db->get('td_members',1);
+            // $this->db->where('email_address',$email);
+            // $query = $this->db->get('td_members',1);
+            //
+            // $member = $query->row();
 
-            $member = $query->row();
-
-            $this->db->where('member_id',$member->id);
+            $this->db->where('member_id',$member_id);
             $deposit_query = $this->db->get('td_deposits');
 
             $total_growth = 0;
@@ -92,7 +92,7 @@
         }
 
         public function Approve_pending($deposit_id){
-            
+
             date_default_timezone_set('Asia/Manila');
 
             $this->db->set('is_pending', '0');
@@ -102,18 +102,34 @@
         }
 
         public function get_all(){
-            
+
             $query = $this->db->get('td_deposits');
 
             return $query->result();
         }
 
         public function delete_deposit($deposit_id){
-
             $this->db->where('id', $deposit_id);
             $this->db->delete('td_deposits');
         }
-        
+
+        public function get_latest_deposit_amount($member_id){
+          $this->db->select('max(id), amount');
+          $this->db->where('member_id', $member_id);
+          $this->db->where('is_pending', 0);
+          $query = $this->db->get('td_deposits');
+
+          return $query->row();
+        }
+
+        public function get_total_deposit($member_id){
+          $this->db->select_sum('amount');
+          $this->db->where('member_id',$member_id);
+          $this->db->where('is_pending','0');
+          $query = $this->db->get('td_deposits');
+
+          return $query->row();
+        }
     }
 
 

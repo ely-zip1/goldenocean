@@ -136,9 +136,9 @@
             <div class="form-group col-md-4 deposit-form">
 							<label for="chosen_plan">Choose your Plan</label>
 							<select class="form-control" name="chosen_plan">
-								<option value="plan1"><?php echo $plan1; ?></option>
-								<option value="plan2"><?php echo $plan2; ?></option>
-								<option value="plan3"><?php echo $plan3; ?></option>
+								<option <?php if($selected_plan == 'plan1') {echo 'selected';} ?> value="plan1"><?php echo $plan1; ?></option>
+								<option <?php if($selected_plan == 'plan2') {echo 'selected';} ?> value="plan3"><?php echo $plan3; ?></option>
+								<option <?php if($selected_plan == 'plan3') {echo 'selected';} ?> value="plan2"><?php echo $plan2; ?></option>
 							</select>
 							<div class="invalid-feedback">
 										<?php echo form_error('chosen_plan');?>
@@ -148,12 +148,12 @@
 						<div class="form-group col-md-4 deposit-form">
 							<label for="plan_option">Payment Mode</label>
 							<select class="form-control" name="plan_payment_mode">
-								<option value="mode1">Bitcoin</option>
-								<option value="mode2">Abra</option>
-								<option value="mode3">Neteller</option>
-								<option value="mode4">Paypal</option>
-								<option value="mode5">Mastercard</option>
-								<option value="mode6">Skrill</option>
+								<option <?php if($selected_mode == 'mode1') {echo 'selected';} ?> value="mode1">Bitcoin</option>
+								<option <?php if($selected_mode == 'mode2') {echo 'selected';} ?> value="mode2">Abra</option>
+								<option <?php if($selected_mode == 'mode3') {echo 'selected';} ?> value="mode3">Neteller</option>
+								<option <?php if($selected_mode == 'mode4') {echo 'selected';} ?> value="mode4">Paypal</option>
+								<option <?php if($selected_mode == 'mode5') {echo 'selected';} ?> value="mode5">Mastercard</option>
+								<option <?php if($selected_mode == 'mode6') {echo 'selected';} ?> value="mode6">Skrill</option>
 							</select>
 							<div class="invalid-feedback">
 										<?php echo form_error('plan_payment_mode');?>

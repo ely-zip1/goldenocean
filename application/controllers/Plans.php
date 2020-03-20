@@ -35,6 +35,9 @@ class Plans extends CI_Controller
 		$data['mode5'] = ucfirst($modes_of_payment[4]->name);
 		$data['mode6'] = ucfirst($modes_of_payment[5]->name);
 
+
+		$data['selected_plan'] = 'plan1';
+		$data['selected_mode'] = 'mode1';
 		// print_r($packages);
 
 		// $url = "https://bitpay.com/api/rates";
@@ -50,6 +53,11 @@ class Plans extends CI_Controller
 		$this->form_validation->set_rules('deposit_amount', 'Deposit Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_deposit');
 
 		if ($this->form_validation->run() == FALSE) {
+			if(isset($_POST['chosen_plan'])){
+				$data['selected_plan'] = $_POST['chosen_plan'];
+				$data['selected_mode'] = $_POST['plan_payment_mode'];
+			}
+
 			$this->load->view('templates/header', $data);
 			$this->load->view('pages/plans', $data);
 			$this->load->view('templates/footer');
@@ -64,31 +72,52 @@ class Plans extends CI_Controller
 
 			if($_POST['chosen_plan'] == 'plan1'){
 				$deposit_data['package_id'] = '1';
+				$data['deposit_selected_plan'] = strtoupper($packages[0]->package_name);
 			}else if($_POST['chosen_plan'] == 'plan2'){
 				$deposit_data['package_id'] = '2';
+				$data['deposit_selected_plan'] = strtoupper($packages[1]->package_name);
 			}else if($_POST['chosen_plan'] == 'plan3'){
 				$deposit_data['package_id'] = '3';
+				$data['deposit_selected_plan'] = strtoupper($packages[2]->package_name);
 			}
 
 			if($_POST['plan_payment_mode'] == 'mode1'){
 				$deposit_data['deposit_options_id'] = '1';
-			}else if($_POST['plan_payment_mode'] == 'mode1'){
-				$deposit_data['deposit_options_id'] = '2';
+				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[0]->name);
+				$data['deposit_address'] = $modes_of_payment[0]->account;
 			}else if($_POST['plan_payment_mode'] == 'mode2'){
-				$deposit_data['deposit_options_id'] = '3';
+				$deposit_data['deposit_options_id'] = '2';
+				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[1]->name);
+				$data['deposit_address'] = $modes_of_payment[1]->account;
 			}else if($_POST['plan_payment_mode'] == 'mode3'){
-				$deposit_data['deposit_options_id'] = '4';
+				$deposit_data['deposit_options_id'] = '3';
+				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[2]->name);
+				$data['deposit_address'] = $modes_of_payment[2]->account;
 			}else if($_POST['plan_payment_mode'] == 'mode4'){
-				$deposit_data['deposit_options_id'] = '5';
+				$deposit_data['deposit_options_id'] = '4';
+				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[3]->name);
+				$data['deposit_address'] = $modes_of_payment[3]->account;
 			}else if($_POST['plan_payment_mode'] == 'mode5'){
+				$deposit_data['deposit_options_id'] = '5';
+				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[4]->name);
+				$data['deposit_address'] = $modes_of_payment[4]->account;
+			}else if($_POST['plan_payment_mode'] == 'mode6'){
 				$deposit_data['deposit_options_id'] = '6';
+				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[5]->name);
+				$data['deposit_address'] = $modes_of_payment[5]->account;
 			}
 
 			$deposit_data['is_pending'] = '1';
 
 			$this->DepositModel->add_deposit($deposit_data);
 
-			redirect('deposit_details', refresh);
+			$data['deposit_date'] = date('Y-m-d H:i:s');
+			$data['deposit_amount'] = '$'.number_format($_POST['deposit_amount'], 2, '.', ',');
+
+			// redirect('deposit_details', 'refresh');
+			$this->load->view('templates/header', $data);
+			$this->load->view('pages/deposit_details', $data);
+			$this->load->view('templates/footer');
 		}
 	}
 

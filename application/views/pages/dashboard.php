@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-md-3 text-center">
-              <a href="#" class="btn btn-icon icon-left btn-dark rounded-button rounded-button-settings"><i class="fas fa-cogs"></i> Settings</a>
+              <a href="<?php echo base_url('account_settings'); ?>" class="btn btn-icon icon-left btn-dark rounded-button rounded-button-settings"><i class="fas fa-cogs"></i> Settings</a>
             </div>
 
           </div>
@@ -68,38 +68,38 @@
 
       <div class="row account-summary-row ">
         <div class="col-md-6 account-summary-3">
-					<div class="table-responsive">
+					<div class="table-responsive dash-table-1">
 						<table class="table go-table table-striped table-dark">
 							<tr>
 		          	<th class="table-rowheader">Pending Withdrawal: </th>
-								<td></td>
+								<td><?php echo $pending_withdrawals; ?></td>
 		          </tr>
 							<tr>
 		          	<th class="table-rowheader">Total Withdrawal: </th>
-								<td></td>
+								<td><?php echo $total_withdrawals; ?></td>
 		          </tr>
 							<tr>
 		          	<th class="table-rowheader">Total Earned: </th>
-								<td></td>
+								<td><?php echo $total_growth; ?></td>
 		          </tr>
 						</table>
 					</div>
         </div>
 
         <div class="col-md-6 account-summary-4">
-					<div class="table-responsive">
+					<div class="table-responsive dash-table-1">
 						<table class="table go-table table-striped table-dark">
 							<tr>
 		          	<th class="table-rowheader">Last Deposit: </th>
-								<td>$0.00</td>
+								<td><?php echo $last_deposit; ?></td>
 		          </tr>
 							<tr>
 		          	<th class="table-rowheader">Total Deposit: </th>
-								<td>$0.00</td>
+								<td><?php echo $total_deposit; ?></td>
 		          </tr>
 							<tr>
 		          	<th class="table-rowheader">Last Withdrawal: </th>
-								<td>$0.00</td>
+								<td><?php echo $last_withdrawal; ?></td>
 		          </tr>
 						</table>
 					</div>
@@ -114,8 +114,11 @@
               <h5 class="card-title">AFFILIATE PROGRAM</h5>
                 <!-- <div class="alert alert-has-icon affiliate-link-alert">
                     <div class="alert-body"> -->
-                      <input type="text" class="form-control text-center bold-text" name=""
-											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>">
+                      <!-- <input type="text" class="form-control text-center bold-text" name=""
+											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>"> -->
+											<div class="alert alert-light">
+												<a class="affiliate-alert" href="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>">https://goldenocean.com/my/ref/<?php echo $referral_code; ?></a>
+	                    </div>
 											<!-- </br> -->
 					              <!-- <a href="#" class="btn btn-icon icon-left btn-dark rounded-button" id="copy_button" onclick="copyTextFunction()"><i class="fas fa-copy"></i> Copy</a> -->
                     <!-- </div>
