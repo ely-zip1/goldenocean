@@ -11,8 +11,8 @@ if(!isset($this->session->email)){
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title><?php echo $title; ?> &mdash; MPD</title>
-  
+  <title><?php echo $title; ?> &mdash; Golden Ocean</title>
+
 
   <!-- favicon -->
   <link rel="icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/gif">
@@ -20,7 +20,7 @@ if(!isset($this->session->email)){
   <!-- General CSS Files -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
-  
+
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/ionicons/css/ionicons.min.css">
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jqvmap/dist/jqvmap.min.css">
@@ -174,30 +174,30 @@ if(!isset($this->session->email)){
     gtag('config', 'UA-94034622-3');
   </script>
   <!-- /END GA -->
-  
+
   <script>
 	  var timer = 0;
-	  
+
 	  function set_interval(){
 		  timer = setInterval("auto_logout()", 30*60*1000);
 	  }
-	  
+
 	  function reset_interval(){
 		  if(timer != 0){
 			  clearInterval(timer);
 			  timer = 0;
-			  
+
 			  timer = setInterval("auto_logout()", 30*60*1000);
 		  }
 	  }
-	  
+
 	  function auto_logout(){
 		  window.location.href = "<?php echo site_url('logout'); ?>";
 	  }
   </script>
 </head>
 
-<body class="body-custom-admin" 
+<body class="body-custom-admin"
 	onload = "set_interval()"
 	onmousemove = "reset_interval()"
 	onclick = "reset_interval()"

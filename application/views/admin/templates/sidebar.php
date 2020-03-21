@@ -3,16 +3,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="main-sidebar sidebar-style-2 shadow sidebar">
 	<aside id="sidebar-wrapper">
-		
-		<div class="sidebar-brand"> 
-			  <a href="<?= base_url();?>AdminDashboard"><img src="<?= base_url();?>assets/img/MPD_Logo_blue.png" alt="logo" width="150"></a>
+
+		<div class="sidebar-brand">
+			<a href="<?= base_url('deposits_admin');?>">Golden Ocean</a>
+			  <!-- <a href="<?= base_url();?>AdminDashboard"><img src="<?= base_url();?>assets/img/MPD_Logo_blue.png" alt="logo" width="150"></a> -->
 		</div>
-		<div class="sidebar-brand sidebar-brand-sm"> 
-			  <a href="<?= base_url();?>AdminDashboard"><img src="<?= base_url();?>assets/img/MPD_Logo_small_blue.png" alt="logo" width="40"></a>
+		<div class="sidebar-brand sidebar-brand-sm">
+			<a href="<?= base_url('deposits_admin');?>">GO</a>
+			  <!-- <a href="<?= base_url();?>AdminDashboard"><img src="<?= base_url();?>assets/img/MPD_Logo_small_blue.png" alt="logo" width="40"></a> -->
 		</div>
 
 		<ul class="sidebar-menu">
-			
+
             <li class="menu-header">Deposit</li>
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'deposits_admin' ? 'active' : ''; ?>"> <a
 					href="<?= base_url();?>deposits_admin" class="nav-link"><i
@@ -22,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					href="<?= base_url();?>approved_deposits" class="nav-link"><i
 						class="far fa-check-circle"></i><span>Approved Deposits</span></a>
 			</li>
-			
+
             <li class="menu-header">Withdrawal</li>
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'withdrawals_admin' ? 'active' : ''; ?>"> <a
 					href="<?= base_url();?>withdrawals_admin" class="nav-link"><i
@@ -32,7 +34,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					href="<?= base_url();?>approved_withdrawals" class="nav-link"><i
 						class="fas fa-check-circle"></i><span>Approved Withdrawals</span></a>
 			</li>
-			
+
             <li class="menu-header">User</li>
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'manage_users' ? 'active' : ''; ?>"> <a
 					href="<?= base_url();?>manage_users" class="nav-link"><i

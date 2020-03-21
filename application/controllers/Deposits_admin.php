@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class Deposits_admin extends CI_Controller
 {
-    
+
   public function __construct()
   {
     parent::__construct();
@@ -32,25 +32,19 @@ class Deposits_admin extends CI_Controller
         if(!$this->Members->is_exist($pending->member_id)){
           continue;
         }
-        
+
         $member_data = $this->Members->get_member_by_id($pending->member_id);
         $deposit_mode = $this->Deposit_Options->get_by_id($pending->deposit_options_id);
         $package_data = $this->PackageModel->get_package_by_id($pending->package_id);
 
         $temp = array();
         $temp['id'] = $pending->id;
-        $temp['client_name'] = ucfirst($member_data->first_name) . ' ' . ucfirst($member_data->last_name);
+        $temp['client_name'] = ucfirst($member_data->full_name);
         $temp['email'] = $member_data->email_address;
-        $temp['phone'] = $member_data->contact_number;
         $temp['amount'] = number_format($pending->amount,2);
         $temp['plan'] = $package_data->package_name;
         $temp['date'] = $pending->date;
-        
-        if($deposit_mode->name == 'Bitcoin'){
-            $temp['mode'] = 'Coins.ph';
-        }else{
-            $temp['mode'] = $deposit_mode->name;
-        }
+        $temp['mode'] = $deposit_mode->name;
 
         array_push($deposit_data, $temp);
       }
@@ -81,7 +75,7 @@ class Deposits_admin extends CI_Controller
     );
 
     $referral1 = $this->ReferralModel->get_referrer($referral2->referrer_id);
-    
+
     if(isset($referral1->referrer_id)){
 
       $indirect_bonus_data = array(
@@ -91,7 +85,7 @@ class Deposits_admin extends CI_Controller
         'first_level_id' => $referral2->referrer_id,
         'second_level_id' => $member->id
       );
-      
+
       $this->Indirect_bonus_model->add($indirect_bonus_data);
 
     }
@@ -106,7 +100,7 @@ class Deposits_admin extends CI_Controller
   public function delete_deposit($deposit_id){
 
     $this->DepositModel->delete_deposit($deposit_id);
-    
+
     redirect('deposits_admin', 'refresh');
 
   }
