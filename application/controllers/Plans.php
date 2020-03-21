@@ -6,7 +6,7 @@ class Plans extends CI_Controller
 	public function __construct()
         {
             parent::__construct();
-						$this->load->model('Packagemodel');
+						$this->load->model('PackageModel');
 						$this->load->model('DepositModel');
 						$this->load->model('Members');
 						$this->load->model('Deposit_Options');
@@ -20,7 +20,7 @@ class Plans extends CI_Controller
 			'title' => "Plans"
 		);
 
-		$packages = $this->Packagemodel->get_packages();
+		$packages = $this->PackageModel->get_packages();
 
 		$data['plan1'] = strtoupper($packages[0]->package_name);
 		$data['plan2'] = strtoupper($packages[1]->package_name);

@@ -6,7 +6,7 @@ class Account_settings extends CI_Controller
 	public function __construct()
         {
             parent::__construct();
-						$this->load->model('Packagemodel');
+						$this->load->model('PackageModel');
 						$this->load->model('DepositModel');
 						$this->load->model('Members');
 						$this->load->model('Deposit_Options');

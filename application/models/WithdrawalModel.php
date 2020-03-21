@@ -97,8 +97,7 @@
 
         public function get_pending_withdrawal($member_id){
           $query = $this->db->query('SELECT sum(amount) as total FROM `td_withdrawals`
-          WHERE member_id = '.$member_id.' and is_pending = 1
-          GROUP BY member_id');
+          WHERE member_id = '.$member_id.' and is_pending = 1');
 
           return $query->row();
         }
