@@ -1,8 +1,8 @@
 <div class="main-content">
 	<section class="section">
-		<div class="section-header">
-			<!-- <h1>Update Account</h1>  -->
-		</div>
+		<!-- <div class="section-header">
+			<h1>Update Account</h1>
+		</div> -->
 		<div class="container mt-5">
 			<!-- <?php print_r($deposit_data);?> -->
 			<div class="row">
@@ -36,13 +36,13 @@
 										<td><?php echo $item['mode']; ?></td>
 										<td><?php echo $item['email']; ?></td>
 										<td><?php echo $item['phone']; ?></td>
-										<td><?php 
+										<td><?php
                                                 $date=date_create($item['date']);
                                                 echo date_format($date,"M d, Y h:i A"); ?></td>
 										<td>
 
 											<a tabindex="0" role="button" class="btn btn-info" data-toggle="popover" data-html="true"
-											title="<?php echo $item['pop_over_title']; ?>" 
+											title="<?php echo $item['pop_over_title']; ?>"
 											data-content="<?php echo $item['pop_over_text']; ?>">
 												View
 											</a>

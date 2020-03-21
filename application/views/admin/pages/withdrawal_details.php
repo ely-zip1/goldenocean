@@ -1,8 +1,8 @@
 <div class="main-content">
     <section class="section">
-        <div class="section-header">
-            <!-- <h1>Update Account</h1>  -->
-        </div>
+        <!-- <div class="section-header">
+            <h1>Update Account</h1>
+        </div> -->
         <div class="container mt-5">
             <!-- <?php print_r($deposit_data);?> -->
             <div class="row">
@@ -26,7 +26,7 @@
                                                 </div>
                                                 <div class="card card-info">
                                                     <div class="card-body">
-                                                    
+
                                                         <div class="form-group row">
                                                             <label for="staticEmail"
                                                                 class="col-sm-2 col-form-label">Email</label>
@@ -36,7 +36,7 @@
                                                                     value="email@example.com">
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div class="form-group row">
                                                             <label for="staticEmail"
                                                                 class="col-sm-2 col-form-label">Email</label>

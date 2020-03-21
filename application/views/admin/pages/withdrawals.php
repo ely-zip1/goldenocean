@@ -1,8 +1,8 @@
 <div class="main-content">
 	<section class="section">
-		<div class="section-header">
-			<!-- <h1>Update Account</h1>  -->
-		</div>
+		<!-- <div class="section-header">
+			<h1>Update Account</h1>
+		</div> -->
 		<div class="container mt-5">
 			<div class="row">
 				<div class="col-6 offset-2">

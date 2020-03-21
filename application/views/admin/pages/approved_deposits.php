@@ -1,8 +1,8 @@
 <div class="main-content">
 	<section class="section">
-		<div class="section-header">
-			<!-- <h1>Update Account</h1>  -->
-		</div>
+		<!-- <div class="section-header">
+			<h1>Update Account</h1>
+		</div> -->
 		<div class="container mt-5">
 			<!-- <?php print_r($deposit_data);?> -->
 			<div class="row">
@@ -36,10 +36,10 @@
 										<td>$ <?php echo $item['amount']; ?></td>
 										<td><?php echo $item['mode']; ?></td>
 										<td><?php echo $item['plan']; ?></td>
-										<td><?php 
+										<td><?php
                                                 $date=date_create($item['date']);
                                                 echo date_format($date,"M d, Y h:i A"); ?></td>
-										<td><?php 
+										<td><?php
                                                 $date=date_create($item['date_approved']);
                                                 echo date_format($date,"M d, Y h:i A"); ?></td>
 									</tr>
