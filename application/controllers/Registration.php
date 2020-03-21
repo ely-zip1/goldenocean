@@ -81,8 +81,8 @@ class Registration extends CI_Controller{
 
                       $this->session->set_flashdata("success","yeey");
 
-                      unset($_POST);
-                      unset($_POST);
+                      // unset($_POST);
+                      // unset($_POST);
                       redirect('registration','refresh');
 
                   }else{

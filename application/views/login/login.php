@@ -72,8 +72,7 @@
 
                                        </div>
                                  <div class="mb-3 text-muted text-center" >
-                                       Don't have an account? <a href="<?php echo base_url(); ?>registration">Create
-                                             One</a>
+                                       <a href="<?php echo base_url(); ?>registration">Register Now</a>
                                  </div>
                                  </div>
                            </div>
