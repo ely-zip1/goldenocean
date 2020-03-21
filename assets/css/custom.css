@@ -326,8 +326,59 @@ select option {
 
 .affiliate-alert{
   text-decoration:none !important;
+  font-family: monospace;
   font-size: 20px;
   font-weight: bold;
+  color: #00222e !important;
+}
+
+.edit-account-table{
+  background: rgba(19, 152, 192, 1) !important;
+  margin-top: 20px;
+  color: white;
+  min-height: 290px;
+}
+.edit-account-table table{
+  width: 100%;
+}
+.edit-account-table td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid white;
+  width: 30%;
+  /* text-align: right; */
+}
+
+.edit-account-table th{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  border-bottom: 1px solid white;
+}
+
+.reset-password{
+  background: rgba(19, 152, 192, 1) !important;
+  margin-top: 20px;
+  color: white;
+  padding: 10px;
+  min-height: 290px;
+  /* text-align: center; */
+}
+.reset-password label{
+  color: white;
+  font-size: 14px;
+}
+
+.user-account-form{
+  margin-top: 20px;
+  background: rgba(19, 152, 192, 1) !important;
+  padding: 10px 20px;
+}
+.user-account-form label{
+  color: white !important;
 }
 
 footer {
