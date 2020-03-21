@@ -74,7 +74,7 @@ class Registration extends CI_Controller{
 
                       $new_referral = array(
                           'referrer_id' => $referrer_data->id,
-                          'member_id' => $new_member->id
+                          'referee_id' => $new_member->id
                       );
 
                       $this->ReferralModel->add_referral($new_referral);
