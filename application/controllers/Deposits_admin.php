@@ -64,32 +64,49 @@ class Deposits_admin extends CI_Controller
 
     $member = $this->Members->get_member_by_id($deposit->member_id);
 
-    $referral2 = $this->ReferralModel->get_referrer($member->id);
-    $bonus_amount = $deposit->amount * 0.10;
-    $indirect_bonus_amount = $deposit->amount * 0.02;
+    $level_1 = $this->ReferralModel->get_referrer($member->id);
+    $level_2 = $this->ReferralModel->get_referrer($level_1->referrer_id);
+    $level_3 = $this->ReferralModel->get_referrer($level_2->referrer_id);
+    $bonus_1 = $deposit->amount * 0.05;
+    $bonus_2 = $deposit->amount * 0.03;
+    $bonus_3 = $deposit->amount * 0.02;
 
-    $bonus_data = array(
+    $bonus_1_data = array(
       'deposit_id' => $deposit->id,
-      'referrer_id' => $referral2->referrer_id,
-      'amount' => $bonus_amount
+      'referrer_id' => $level_1->referrer_id,
+      'amount' => $bonus_1
     );
 
-    $referral1 = $this->ReferralModel->get_referrer($referral2->referrer_id);
+    $bonus_2_data = array(
+      'deposit_id' => $deposit->id,
+      'referrer_id' => $level_2->referrer_id,
+      'amount' => $bonus_2
+    );
 
-    if(isset($referral1->referrer_id)){
+    $bonus_2_data = array(
+      'deposit_id' => $deposit->id,
+      'referrer_id' => $level_3->referrer_id,
+      'amount' => $bonus_3
+    );
 
-      $indirect_bonus_data = array(
-        'amount' => $indirect_bonus_amount,
-        'deposit_id' => $deposit->id,
-        'member_id' => $referral1->referrer_id,
-        'first_level_id' => $referral2->referrer_id,
-        'second_level_id' => $member->id
-      );
-
-      $this->Indirect_bonus_model->add($indirect_bonus_data);
-
-    }
-    $this->Referral_bonus_model->add($bonus_data);
+    // $referral1 = $this->ReferralModel->get_referrer($referral2->referrer_id);
+    //
+    // if(isset($referral1->referrer_id)){
+    //
+    //   $indirect_bonus_data = array(
+    //     'amount' => $indirect_bonus_amount,
+    //     'deposit_id' => $deposit->id,
+    //     'member_id' => $referral1->referrer_id,
+    //     'first_level_id' => $referral2->referrer_id,
+    //     'second_level_id' => $member->id
+    //   );
+    //
+    //   $this->Indirect_bonus_model->add($indirect_bonus_data);
+    //
+    // }
+    $this->Referral_bonus_model->add($bonus_1_data);
+    $this->Referral_bonus_model->add($bonus_2_data);
+    $this->Referral_bonus_model->add($bonus_3_data);
     $this->DepositModel->Approve_pending($deposit_id);
 
     redirect('deposits_admin', 'refresh');
