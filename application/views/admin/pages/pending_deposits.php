@@ -10,7 +10,7 @@
 					<div class="login-brand">
 						<h4>Pending Deposits</h4>
 					</div>
-					<div class="card card-info">
+					<div class="card">
 						<div class="card-body">
 							<table class="table table-hover table-bordered table-sm">
 
