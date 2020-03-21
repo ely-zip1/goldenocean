@@ -384,3 +384,7 @@ select option {
 footer {
   height: 100px;
 }
+
+.body-custom-admin{
+  background: black;
+}
