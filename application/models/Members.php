@@ -62,7 +62,7 @@
             $member = $query->row();
 
             if(isset($member)){
-                if(strlen($member->first_name) > 0){
+                if(strlen($member->full_name) > 0){
                     return true;
                 }else{
                     return false;

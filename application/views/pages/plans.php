@@ -137,8 +137,8 @@
 							<label for="chosen_plan">Choose your Plan</label>
 							<select class="form-control" name="chosen_plan">
 								<option <?php if($selected_plan == 'plan1') {echo 'selected';} ?> value="plan1"><?php echo $plan1; ?></option>
-								<option <?php if($selected_plan == 'plan2') {echo 'selected';} ?> value="plan3"><?php echo $plan3; ?></option>
-								<option <?php if($selected_plan == 'plan3') {echo 'selected';} ?> value="plan2"><?php echo $plan2; ?></option>
+								<option <?php if($selected_plan == 'plan2') {echo 'selected';} ?> value="plan2"><?php echo $plan2; ?></option>
+								<option <?php if($selected_plan == 'plan3') {echo 'selected';} ?> value="plan3"><?php echo $plan3; ?></option>
 							</select>
 							<div class="invalid-feedback">
 										<?php echo form_error('chosen_plan');?>
