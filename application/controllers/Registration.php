@@ -66,11 +66,11 @@ class Registration extends CI_Controller{
 
                   $this->Members->add_member($user_data);
 
-                  if($this->Members->verify_member($user_data['email_address'],$_POST['password'])){
+                  if($this->Members->verify_member($user_data['username'],$_POST['password'])){
                       // echo "success";
                       $referrer_code = $this->Referral_codes->get_by_code($_POST['referral']);
                       $referrer_data = $this->Members->get_member_by_referral_id($referrer_code->id);
-                      $new_member = $this->Members->get_member($user_data['email_address']);
+                      $new_member = $this->Members->get_member($user_data['username']);
 
                       $new_referral = array(
                           'referrer_id' => $referrer_data->id,
