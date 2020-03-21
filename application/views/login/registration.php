@@ -20,9 +20,13 @@
                 </div>
               </div>
 
-            <!-- <div class="row">
-              <?php if(isset($_SESSION['success'])){ $this->load->view('templates/hero_registration'); }?>
-            </div> -->
+            <div class="row">
+              <?php if(isset($_SESSION['success'])){
+                echo '<div class="alert alert-success">
+                      Registration successful. Proceed to <a href="'.base_url('login');.'">login</a>.
+                    </div>';
+               }?>
+            </div>
 
             <?php echo form_open('registration'); ?>
 
