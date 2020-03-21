@@ -19,7 +19,7 @@
 									<tr>
 										<th>Client Name</th>
 										<th>Email</th>
-										<th>Phone No.</th>
+										<!-- <th>Phone No.</th> -->
 										<th>Amount</th>
 										<th>Payment Mode</th>
 										<th>Plan</th>
@@ -34,11 +34,11 @@
 									<tr>
 										<td><?php echo $item['client_name']; ?></td>
 										<td><?php echo $item['email']; ?></td>
-										<td><?php echo $item['phone']; ?></td>
+										<!-- <td><?php echo $item['phone']; ?></td> -->
 										<td>$ <?php echo $item['amount']; ?></td>
 										<td><?php echo $item['mode']; ?></td>
 										<td><?php echo $item['plan']; ?></td>
-										<td><?php 
+										<td><?php
                                                 $date=date_create($item['date']);
                                                 echo date_format($date,"M d, Y h:i A"); ?></td>
 										<td>
