@@ -83,7 +83,7 @@ class Registration extends CI_Controller{
 
                       // unset($_POST);
                       // unset($_POST);
-                      redirect('registration','refresh');
+                      redirect('login','refresh');
 
                   }else{
                       // echo "failed";
