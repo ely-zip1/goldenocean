@@ -20,12 +20,14 @@
                 </div>
               </div>
 
-            <div class="row">
-              <?php if(isset($_SESSION['success'])){
-                echo '<div class="alert alert-success">
-                      Registration successful. Proceed to <a href="'.base_url('login').'">login</a>.
-                    </div>';
-               }?>
+            <div class="row text-center">
+              <div class="col-12">
+                <?php if(isset($_SESSION['success'])){
+                  echo '<div class="alert alert-success">
+                        Registration successful. Proceed to <a href="'.base_url('login').'">login</a>.
+                      </div>';
+                 }?>
+              </div>
             </div>
 
             <?php echo form_open('registration'); ?>
