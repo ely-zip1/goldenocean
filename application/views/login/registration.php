@@ -23,7 +23,7 @@
             <div class="row">
               <?php if(isset($_SESSION['success'])){
                 echo '<div class="alert alert-success">
-                      Registration successful. Proceed to <a href="'.base_url('login');.'">login</a>.
+                      Registration successful. Proceed to <a href="'.base_url('login').'">login</a>.
                     </div>';
                }?>
             </div>
