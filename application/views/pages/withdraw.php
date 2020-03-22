@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="row deposit-row">
+      <div class="row">
         <div class="col-12">
           <div class="alert alert-info alert-has-icon">
             <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="row deposit-row">
+      <div class="row">
         <div class="col-12">
           <div class="card bg-primary text-white">
               <div class="card-body">
