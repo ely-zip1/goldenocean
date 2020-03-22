@@ -64,30 +64,36 @@ class Deposits_admin extends CI_Controller
 
     $member = $this->Members->get_member_by_id($deposit->member_id);
 
-    $level_1 = $this->ReferralModel->get_referrer($member->id);
-    $level_2 = $this->ReferralModel->get_referrer($level_1->referrer_id);
-    $level_3 = $this->ReferralModel->get_referrer($level_2->referrer_id);
-    $bonus_1 = $deposit->amount * 0.05;
-    $bonus_2 = $deposit->amount * 0.03;
-    $bonus_3 = $deposit->amount * 0.02;
+    if($this->ReferralModel->get_referrer($member->id)->referrer_id != '1'){
+      $level_1 = $this->ReferralModel->get_referrer($member->id);
+      $bonus_1 = $deposit->amount * 0.05;
+      $bonus_1_data = array(
+        'deposit_id' => $deposit->id,
+        'referrer_id' => $level_1->referrer_id,
+        'amount' => $bonus_1
+      );
 
-    $bonus_1_data = array(
-      'deposit_id' => $deposit->id,
-      'referrer_id' => $level_1->referrer_id,
-      'amount' => $bonus_1
-    );
+      if($this->ReferralModel->get_referrer($level_1->referee_id)->referrer_id != '1'){
+        $level_2 = $this->ReferralModel->get_referrer($level_1->referee_id);
+        $bonus_2 = $deposit->amount * 0.03;
+        $bonus_2_data = array(
+          'deposit_id' => $deposit->id,
+          'referrer_id' => $level_2->referrer_id,
+          'amount' => $bonus_2
+        );
 
-    $bonus_2_data = array(
-      'deposit_id' => $deposit->id,
-      'referrer_id' => $level_2->referrer_id,
-      'amount' => $bonus_2
-    );
+         if($this->ReferralModel->get_referrer($level_2->referee_id)->referrer_id != '1'){
+          $level_3 = $this->ReferralModel->get_referrer($level_2->referee_id);
+          $bonus_3 = $deposit->amount * 0.02;
+          $bonus_3_data = array(
+            'deposit_id' => $deposit->id,
+            'referrer_id' => $level_3->referrer_id,
+            'amount' => $bonus_3
+          );
+        }
+      }
 
-    $bonus_2_data = array(
-      'deposit_id' => $deposit->id,
-      'referrer_id' => $level_3->referrer_id,
-      'amount' => $bonus_3
-    );
+    }
 
     // $referral1 = $this->ReferralModel->get_referrer($referral2->referrer_id);
     //
