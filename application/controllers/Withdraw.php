@@ -15,6 +15,7 @@ class Withdraw extends CI_Controller
     $this->load->model('Indirect_bonus_model');
     $this->load->model('ReferralModel');
     $this->load->model('Withdrawal_Mode_model');
+    $this->load->model('Bank_model');
 
     date_default_timezone_set('Asia/Manila');
   }
@@ -26,6 +27,7 @@ class Withdraw extends CI_Controller
     $member = $this->Members->get_member($this->session->username);
     $withdrawals = $this->WithdrawalModel->get_total_withdrawal_per_member($member->id);
     $withdrawal_modes = $this->Withdrawal_Mode_model->get_per_member($member->id);
+    $has_bank = $this->Bank_model->has_account($member->id);
 
     $pending_withdrawal = $this->WithdrawalModel->get_pending_withdrawal($member->id);
     $total_growth = $this->DepositModel->get_total_growth($member->id);
@@ -56,6 +58,9 @@ class Withdraw extends CI_Controller
 
         if($_POST['plan_payment_mode'] == 'mode1'){
           $withdrawal_data['payment_method_id'] = 'Bank';
+          if($has_bank == FALSE){
+              redirect('edit_account', refresh);
+          }
   			}else if($_POST['plan_payment_mode'] == 'mode2'){
           $withdrawal_data['payment_method_id'] = 'Bitcoin';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
@@ -97,6 +102,11 @@ class Withdraw extends CI_Controller
 
   public function valid_amount()
   {
+    $total_growth = $this->DepositModel->get_total_growth($member->id);
+    $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
+    $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
+
+    $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
     if($_POST['withdraw_amount'] <= $account_balance){
       $this->form_validation->set_message('valid_amount', 'Invalid amount.');
 			return false;
