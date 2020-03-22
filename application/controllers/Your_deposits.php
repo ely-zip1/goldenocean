@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Deposits_admin extends CI_Controller
+class Your_deposits extends CI_Controller
 {
 
   public function __construct()
@@ -22,9 +22,9 @@ class Deposits_admin extends CI_Controller
     $member = $this->Members->get_member($this->session->username);
     $deposits = $this->DepositModel->get_deposit_per_member($member->id);
 
-    $this->load->view('admin/templates/header', $data);
-    $this->load->view('admin/pages/pending_deposits', $data);
-    $this->load->view('admin/templates/footer');
+    $this->load->view('templates/header', $data);
+    $this->load->view('pages/your_deposits', $data);
+    $this->load->view('templates/footer');
   }
 
 }
