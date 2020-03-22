@@ -63,6 +63,8 @@ class Deposits_admin extends CI_Controller
     $deposit = $this->DepositModel->get_by_id($deposit_id);
     $member = $this->Members->get_member_by_id($deposit->member_id);
 
+    print_r($this->ReferralModel->get_referrer($member->id));
+
     if($this->ReferralModel->get_referrer($member->id)->referrer_id != '1'){
       $level_1 = $this->ReferralModel->get_referrer($member->id);
       $bonus_1 = $deposit->amount * 0.05;
