@@ -30,8 +30,8 @@
 
       <div class="row deposit-row">
         <div class="col-12">
-					<div class="card bg-light text-dark">
-				    <div class="card-body">
+					<div class="card bg-info text-white">
+				    <div class="card-header">
 							<h4>Total Deposit: <?php echo $total_details; ?></h4>
 						</div>
 				  </div>
@@ -40,16 +40,35 @@
 
       <div class="row deposit-row">
         <div class="col-12">
-
 				  <div class="card bg-primary text-white">
 						<div class="card-header">
-            	<h4>Ultramax Plan</h4>
+            	<h4>ULTRAMAX PLAN</h4>
             </div>
 				    <div class="card-body">
-							Primary card
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">Amount</th>
+										<th scope="col">Payment Mode</th>
+										<th scope="col">Date Created</th>
+										<th scope="col">Date Approved</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									if(isset($deposit_data)){
+									foreach ($deposit_data as $row){?>
+								  	<tr>
+											<td>$ <?php echo $row['amount']; ?></td>
+											<td><?php echo $row['mode']; ?></td>
+											<td><?php echo $row['date']; ?></td>
+											<td><?php echo $row['date_approved']; ?></td>
+										</tr>
+									<?php }}?>
+								</tbody>
+							</table>
 						</div>
 				  </div>
-
         </div>
       </div>
 
