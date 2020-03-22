@@ -59,7 +59,7 @@
           <div class="card bg-primary text-white">
               <div class="card-body">
                 <div class="row">
-          				<div class="col-md-9">
+          				<div class="col-md-12">
           					<?php echo form_open('withdrawal'); ?>
           					<div class="form-row">
           						<div class="form-group col-md-5 deposit-form">
@@ -87,7 +87,7 @@
                       </div>
 
                       <div class="form-group col-md-2">
-            	          <label for="deposit_amount" hidden>Submit</label>
+            	          <label for="deposit-submit-button">Submit</label>
               					<button type="submit" class="btn btn-block" name="deposit-submit-button">Withdraw</button>
               					<?php echo form_close(); ?>
               				</div>
