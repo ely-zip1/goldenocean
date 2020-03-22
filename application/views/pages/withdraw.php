@@ -62,7 +62,7 @@
           				<div class="col-md-9">
           					<?php echo form_open('withdrawal'); ?>
           					<div class="form-row">
-          						<div class="form-group col-md-6 deposit-form">
+          						<div class="form-group col-md-5 deposit-form">
           							<label for="plan_option">Mode</label>
           							<select class="form-control" name="plan_payment_mode">
           								<option <?php if($selected_mode == 'mode1') {echo 'selected';} ?> value="mode1">Bitcoin</option>
@@ -77,7 +77,7 @@
           							</div>
                       </div>
 
-                      <div class="form-group col-md-6 deposit-form">
+                      <div class="form-group col-md-5 deposit-form">
           	            <label for="deposit_amount">Amount</label>
           	            <input type="text" class="form-control <?php if(strlen(form_error('deposit_amount')) > 0){echo "is-invalid";} ?>"
           								name="deposit_amount" id="deposit-amount" placeholder="Amount" value="<?php set_value('deposit_amount','',true); ?>">
@@ -86,12 +86,14 @@
           							</div>
                       </div>
                     </div>
+
+                    <div class="form-group col-md-2">
+            					<button type="submit" class="btn btn-block" name="deposit-submit-button">Withdraw</button>
+            					<?php echo form_close(); ?>
+            				</div>
           				</div>
 
-          				<div class="col-md-3">
-          					<button type="submit" class="btn btn-block" name="deposit-submit-button">Withdraw</button>
-          					<?php echo form_close(); ?>
-          				</div>
+
           			</div>
               </div>
           </div>
