@@ -385,6 +385,10 @@ footer {
   height: 100px;
 }
 
+.deposit-row{
+  margin-top: 20px !important;
+}
+
 .body-custom-admin{
   background: black;
 }

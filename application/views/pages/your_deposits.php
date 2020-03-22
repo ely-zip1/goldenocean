@@ -28,13 +28,28 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row deposit-row">
         <div class="col-12">
-					<div class="card bg-light text-white">
+					<div class="card bg-light text-dark">
 				    <div class="card-body">
 							<h4>Total Deposit: <?php echo $total_details; ?></h4>
 						</div>
 				  </div>
+        </div>
+      </div>
+
+      <div class="row deposit-row">
+        <div class="col-12">
+
+				  <div class="card bg-primary text-white">
+						<div class="card-header">
+            	<h4>Ultramax Plan</h4>
+            </div>
+				    <div class="card-body">
+							Primary card
+						</div>
+				  </div>
+
         </div>
       </div>
 
