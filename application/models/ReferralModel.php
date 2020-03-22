@@ -14,8 +14,8 @@
             return $query->result();
         }
 
-        public function get_referrer($referee_id){
-            $this->db->where('referee_id', $referee_id);
+        public function get_referrer($member_id){
+            $this->db->where('referee_id', $member_id);
             $query = $this->db->get('td_referrals');
 
             return $query->row();
@@ -29,7 +29,7 @@
         }
 
         public function add_referral($referral_array){
-            
+
             $this->db->insert('td_referrals',$referral_array);
         }
 
@@ -39,7 +39,7 @@
             $this->db->where('referee_id', $referee_id);
             $this->db->update('td_referrals');
         }
-        
+
     }
 
 

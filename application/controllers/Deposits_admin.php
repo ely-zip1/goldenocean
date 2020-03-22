@@ -58,38 +58,40 @@ class Deposits_admin extends CI_Controller
   }
 
   public function approve_deposit($deposit_id){
+
     $root_member = $this->Members->get_root();
-
     $deposit = $this->DepositModel->get_by_id($deposit_id);
-
     $member = $this->Members->get_member_by_id($deposit->member_id);
 
-    if($this->ReferralModel->get_referrer($member->id)->referrer_id != '1'){
+    if($this->ReferralModel->get_referrer($member->id) != '1'){
       $level_1 = $this->ReferralModel->get_referrer($member->id);
       $bonus_1 = $deposit->amount * 0.05;
       $bonus_1_data = array(
         'deposit_id' => $deposit->id,
-        'referrer_id' => $level_1->referrer_id,
+        'referrer_id' => $level_1,
         'amount' => $bonus_1
       );
+      $this->Referral_bonus_model->add($bonus_1_data);
 
-      if($this->ReferralModel->get_referrer($level_1->referee_id)->referrer_id != '1'){
-        $level_2 = $this->ReferralModel->get_referrer($level_1->referee_id);
+      if($this->ReferralModel->get_referrer($level_1->referee_id) != '1'){
+        $level_2 = $this->ReferralModel->get_referrer($level_1);
         $bonus_2 = $deposit->amount * 0.03;
         $bonus_2_data = array(
           'deposit_id' => $deposit->id,
-          'referrer_id' => $level_2->referrer_id,
+          'referrer_id' => $level_2,
           'amount' => $bonus_2
         );
+        $this->Referral_bonus_model->add($bonus_2_data);
 
-         if($this->ReferralModel->get_referrer($level_2->referee_id)->referrer_id != '1'){
-          $level_3 = $this->ReferralModel->get_referrer($level_2->referee_id);
+         if($this->ReferralModel->get_referrer($level_2->referee_id) != '1'){
+          $level_3 = $this->ReferralModel->get_referrer($level_2);
           $bonus_3 = $deposit->amount * 0.02;
           $bonus_3_data = array(
             'deposit_id' => $deposit->id,
-            'referrer_id' => $level_3->referrer_id,
+            'referrer_id' => $level_3,
             'amount' => $bonus_3
           );
+          $this->Referral_bonus_model->add($bonus_3_data);
         }
       }
 
@@ -110,9 +112,6 @@ class Deposits_admin extends CI_Controller
     //   $this->Indirect_bonus_model->add($indirect_bonus_data);
     //
     // }
-    $this->Referral_bonus_model->add($bonus_1_data);
-    $this->Referral_bonus_model->add($bonus_2_data);
-    $this->Referral_bonus_model->add($bonus_3_data);
     $this->DepositModel->Approve_pending($deposit_id);
 
     redirect('deposits_admin', 'refresh');
