@@ -30,7 +30,11 @@
 
       <div class="row">
         <div class="col-12">
-          
+					<div class="card bg-primary text-white">
+				    <div class="card-body">
+							Primary card
+						</div>
+				  </div>
         </div>
       </div>
 
