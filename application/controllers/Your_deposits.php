@@ -22,6 +22,15 @@ class Your_deposits extends CI_Controller
     $member = $this->Members->get_member($this->session->username);
     $deposits = $this->DepositModel->get_deposit_per_member($member->id);
 
+    $total_deposit = 0;
+    foreach ($deposits as $deposit) {
+      if($deposit->is_pending == 0){
+        $total_deposit += $deposit->amount;
+      }
+    }
+
+    $data['total_details'] = number_format($total_deposit, 2, '.', ',');
+
     $this->load->view('templates/header', $data);
     $this->load->view('pages/your_deposits', $data);
     $this->load->view('templates/footer');

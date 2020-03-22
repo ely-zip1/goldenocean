@@ -32,7 +32,7 @@
         <div class="col-12">
 					<div class="card bg-primary text-white">
 				    <div class="card-body">
-							Primary card
+							<h1>Total Deposit: <?php echo $total_details; ?></h1>
 						</div>
 				  </div>
         </div>
