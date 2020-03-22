@@ -102,6 +102,8 @@ class Withdraw extends CI_Controller
 
   public function valid_amount()
   {
+    $member = $this->Members->get_member($this->session->username);
+    
     $total_growth = $this->DepositModel->get_total_growth($member->id);
     $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
     $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
