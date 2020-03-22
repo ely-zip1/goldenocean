@@ -40,7 +40,7 @@
 
       <div class="row deposit-row">
         <div class="col-12">
-				  <div class="card bg-primary text-white">
+				  <div class="card bg-primary text-white text-white">
 						<div class="card-header">
             	<h4>ULTRAMAX PLAN</h4>
             </div>
@@ -74,7 +74,7 @@
 
       <div class="row deposit-row">
         <div class="col-12">
-				  <div class="card bg-primary text-white">
+				  <div class="card bg-primary text-white text-white">
 						<div class="card-header">
             	<h4>PANAMAX PLAN</h4>
             </div>
@@ -113,7 +113,7 @@
             	<h4>CAPESIZE PLAN</h4>
             </div>
 				    <div class="card-body">
-							<table class="table table-striped">
+							<table class="table table-striped text-white">
 								<thead>
 									<tr>
 										<th scope="col">Amount</th>
