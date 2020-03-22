@@ -10,6 +10,7 @@ class Account_settings extends CI_Controller
 						$this->load->model('DepositModel');
 						$this->load->model('Members');
 						$this->load->model('Deposit_Options');
+						$this->load->model('Bank_model');
 
             date_default_timezone_set('Asia/Manila');
         }
@@ -63,15 +64,47 @@ class Account_settings extends CI_Controller
 			$this->load->view('templates/header', $data);
 	    $this->load->view('pages/account_settings', $data);
 	    $this->load->view('templates/footer');
-		}else{
-			$data['password_update_success'] = 'Password updated!';
+		}
+		else{
+			if($_POST['account_submit'] == 'reset_password'){
+				$data['password_update_success'] = 'Password updated!';
+			}
+			else{
+				$data['account_update_success'] = 'Account updated!';
+			}
+
+			if($_POST['account_submit'] == 'bank'){
+				$new_bank_details = array(
+					'bank_name' => $_POST['bank_name'],
+					'account_name' => $_POST['bank_account_name'],
+					'account_number' => $_POST['bank_account_number'],
+					'member_id' => $member_data->id
+					);
+				$this->Bank_model->update($new_bank_details);
+			}
+			else if($_POST['account_submit'] == 'bitcoin'){
+				$this->Withdrawal_Mode_model->update_bitcoin($member_data->id, $_POST['bitcoint_account']);
+			}
+			else if($_POST['account_submit'] == 'ethereum'){
+				$this->Withdrawal_Mode_model->update_ethereum($member_data->id, $_POST['ethereum_account']);
+			}
+			else if($_POST['account_submit'] == 'paypal'){
+				$this->Withdrawal_Mode_model->update_paypal($member_data->id, $_POST['paypal_account']);
+			}
+			else if($_POST['account_submit'] == 'abra'){
+				$this->Withdrawal_Mode_model->update_abra($member_data->id, $_POST['abra_account']);
+			}
+			else if($_POST['account_submit'] == 'neteller'){
+				$this->Withdrawal_Mode_model->update_neteller($member_data->id, $_POST['neteller_account']);
+			}
+			else if($_POST['account_submit'] == 'advcash'){
+				$this->Withdrawal_Mode_model->update_advcash($member_data->id, $_POST['advcash_account']);
+			}
 
 			$this->load->view('templates/header', $data);
 	    $this->load->view('pages/account_settings', $data);
 	    $this->load->view('templates/footer');
 		}
-
-
   }
 
 }

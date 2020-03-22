@@ -7,6 +7,8 @@ class Registration extends CI_Controller{
             $this->load->model('Members');
             $this->load->model('Referral_codes');
             $this->load->model('ReferralModel');
+            $this->load->model('Withdrawal_Mode_model');
+            $this->load->model('Bank_model');
 
             date_default_timezone_set('Asia/Manila');
     }
@@ -64,6 +66,7 @@ class Registration extends CI_Controller{
                       'account_type_id' => '2'
                   );
 
+
                   $this->Members->add_member($user_data);
 
                   if($this->Members->verify_member($user_data['username'],$_POST['password'])){
@@ -77,6 +80,10 @@ class Registration extends CI_Controller{
                           'referee_id' => $new_member->id
                       );
 
+                      $members_bank = array('member_id' => $new_member->id);
+                      $this->Bank_model->add($members_bank);
+                      $this->Withdrawal_Mode_model->add($members_bank);
+                      
                       $this->ReferralModel->add_referral($new_referral);
 
                       $this->session->set_flashdata("success","yeey");

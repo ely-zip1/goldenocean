@@ -19,7 +19,9 @@ class Withdrawal_Mode_model extends CI_Model {
     //
   }
 
-  // ------------------------------------------------------------------------
+  public function add($data){
+      $this->db->insert('td_withdrawal_mode',$data);
+  }
 
   public function get_all(){
     $query = $this->db->get('td_withdrawal_mode');
