@@ -54,14 +54,10 @@
             return $query->result();
         }
 
-        public function compute_total_withdrawn($email){
+        public function compute_total_withdrawn($member_id){
 
-            $this->db->where('email_address',$email);
-            $query = $this->db->get('td_members',1);
-
-            $member = $query->row();
-
-            $this->db->where('member_id',$member->id);
+          $this->db->where('member_id',$member_id);
+            $this->db->where('is_pending',0);
             $withdrawn_query = $this->db->get('td_withdrawals');
 
             $total_withdrawn = 0;

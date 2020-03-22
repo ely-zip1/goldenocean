@@ -26,14 +26,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'withdraw' ? 'active' : ''; ?>"> <a
 					href="withdraw" class="nav-link"><i class="fas fa-money-check-alt"></i><span>Withdraw</span></a>
 			</li>
-			<li class="dropdown <?php echo $this->uri->segment(1) == 'earning_history' ? 'active' : ''; ?>"> <a
+			<!-- <li class="dropdown <?php echo $this->uri->segment(1) == 'earning_history' ? 'active' : ''; ?>"> <a
 					href="earning_history" class="nav-link"><i class="fas fa-money-bill-wave-alt"></i><span>Earning History</span></a>
 			</li>
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'referral_history' ? 'active' : ''; ?>"> <a
 					href="withdraw" class="nav-link"><i class="fas fa-user-clock"></i><span>Referrals History</span></a>
 			</li>
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'withdrawal_history' ? 'active' : ''; ?>"> <a
-					href="withdrawal_history" class="nav-link"><i class="fas fa-money-bill"></i><span>Withdrawals History</span></a>
+					href="withdrawal_history" class="nav-link"><i class="fas fa-money-bill"></i><span>Withdrawals History</span></a> -->
 			</li>
 		</ul>
 	</aside>
