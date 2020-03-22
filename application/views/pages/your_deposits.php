@@ -44,7 +44,7 @@
 						<div class="card-header">
             	<h4>ULTRAMAX PLAN</h4>
             </div>
-				    <div class="card-body">
+				    <div class="card-body table-responsive">
 							<table class="table table-striped">
 								<thead>
 									<tr>
@@ -56,8 +56,8 @@
 								</thead>
 								<tbody>
 									<?php
-									if(isset($deposit_data)){
-									foreach ($deposit_data as $row){?>
+									if(isset($ultramax_deposit_data)){
+									foreach ($ultramax_deposit_data as $row){?>
 								  	<tr>
 											<td>$ <?php echo $row['amount']; ?></td>
 											<td><?php echo $row['mode']; ?></td>
@@ -78,7 +78,7 @@
 						<div class="card-header">
             	<h4>PANAMAX PLAN</h4>
             </div>
-				    <div class="card-body">
+				    <div class="card-body table-responsive">
 							<table class="table table-striped">
 								<thead>
 									<tr>
@@ -90,8 +90,8 @@
 								</thead>
 								<tbody>
 									<?php
-									if(isset($deposit_data)){
-									foreach ($deposit_data as $row){?>
+									if(isset($panamax_deposit_data)){
+									foreach ($panamax_deposit_data as $row){?>
 								  	<tr>
 											<td>$ <?php echo $row['amount']; ?></td>
 											<td><?php echo $row['mode']; ?></td>
@@ -112,7 +112,7 @@
 						<div class="card-header">
             	<h4>CAPESIZE PLAN</h4>
             </div>
-				    <div class="card-body">
+				    <div class="card-body table-responsive">
 							<table class="table table-striped text-white">
 								<thead>
 									<tr>
@@ -124,8 +124,8 @@
 								</thead>
 								<tbody>
 									<?php
-									if(isset($deposit_data)){
-									foreach ($deposit_data as $row){?>
+									if(isset($capesize_deposit_data)){
+									foreach ($capesize_deposit_data as $row){?>
 								  	<tr>
 											<td>$ <?php echo $row['amount']; ?></td>
 											<td><?php echo $row['mode']; ?></td>
