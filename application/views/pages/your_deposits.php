@@ -30,9 +30,9 @@
 
       <div class="row">
         <div class="col-12">
-					<div class="card bg-primary text-white">
+					<div class="card bg-light text-white">
 				    <div class="card-body">
-							<h1>Total Deposit: <?php echo $total_details; ?></h1>
+							<h4>Total Deposit: <?php echo $total_details; ?></h4>
 						</div>
 				  </div>
         </div>

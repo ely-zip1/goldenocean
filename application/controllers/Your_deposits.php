@@ -29,7 +29,7 @@ class Your_deposits extends CI_Controller
       }
     }
 
-    $data['total_details'] = number_format($total_deposit, 2, '.', ',');
+    $data['total_details'] = '$ '. number_format($total_deposit, 2, '.', ',');
 
     $this->load->view('templates/header', $data);
     $this->load->view('pages/your_deposits', $data);
