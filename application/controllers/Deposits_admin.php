@@ -86,7 +86,7 @@ class Deposits_admin extends CI_Controller
         );
         $this->Referral_bonus_model->add($bonus_2_data);
 
-         if($this->ReferralModel->get_referrer($level_2->referee_id)->referrer_id != 1){
+        if($this->ReferralModel->get_referrer($level_2->referee_id)->referrer_id != 1){
           $level_3 = $this->ReferralModel->get_referrer($level_2->referee_id);
           $bonus_3 = $deposit->amount * 0.02;
           $bonus_3_data = array(
@@ -97,24 +97,8 @@ class Deposits_admin extends CI_Controller
           $this->Referral_bonus_model->add($bonus_3_data);
         }
       }
-
     }
-
-    // $referral1 = $this->ReferralModel->get_referrer($referral2->referrer_id);
-    //
-    // if(isset($referral1->referrer_id)){
-    //
-    //   $indirect_bonus_data = array(
-    //     'amount' => $indirect_bonus_amount,
-    //     'deposit_id' => $deposit->id,
-    //     'member_id' => $referral1->referrer_id,
-    //     'first_level_id' => $referral2->referrer_id,
-    //     'second_level_id' => $member->id
-    //   );
-    //
-    //   $this->Indirect_bonus_model->add($indirect_bonus_data);
-    //
-    // }
+    
     $this->DepositModel->Approve_pending($deposit_id);
 
     redirect('deposits_admin', 'refresh');
