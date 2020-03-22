@@ -66,7 +66,7 @@ class Deposits_admin extends CI_Controller
     $x = $this->ReferralModel->get_referrer($member->id);
     printf($x);
 
-    if($this->ReferralModel->get_referrer($member->id)->referrer_id != '1'){
+    if($this->ReferralModel->get_referrer($member->id)->referrer_id != 1){
       $level_1 = $this->ReferralModel->get_referrer($member->id);
       $bonus_1 = $deposit->amount * 0.05;
       $bonus_1_data = array(
@@ -76,7 +76,7 @@ class Deposits_admin extends CI_Controller
       );
       // $this->Referral_bonus_model->add($bonus_1_data);
 
-      if($this->ReferralModel->get_referrer($level_1->referee_id)->referrer_id != '1'){
+      if($this->ReferralModel->get_referrer($level_1->referee_id)->referrer_id != 1){
         $level_2 = $this->ReferralModel->get_referrer($level_1->referee_id);
         $bonus_2 = $deposit->amount * 0.03;
         $bonus_2_data = array(
@@ -86,7 +86,7 @@ class Deposits_admin extends CI_Controller
         );
         // $this->Referral_bonus_model->add($bonus_2_data);
 
-         if($this->ReferralModel->get_referrer($level_2->referee_id)->referrer_id != '1'){
+         if($this->ReferralModel->get_referrer($level_2->referee_id)->referrer_id != 1){
           $level_3 = $this->ReferralModel->get_referrer($level_2->referee_id);
           $bonus_3 = $deposit->amount * 0.02;
           $bonus_3_data = array(
