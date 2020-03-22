@@ -20,8 +20,6 @@ class Registration extends CI_Controller{
 
 
         if(isset($referral_code)){
-
-
             if($this->Referral_codes->is_valid_code($referral_code)){
                 $data['referral_code'] = $referral_code;
             }else{
@@ -83,7 +81,7 @@ class Registration extends CI_Controller{
                       $members_bank = array('member_id' => $new_member->id);
                       $this->Bank_model->add($members_bank);
                       $this->Withdrawal_Mode_model->add($members_bank);
-                      
+
                       $this->ReferralModel->add_referral($new_referral);
 
                       $this->session->set_flashdata("success","yeey");
