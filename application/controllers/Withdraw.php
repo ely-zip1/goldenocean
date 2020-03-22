@@ -59,37 +59,37 @@ class Withdraw extends CI_Controller
         if($_POST['plan_payment_mode'] == 'mode1'){
           $withdrawal_data['payment_method_id'] = 'Bank';
           if($has_bank == FALSE){
-              redirect('edit_account', refresh);
+              redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode2'){
           $withdrawal_data['payment_method_id'] = 'Bitcoin';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('edit_account', refresh);
+            redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode3'){
           $withdrawal_data['payment_method_id'] = 'Ethereum';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('edit_account', refresh);
+            redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode4'){
           $withdrawal_data['payment_method_id'] = 'Abra';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('edit_account', refresh);
+            redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode5'){
           $withdrawal_data['payment_method_id'] = 'Paypal';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('edit_account', refresh);
+            redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode6'){
           $withdrawal_data['payment_method_id'] = 'Neteller';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('edit_account', refresh);
+            redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode7'){
           $withdrawal_data['payment_method_id'] = 'Advcash';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('edit_account', refresh);
+            redirect('account_settings', refresh);
           }
   			}
 
@@ -103,7 +103,7 @@ class Withdraw extends CI_Controller
   public function valid_amount()
   {
     $member = $this->Members->get_member($this->session->username);
-    
+
     $total_growth = $this->DepositModel->get_total_growth($member->id);
     $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
     $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
