@@ -89,7 +89,7 @@
           				</div>
 
           				<div class="col-md-3">
-          					<button type="submit" class="rounded-button submit-deposit" name="deposit-submit-button">Withdraw</button>
+          					<button type="submit" class="btn btn-block" name="deposit-submit-button">Withdraw</button>
           					<?php echo form_close(); ?>
           				</div>
           			</div>
