@@ -60,7 +60,7 @@
               <div class="card-body">
                 <div class="row">
           				<div class="col-md-12">
-          					<?php echo form_open('withdrawal'); ?>
+          					<?php echo form_open('withdraw'); ?>
           					<div class="form-row">
           						<div class="form-group col-md-5 deposit-form">
           							<label for="plan_option">Mode</label>
@@ -79,11 +79,11 @@
                       </div>
 
                       <div class="form-group col-md-5 deposit-form">
-          	            <label for="deposit_amount">Amount</label>
-          	            <input type="text" class="form-control <?php if(strlen(form_error('deposit_amount')) > 0){echo "is-invalid";} ?>"
-          								name="deposit_amount" id="deposit-amount" placeholder="Amount" value="<?php set_value('deposit_amount','',true); ?>">
+          	            <label for="withdraw_amount">Amount</label>
+          	            <input type="text" class="form-control <?php if(strlen(form_error('withdraw_amount')) > 0){echo "is-invalid";} ?>"
+          								name="withdraw_amount" id="deposit-amount" placeholder="Amount" value="<?php set_value('withdraw_amount','',true); ?>">
           							<div class="invalid-feedback deposit-error">
-          										<?php echo form_error('deposit_amount');?>
+          										<?php echo form_error('withdraw_amount');?>
           							</div>
                       </div>
 
