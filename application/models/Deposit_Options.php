@@ -9,10 +9,10 @@
         }
 
         public function get_all(){
+          $this->db->order_by('id', 'asc');
+          $query = $this->db->get('td_deposit_options');
 
-            $query = $this->db->get('td_deposit_options');
-
-            return $query->result();
+          return $query->result();
         }
 
         public function get_by_id($id){

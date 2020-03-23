@@ -18,3 +18,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php $this->load->view('dist/_partials/js'); ?>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
 <script src="<?php echo base_url('assets/js/clipboard.js-master/dist/clipboard.min.js'); ?>"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"></script>

@@ -139,18 +139,9 @@
 </div>
 
 <script type="text/javascript">
-	function copyTextFunction() {
-	/* Get the text field */
-	var copyText = document.getElementById("copy_button");
 
-	/* Select the text field */
-	copyText.select();
-	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+$( document ).ready(function() {
+  var clipboard = new Clipboard('.clipboard');
+});
 
-	/* Copy the text inside the text field */
-	document.execCommand("copy");
-
-	/* Alert the copied text */
-	alert("Copied the text: " + copyText.value);
-	}
 </script>

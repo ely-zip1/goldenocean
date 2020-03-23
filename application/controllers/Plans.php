@@ -85,23 +85,28 @@ class Plans extends CI_Controller
 				$deposit_data['deposit_options_id'] = '1';
 				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[0]->name);
 				$data['deposit_address'] = $modes_of_payment[0]->account;
-			}else if($_POST['plan_payment_mode'] == 'mode2'){
+			}
+			else if($_POST['plan_payment_mode'] == 'mode2'){
 				$deposit_data['deposit_options_id'] = '2';
 				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[1]->name);
 				$data['deposit_address'] = $modes_of_payment[1]->account;
-			}else if($_POST['plan_payment_mode'] == 'mode3'){
+			}
+			else if($_POST['plan_payment_mode'] == 'mode3'){
 				$deposit_data['deposit_options_id'] = '3';
 				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[2]->name);
 				$data['deposit_address'] = $modes_of_payment[2]->account;
-			}else if($_POST['plan_payment_mode'] == 'mode4'){
+			}
+			else if($_POST['plan_payment_mode'] == 'mode4'){
 				$deposit_data['deposit_options_id'] = '4';
 				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[3]->name);
 				$data['deposit_address'] = $modes_of_payment[3]->account;
-			}else if($_POST['plan_payment_mode'] == 'mode5'){
+			}
+			else if($_POST['plan_payment_mode'] == 'mode5'){
 				$deposit_data['deposit_options_id'] = '5';
 				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[4]->name);
 				$data['deposit_address'] = $modes_of_payment[4]->account;
-			}else if($_POST['plan_payment_mode'] == 'mode6'){
+			}
+			else if($_POST['plan_payment_mode'] == 'mode6'){
 				$deposit_data['deposit_options_id'] = '6';
 				$data['deposit_payment_mode'] = strtoupper($modes_of_payment[5]->name);
 				$data['deposit_address'] = $modes_of_payment[5]->account;
