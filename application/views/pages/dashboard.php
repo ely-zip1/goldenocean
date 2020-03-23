@@ -118,7 +118,8 @@
 											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>"> -->
 											<div class="alert alert-light">
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
-													<span id="link">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span>
+													<!-- <span id="link">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span> -->
+													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12" />
 												</a>
 												<!-- <button class="clipboard" data-clipboard-target="#copy">
 												  Copy
@@ -131,7 +132,7 @@
 												<br>
 												<!-- <input type="text" value="xxx" id="link" class="span12" /> -->
 												<button type="button" class="btn btn-info btn-sm" onclick="copyToClipboard('#link')">
-												    Copy Input Value
+												    Copy
 												</button>
 	                    </div>
 											<!-- </br> -->
