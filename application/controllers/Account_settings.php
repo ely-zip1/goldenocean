@@ -11,6 +11,7 @@ class Account_settings extends CI_Controller
 						$this->load->model('Members');
 						$this->load->model('Deposit_Options');
 						$this->load->model('Bank_model');
+						$this->load->model('Withdrawal_Mode_model');
 
             date_default_timezone_set('Asia/Manila');
         }
