@@ -68,7 +68,7 @@
 
       <div class="row account-summary-row ">
         <div class="col-md-6 account-summary-3">
-					<div class="table-responsive dash-table-1">
+					<div class="dash-table-1">
 						<table class="table go-table table-striped table-dark">
 							<tr>
 		          	<th class="table-rowheader">Pending Withdrawal: </th>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-md-6 account-summary-4">
-					<div class="table-responsive dash-table-1">
+					<div class="dash-table-1">
 						<table class="table go-table table-striped table-dark">
 							<tr>
 		          	<th class="table-rowheader">Last Deposit: </th>
