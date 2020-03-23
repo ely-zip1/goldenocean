@@ -101,16 +101,6 @@
         </div>
       </div>
 
-			<div class="row deposit-row">
-        <div class="col-12">
-					<div class="card bg-info text-white">
-				    <div class="card-header">
-							<h4>Total Deposit: <?php echo $total_details; ?></h4>
-						</div>
-				  </div>
-        </div>
-      </div>
-
       <div class="row deposit-row">
         <div class="col-12">
 				  <div class="card bg-primary text-white text-white">
