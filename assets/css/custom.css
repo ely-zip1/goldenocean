@@ -138,11 +138,11 @@
   margin-top: 50px;
 }
 .ref-card {
+  float: right !important;
   height: 60px;
   padding-right: 10px
 }
 .ref-card h5{
-    float: right !important;
 }
 
 .top {
