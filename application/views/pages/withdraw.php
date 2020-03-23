@@ -101,6 +101,48 @@
         </div>
       </div>
 
+			<div class="row deposit-row">
+        <div class="col-12">
+					<div class="card bg-info text-white">
+				    <div class="card-header">
+							<h4>Total Deposit: <?php echo $total_details; ?></h4>
+						</div>
+				  </div>
+        </div>
+      </div>
+
+      <div class="row deposit-row">
+        <div class="col-12">
+				  <div class="card bg-primary text-white text-white">
+						<div class="card-header">
+            	<h4>WITHDRAWAL HISTORY</h4>
+            </div>
+				    <div class="card-body table-responsive">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<th scope="col">Amount</th>
+										<th scope="col">Mode</th>
+										<th scope="col">Date Created</th>
+										<th scope="col">Status</th>
+									</tr>
+									<?php
+									if(isset($ultramax_deposit_data)){
+									foreach ($ultramax_deposit_data as $row){?>
+								  	<tr>
+											<td>$ <?php echo $row['amount']; ?></td>
+											<td><?php echo $row['mode']; ?></td>
+											<td><?php echo $row['date']; ?></td>
+											<td><?php echo $row['status']; ?></td>
+										</tr>
+									<?php }}?>
+								</tbody>
+							</table>
+						</div>
+				  </div>
+        </div>
+      </div>
+
 
     </div>
 	</section>

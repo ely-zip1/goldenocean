@@ -109,7 +109,7 @@ class Withdraw extends CI_Controller
     $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
 
     $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
-    if($_POST['withdraw_amount'] <= $account_balance){
+    if($_POST['withdraw_amount'] > $account_balance){
       $this->form_validation->set_message('valid_amount', 'Invalid amount.');
 			return false;
     }else {
