@@ -32,7 +32,7 @@
       <div class="row row-referrals">
         <div class="col-12">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4">
               <div class="right">
                 <div class="top-dash">
                   <h1><?php echo $total_bonus; ?></h1>
@@ -45,7 +45,7 @@
           </div>
 
           <div class="row row-referrals">
-            <div class="col-sm-4">
+            <div class="col-md-4">
               <div class="right">
                 <div class="top-dash">
                   <h1><?php echo $total_referrals; ?></h1>
@@ -58,7 +58,7 @@
           </div>
 
           <div class="row row-referrals">
-            <div class="col-sm-4">
+            <div class="col-md-4">
               <div class="right">
                 <div class="top-dash">
                   <h1><?php echo $active_referrals; ?></h1>
