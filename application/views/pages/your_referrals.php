@@ -29,7 +29,102 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row account-summary-row ">
+        <div class="col-sm-4 account-summary-1">
+          <div class="left">
+            <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
+            <div class="icon-container">
+              <img src="<?php echo base_url('assets/img/plan1-min.png');?>" alt="">
+            </div>
+          </div>
+          <div class="right">
+            <div class="top">
+              <h1>$80.00</h1>
+              <h6>Up to $799.00</h6>
+            </div>
+            <div class="bottom1 plan-card">
+              <h4><?php echo $plan1; ?></h4>
+              <!-- <h4>ULTRAMAX PLAN</h4> -->
+              <p class="plan-card-info">
+                <b>120 Days</b> Contract
+                <br>
+                Sponsor Bonus
+                <br>
+                <b>1st level - 5%</b>
+                <br>
+                <b>2nd level - 3%</b>
+                <br>
+                <b>3rd level - 2%</b>
+              </p>
+
+              <h1 class="interest-info text-center"> 1% DAILY</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 account-summary-1">
+          <div class="left">
+            <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
+            <div class="icon-container">
+              <img src="<?php echo base_url('assets/img/plan7-min.png');?>" alt="">
+            </div>
+          </div>
+          <div class="right">
+            <div class="top">
+              <h1>$800.00</h1>
+              <h6>Up to 3,999.00</h6>
+            </div>
+            <div class="bottom2 plan-card">
+              <h4><?php echo $plan2; ?></h4>
+              <p class="plan-card-info">
+                <b>90 Days</b> Contract
+                <br>
+                Sponsor Bonus
+                <br>
+                <b>1st level - 5%</b>
+                <br>
+                <b>2nd level - 3%</b>
+                <br>
+                <b>3rd level - 2%</b>
+              </p>
+
+              <h1 class="interest-info text-center"> 1.5% DAILY</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 account-summary-1">
+          <div class="left">
+            <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
+            <div class="icon-container">
+              <img src="<?php echo base_url('assets/img/plan9-min.png');?>" alt="">
+            </div>
+          </div>
+          <div class="right">
+            <div class="top">
+              <h1>$4,000.00</h1>
+              <h6>Up to 8,000.00</h6>
+            </div>
+            <div class="bottom3 plan-card">
+              <h4><?php echo $plan3; ?></h4>
+              <p class="plan-card-info">
+                <b>60 Days</b> Contract
+                <br>
+                Sponsor Bonus
+                <br>
+                <b>1st level - 5%</b>
+                <br>
+                <b>2nd level - 3%</b>
+                <br>
+                <b>3rd level - 2%</b>
+              </p>
+
+              <h1 class="interest-info text-center"> 2% DAILY</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
         <div class="col-12">
           <div class="row">
             <div class="col-md-4">
@@ -70,7 +165,7 @@
             </div>
           </div>
           </div>
-        </div>
+        </div> -->
 
 
 		</div>
