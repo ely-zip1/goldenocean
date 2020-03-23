@@ -2,7 +2,7 @@
 
 	<section class="section">
 		<div class="section-header section-header-custom">
-			<h1>Your Referrals</h1>
+			<h1>Account Overview</h1>
 		</div>
 
 		<div class="section-body">
@@ -29,7 +29,46 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row account-summary-row ">
+        <div class="col-sm-4 account-summary-1">
+
+          <div class="right">
+            <div class="ref-top">
+              <h1>$80.00</h1>
+            </div>
+            <div class="bottom1 ref-card">
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 account-summary-1">
+
+          <div class="right">
+            <div class="ref-top">
+              <h1>$800.00</h1>
+            </div>
+            <div class="bottom2 ref-card">
+              <h4></h4>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 account-summary-1">
+
+          <div class="right">
+            <div class="ref-top">
+              <h1>$4,000.00</h1>
+            </div>
+            <div class="bottom3 ref-card">
+              <h4></h4>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
         <div class="col-12">
           <div class="row">
             <div class="col-md-4">
@@ -69,9 +108,8 @@
               </div>
             </div>
           </div>
-
           </div>
-        </div>
+        </div> -->
 
 
 		</div>
