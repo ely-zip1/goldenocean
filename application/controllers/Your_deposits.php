@@ -30,6 +30,7 @@ class Your_deposits extends CI_Controller
     foreach ($deposits as $deposit) {
       if($deposit->is_pending == 0){
         $total_deposit += $deposit->amount;
+      }
 
         if($deposit->package_id == 1){
           $ultramax = array();
@@ -70,7 +71,6 @@ class Your_deposits extends CI_Controller
 
           array_push($capesize_deposit_data, $capesize);
         }
-      }
     }
 
     $data['ultramax_deposit_data'] = $ultramax_deposit_data;
