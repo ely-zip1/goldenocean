@@ -185,6 +185,7 @@
   float: right;
   margin-right: 30px;
   margin-top: 10px;
+  z-index: 1;
 }
 
 .bottom1 {
@@ -199,6 +200,7 @@
   margin-right: 30px;
   margin-top: 10px;
   vertical-align: middle;
+  z-index: 1;
 }
 
 .bottom2 {
