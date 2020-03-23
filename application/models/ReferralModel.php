@@ -40,6 +40,13 @@
             $this->db->update('td_referrals');
         }
 
+        public function count_referrals($member_id){
+          $this->db->where('referrer', $member_id);
+          $this->db->from('td_referrals');
+          $query = $this->db->count_all_results();
+
+          return $query->row();
+        }
     }
 
 
