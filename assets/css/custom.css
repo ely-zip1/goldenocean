@@ -133,9 +133,16 @@
 .ref-top h1 {
   position: absolute;
   right: 0px;
-  bottom: 50px;
+  bottom: 70px;
   margin-right: 30px;
   margin-top: 50px;
+}
+.ref-card {
+  height: 60px;
+  padding-right: 10px
+}
+.ref-card h5{
+    float: right;
 }
 
 .top {
@@ -228,10 +235,6 @@
 
 .plan-card {
   height: 300px;
-  padding-right: 10px
-}
-.ref-card {
-  height: 60px;
   padding-right: 10px
 }
 

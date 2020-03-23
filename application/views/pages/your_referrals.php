@@ -37,7 +37,7 @@
               <h1>$80.00</h1>
             </div>
             <div class="bottom1 ref-card">
-              <h4>TOTAL REFERRAL COMMISSION</h4>
+              <h5>TOTAL REFERRAL COMMISSION</h5>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
               <h1>$800.00</h1>
             </div>
             <div class="bottom2 ref-card">
-              <h4>REFERRALS</h4>
+              <h5>REFERRALS</h5>
 
             </div>
           </div>
@@ -62,7 +62,7 @@
               <h1>$4,000.00</h1>
             </div>
             <div class="bottom3 ref-card">
-              <h4>ACTIVE REFERRALS</h4>
+              <h5>ACTIVE REFERRALS</h5>
 
             </div>
           </div>
