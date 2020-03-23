@@ -10,17 +10,6 @@ class Referral_bonus_model extends CI_Model {
     parent::__construct();
   }
 
-  // ------------------------------------------------------------------------
-
-
-  // ------------------------------------------------------------------------
-  public function index()
-  {
-    // 
-  }
-
-  // ------------------------------------------------------------------------
-
   public function add($bonus){
     $this->db->insert('td_referral_bonus', $bonus);
   }

@@ -200,4 +200,3 @@ class Withdrawals_admin extends CI_Controller
     }
 
 }
-

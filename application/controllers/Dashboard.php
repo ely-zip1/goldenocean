@@ -38,8 +38,11 @@ class Dashboard extends CI_Controller {
 			$total_growth = $this->DepositModel->get_total_growth($member_data->id);
 			$last_deposit = $this->DepositModel->get_latest_deposit_amount($member_data->id);
 			$total_deposit = $this->DepositModel->get_total_deposit($member_data->id);
+			$total_bonus = $this->Referral_bonus_model->get_total_bonus($member_data->id);
 
+			$account_balance = ($total_growth + $total_bonus) - $total_withdrawal->amount;
 
+			$data['account_balance'] = '$ '.number_format($account_balance, 2, '.', ',');
 			$data['pending_withdrawals'] = '$ '.number_format($pending_withdrawal->total, 2, '.', ',');
 			$data['total_withdrawals'] = '$ '.number_format($total_withdrawal->amount, 2, '.', ',');
 			$data['last_withdrawal'] = '$ '.number_format($last_withdrawal->amount, 2, '.', ',');
