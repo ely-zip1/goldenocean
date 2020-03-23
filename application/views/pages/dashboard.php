@@ -119,26 +119,12 @@
 											<div class="alert alert-light">
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
 													<!-- <span id="link">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span> -->
-													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12" />
+													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12" style="width:100%;"/>
 												</a>
-												<!-- <button class="clipboard" data-clipboard-target="#copy">
-												  Copy
-												</button>
-												<br>
-												<input id="post-shortlink" value="https://ac.me/qmE_jpnYXFo">
-												<br>
-												<button class="button" id="copy-button" data-clipboard-target="#post-shortlink">Copy</button> -->
-
-												<br>
-												<!-- <input type="text" value="xxx" id="link" class="span12" /> -->
 												<button type="button" class="btn btn-info btn-sm" onclick="copyToClipboard('#link')">
 												    Copy
 												</button>
 	                    </div>
-											<!-- </br> -->
-					              <!-- <a href="#" class="btn btn-icon icon-left btn-dark rounded-button" id="copy_button" onclick="copyTextFunction()"><i class="fas fa-copy"></i> Copy</a> -->
-                    <!-- </div>
-                </div> -->
 
             </div>
           </div>
