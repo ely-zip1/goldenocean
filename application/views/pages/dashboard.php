@@ -117,9 +117,12 @@
                       <!-- <input type="text" class="form-control text-center bold-text" name=""
 											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>"> -->
 											<div class="alert alert-light">
-												<a class="affiliate-alert" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
+												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
 													https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>
 												</a>
+												<button class="btn" data-clipboard-action="copy" data-clipboard-target="#referral-link">
+													Copy
+												</button>
 	                    </div>
 											<!-- </br> -->
 					              <!-- <a href="#" class="btn btn-icon icon-left btn-dark rounded-button" id="copy_button" onclick="copyTextFunction()"><i class="fas fa-copy"></i> Copy</a> -->

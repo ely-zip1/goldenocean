@@ -12,8 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </div> -->
   <footer>
-    
+
   </footer>
 
 <?php $this->load->view('dist/_partials/js'); ?>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
+<script src="<?php echo base_url('assets/js/clipboard.min.js'); ?>"></script>
