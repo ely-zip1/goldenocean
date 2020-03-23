@@ -30,7 +30,7 @@
       </div>
 
       <div class="row account-summary-row ">
-        <div class="col-md-4 account-summary-1">
+        <div class="col-sm-4 account-summary-1">
           <div class="left">
             <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
             <div class="icon-container">
@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 account-summary-1">
+        <div class="col-sm-4 account-summary-1">
           <div class="left">
             <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
             <div class="icon-container">
@@ -93,7 +93,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 account-summary-1">
+        <div class="col-sm-4 account-summary-1">
           <div class="left">
             <img src="<?php echo base_url('assets/img/planactivebgside-min.png');?>" alt="">
             <div class="icon-container">
