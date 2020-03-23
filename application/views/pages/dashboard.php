@@ -127,6 +127,12 @@
 												<input id="post-shortlink" value="https://ac.me/qmE_jpnYXFo">
 												<br>
 												<button class="button" id="copy-button" data-clipboard-target="#post-shortlink">Copy</button> -->
+
+												<br>
+												<input type="text" value="xxx" id="link" class="span12" />
+												<button type="button" class="btn btn-info btn-sm" onclick="copyToClipboard('#link')">
+												    Copy Input Value
+												</button>
 	                    </div>
 											<!-- </br> -->
 					              <!-- <a href="#" class="btn btn-icon icon-left btn-dark rounded-button" id="copy_button" onclick="copyTextFunction()"><i class="fas fa-copy"></i> Copy</a> -->
@@ -147,8 +153,11 @@
 	// (function(){
 	//     new Clipboard('#copy-button');
 	// })();
-	$( document ).ready(function() {
-	  var clipboard = new Clipboard('#copy-button');
-	});
-
+	// $( document ).ready(function() {
+	//   var clipboard = new Clipboard('#copy-button');
+	// });
+	function copyToClipboard(element) {
+	    $(element).select();
+	    document.execCommand("copy");
+	}
 </script>
