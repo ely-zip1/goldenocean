@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="row row-referrals">
+      <div class="row">
         <div class="col-12">
           <div class="row">
             <div class="col-md-4">
@@ -44,7 +44,7 @@
             </div>
           </div>
 
-          <div class="row row-referrals">
+          <div class="row">
             <div class="col-md-4">
               <div class="right">
                 <div class="top-dash">
@@ -57,7 +57,7 @@
             </div>
           </div>
 
-          <div class="row row-referrals">
+          <div class="row">
             <div class="col-md-4">
               <div class="right">
                 <div class="top-dash">
