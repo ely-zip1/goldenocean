@@ -47,7 +47,7 @@
             <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
             <div class="alert-body">
             <div class="alert-title">
-              All withdrawals are subject to 5% tax.
+              All withdrawals are subject to 5% processing fee.
             </div>
             </div>
           </div>

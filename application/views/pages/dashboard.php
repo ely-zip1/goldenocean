@@ -118,10 +118,10 @@
 											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>"> -->
 											<div class="alert alert-light">
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
-													https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>
+													<span id="copy">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span>
 												</a>
-												<button class="btn" data-clipboard-action="copy" data-clipboard-target="#referral-link">
-													Copy
+												<button class="clipboard" data-clipboard-target="#copy">
+												  Copy
 												</button>
 	                    </div>
 											<!-- </br> -->
@@ -140,8 +140,8 @@
 
 <script type="text/javascript">
 
-$( document ).ready(function() {
-  var clipboard = new Clipboard('.clipboard');
-});
+	$( document ).ready(function() {
+	  var clipboard = new Clipboard('.clipboard');
+	});
 
 </script>
