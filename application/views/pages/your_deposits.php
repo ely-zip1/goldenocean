@@ -50,8 +50,9 @@
 									<tr>
 										<th scope="col">Amount</th>
 										<th scope="col">Payment Mode</th>
+										<th scope="col">Send to</th>
 										<th scope="col">Date Created</th>
-										<th scope="col">Date Approved</th>
+										<th scope="col">Status</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -61,8 +62,9 @@
 								  	<tr>
 											<td>$ <?php echo $row['amount']; ?></td>
 											<td><?php echo $row['mode']; ?></td>
+											<td><?php echo $row['send_to']; ?></td>
 											<td><?php echo $row['date']; ?></td>
-											<td><?php echo $row['date_approved']; ?></td>
+											<td><?php echo $row['status']; ?></td>
 										</tr>
 									<?php }}?>
 								</tbody>

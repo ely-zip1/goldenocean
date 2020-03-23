@@ -37,6 +37,7 @@ class Your_deposits extends CI_Controller
 
           $payment_mode = $this->Deposit_Options->get_by_id($deposit->deposit_options_id);
           $ultramax['mode'] = $payment_mode->name;
+          $ultramax['send_to'] = $payment_mode->account;
           $ultramax['date'] = $deposit->date;
           $ultramax['date_approved'] = $deposit->date_approved;
 

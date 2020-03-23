@@ -112,13 +112,8 @@
           <div class="card card-primary text-center affiliate-program-card">
             <div class="card-body">
               <h5 class="card-title">AFFILIATE PROGRAM</h5>
-                <!-- <div class="alert alert-has-icon affiliate-link-alert">
-                    <div class="alert-body"> -->
-                      <!-- <input type="text" class="form-control text-center bold-text" name=""
-											value="https://goldenocean.com/my/ref/<?php echo $referral_code; ?>"> -->
 											<div class="alert alert-light">
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
-													<!-- <span id="link">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span> -->
 													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12"
 													style="width:100%;
 														text-align: center;
@@ -141,13 +136,6 @@
 </div>
 
 <script type="text/javascript">
-
-	// (function(){
-	//     new Clipboard('#copy-button');
-	// })();
-	// $( document ).ready(function() {
-	//   var clipboard = new Clipboard('#copy-button');
-	// });
 	function copyToClipboard(element) {
 	    $(element).select();
 	    document.execCommand("copy");
