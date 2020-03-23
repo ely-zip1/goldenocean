@@ -27,7 +27,7 @@ class Withdraw extends CI_Controller
     $member = $this->Members->get_member($this->session->username);
     $withdrawals = $this->WithdrawalModel->get_total_withdrawal_per_member($member->id);
     $withdrawal_modes = $this->Withdrawal_Mode_model->get_per_member($member->id);
-    $has_bank = $this->Bank_model->has_account($member->id);
+    $bank = $this->Bank_model->get_per_member_id($member->id);
 
     $pending_withdrawal = $this->WithdrawalModel->get_pending_withdrawal($member->id);
     $total_growth = $this->DepositModel->get_total_growth($member->id);
@@ -58,7 +58,7 @@ class Withdraw extends CI_Controller
 
         if($_POST['plan_payment_mode'] == 'mode1'){
           $withdrawal_data['payment_method_id'] = 'Bank';
-          if($has_bank == FALSE){
+          if(strlen($bank->bank_name) <= 0){
               redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode2'){
@@ -68,27 +68,27 @@ class Withdraw extends CI_Controller
           }
   			}else if($_POST['plan_payment_mode'] == 'mode3'){
           $withdrawal_data['payment_method_id'] = 'Ethereum';
-          if(strlen($withdrawal_modes->bitcoin) <= 0){
+          if(strlen($withdrawal_modes->ethereum) <= 0){
             redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode4'){
           $withdrawal_data['payment_method_id'] = 'Abra';
-          if(strlen($withdrawal_modes->bitcoin) <= 0){
+          if(strlen($withdrawal_modes->abra) <= 0){
             redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode5'){
           $withdrawal_data['payment_method_id'] = 'Paypal';
-          if(strlen($withdrawal_modes->bitcoin) <= 0){
+          if(strlen($withdrawal_modes->paypal) <= 0){
             redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode6'){
           $withdrawal_data['payment_method_id'] = 'Neteller';
-          if(strlen($withdrawal_modes->bitcoin) <= 0){
+          if(strlen($withdrawal_modes->neteller) <= 0){
             redirect('account_settings', refresh);
           }
   			}else if($_POST['plan_payment_mode'] == 'mode7'){
           $withdrawal_data['payment_method_id'] = 'Advcash';
-          if(strlen($withdrawal_modes->bitcoin) <= 0){
+          if(strlen($withdrawal_modes->advcash) <= 0){
             redirect('account_settings', refresh);
           }
   			}
