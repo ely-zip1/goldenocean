@@ -142,7 +142,7 @@
   padding-right: 10px
 }
 .ref-card h5{
-    float: right;
+    float: right !important;
 }
 
 .top {
