@@ -119,7 +119,12 @@
 											<div class="alert alert-light">
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
 													<!-- <span id="link">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span> -->
-													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12" style="width:100%;"/>
+													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12"
+													style="width:100%;
+														text-align: center;
+												    background: transparent;
+												    border: none;
+												    cursor: pointer;"/>
 												</a>
 												<button type="button" class="btn btn-info btn-sm" onclick="copyToClipboard('#link')">
 												    Copy
