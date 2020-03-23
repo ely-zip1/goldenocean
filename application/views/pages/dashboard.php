@@ -39,7 +39,7 @@
           </div>
           <div class="right">
             <div class="top-dash">
-              <h1>$ <?php echo $account_balance; ?></h1>
+              <h1><?php echo $account_balance; ?></h1>
             </div>
             <div class="bottom1-dash">
               <h6>ACCOUNT BALANCE</h6>
@@ -57,7 +57,7 @@
           </div>
           <div class="right">
             <div class="top-dash">
-                <h1>$ <?php echo $total_deposit; ?></h1>
+                <h1><?php echo $total_deposit; ?></h1>
             </div>
             <div class="bottom2">
               <h6>ACTIVE DEPOSIT</h6>
