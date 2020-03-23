@@ -30,43 +30,48 @@
       </div>
 
       <div class="row row-referrals">
-        <div class="col-sm-4">
-          <div class="right">
-            <div class="top-dash">
-              <h1><?php echo $total_bonus; ?></h1>
-            </div>
-            <div class="bottom1-dash">
-              <h6>TOTAL REFERRAL COMMISSION</h6>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="right">
+                <div class="top-dash">
+                  <h1><?php echo $total_bonus; ?></h1>
+                </div>
+                <div class="bottom1-dash">
+                  <h6>TOTAL REFERRAL COMMISSION</h6>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="row row-referrals">
-        <div class="col-sm-4">
-          <div class="right">
-            <div class="top-dash">
-              <h1><?php echo $total_referrals; ?></h1>
-            </div>
-            <div class="bottom2-dash">
-              <h6>REFERRALS</h6>
+          <div class="row row-referrals">
+            <div class="col-sm-4">
+              <div class="right">
+                <div class="top-dash">
+                  <h1><?php echo $total_referrals; ?></h1>
+                </div>
+                <div class="bottom2-dash">
+                  <h6>REFERRALS</h6>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="row row-referrals">
-        <div class="col-sm-4">
-          <div class="right">
-            <div class="top-dash">
-              <h1><?php echo $active_referrals; ?></h1>
-            </div>
-            <div class="bottom2-dash">
-              <h6>ACTIVE REFERRALS</h6>
+          <div class="row row-referrals">
+            <div class="col-sm-4">
+              <div class="right">
+                <div class="top-dash">
+                  <h1><?php echo $active_referrals; ?></h1>
+                </div>
+                <div class="bottom2-dash">
+                  <h6>ACTIVE REFERRALS</h6>
+                </div>
+              </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+
 
 		</div>
 
