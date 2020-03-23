@@ -120,13 +120,13 @@
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
 													<span id="copy">https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?></span>
 												</a>
-												<button class="clipboard" data-clipboard-target="#copy">
+												<!-- <button class="clipboard" data-clipboard-target="#copy">
 												  Copy
 												</button>
 												<br>
 												<input id="post-shortlink" value="https://ac.me/qmE_jpnYXFo">
 												<br>
-												<button class="button" id="copy-button" data-clipboard-target="#post-shortlink">Copy</button>
+												<button class="button" id="copy-button" data-clipboard-target="#post-shortlink">Copy</button> -->
 	                    </div>
 											<!-- </br> -->
 					              <!-- <a href="#" class="btn btn-icon icon-left btn-dark rounded-button" id="copy_button" onclick="copyTextFunction()"><i class="fas fa-copy"></i> Copy</a> -->
