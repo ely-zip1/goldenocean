@@ -34,7 +34,7 @@
 
           <div class="right">
             <div class="ref-top">
-              <h1>$80.00</h1>
+              <h1><?php echo $total_bonus; ?></h1>
             </div>
             <div class="bottom1 ref-card">
               <h6>TOTAL REFERRAL COMMISSION</h6>
@@ -46,7 +46,7 @@
 
           <div class="right">
             <div class="ref-top">
-              <h1>$800.00</h1>
+              <h1><?php echo $total_referrals; ?></h1>
             </div>
             <div class="bottom2 ref-card">
               <h6>REFERRALS</h6>
@@ -59,7 +59,7 @@
 
           <div class="right">
             <div class="ref-top">
-              <h1>$4,000.00</h1>
+              <h1><?php echo $active_referrals; ?></h1>
             </div>
             <div class="bottom3 ref-card">
               <h6>ACTIVE REFERRALS</h6>
