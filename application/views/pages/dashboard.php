@@ -144,11 +144,11 @@
 
 <script type="text/javascript">
 
-	(function(){
-	    new Clipboard('#copy-button');
-	})();
-	// $( document ).ready(function() {
-	//   var clipboard = new Clipboard('.clipboard');
-	// });
+	// (function(){
+	//     new Clipboard('#copy-button');
+	// })();
+	$( document ).ready(function() {
+	  var clipboard = new Clipboard('#copy-button');
+	});
 
 </script>
