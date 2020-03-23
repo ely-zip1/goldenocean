@@ -59,37 +59,37 @@ class Withdraw extends CI_Controller
         if($_POST['plan_payment_mode'] == 'mode1'){
           $withdrawal_data['payment_method_id'] = 'Bank';
           if(strlen($bank->bank_name) <= 0){
-              redirect('account_settings', refresh);
+              redirect('account_settings', 'refresh');
           }
   			}else if($_POST['plan_payment_mode'] == 'mode2'){
           $withdrawal_data['payment_method_id'] = 'Bitcoin';
           if(strlen($withdrawal_modes->bitcoin) <= 0){
-            redirect('account_settings', refresh);
+            redirect('account_settings', 'refresh');
           }
   			}else if($_POST['plan_payment_mode'] == 'mode3'){
           $withdrawal_data['payment_method_id'] = 'Ethereum';
           if(strlen($withdrawal_modes->ethereum) <= 0){
-            redirect('account_settings', refresh);
+            redirect('account_settings', 'refresh');
           }
   			}else if($_POST['plan_payment_mode'] == 'mode4'){
           $withdrawal_data['payment_method_id'] = 'Abra';
           if(strlen($withdrawal_modes->abra) <= 0){
-            redirect('account_settings', refresh);
+            redirect('account_settings', 'refresh');
           }
   			}else if($_POST['plan_payment_mode'] == 'mode5'){
           $withdrawal_data['payment_method_id'] = 'Paypal';
           if(strlen($withdrawal_modes->paypal) <= 0){
-            redirect('account_settings', refresh);
+            redirect('account_settings', 'refresh');
           }
   			}else if($_POST['plan_payment_mode'] == 'mode6'){
           $withdrawal_data['payment_method_id'] = 'Neteller';
           if(strlen($withdrawal_modes->neteller) <= 0){
-            redirect('account_settings', refresh);
+            redirect('account_settings', 'refresh');
           }
   			}else if($_POST['plan_payment_mode'] == 'mode7'){
           $withdrawal_data['payment_method_id'] = 'Advcash';
           if(strlen($withdrawal_modes->advcash) <= 0){
-            redirect('account_settings', refresh);
+            redirect('account_settings', 'refresh');
           }
   			}
 
