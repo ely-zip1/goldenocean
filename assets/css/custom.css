@@ -122,6 +122,22 @@
   margin-top: 50px;
 }
 
+.ref-top {
+  float: right;
+  top: 0;
+  height: 111px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(19, 152, 192, 1) 0%, rgba(57, 216, 179, 1) 100%);
+  color: #fff;
+}
+.ref-top h1 {
+  position: absolute;
+  right: 0px;
+  bottom: 30px;
+  margin-right: 30px;
+  margin-top: 50px;
+}
+
 .top {
   float: right;
   top: 0;
@@ -212,6 +228,10 @@
 
 .plan-card {
   height: 300px;
+  padding-right: 10px
+}
+.ref-card {
+  height: 100px;
   padding-right: 10px
 }
 

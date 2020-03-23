@@ -31,12 +31,12 @@
 
       <div class="row account-summary-row ">
         <div class="col-sm-4 account-summary-1">
-          
+
           <div class="right">
-            <div class="top">
+            <div class="ref-top">
               <h1>$80.00</h1>
             </div>
-            <div class="bottom1 plan-card">
+            <div class="bottom1 ref-card">
               <h4></h4>
             </div>
           </div>
@@ -45,10 +45,10 @@
         <div class="col-sm-4 account-summary-1">
 
           <div class="right">
-            <div class="top">
+            <div class="ref-top">
               <h1>$800.00</h1>
             </div>
-            <div class="bottom2 plan-card">
+            <div class="bottom2 ref-card">
               <h4></h4>
 
             </div>
@@ -58,10 +58,10 @@
         <div class="col-sm-4 account-summary-1">
 
           <div class="right">
-            <div class="top">
+            <div class="ref-top">
               <h1>$4,000.00</h1>
             </div>
-            <div class="bottom3 plan-card">
+            <div class="bottom3 ref-card">
               <h4></h4>
 
             </div>
