@@ -47,7 +47,8 @@
             <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
             <div class="alert-body">
             <div class="alert-title">
-              All withdrawals are subject to 5% processing fee.
+              All withdrawals are subject to 5% processing fee.<br>
+							Cut off time for withdrawal request: 11:59 AM
             </div>
             </div>
           </div>
