@@ -71,7 +71,7 @@
 
                       <div class="form-group col-md-2">
             	          <label for="deposit_amount" style="visibility: hidden;">Submit</label>
-              					<button type="submit" class="btn btn-block btn-lg btn-dark <?php if(isset($withdrawable)) echo 'disabled'; ?>" name="deposit-submit-button">Withdraw</button>
+              					<button type="submit" class="btn btn-block btn-lg btn-dark" <?php if(isset($withdrawable)) echo 'disabled'; ?> name="deposit-submit-button">Withdraw</button>
               					<?php echo form_close(); ?>
               				</div>
                     </div>
