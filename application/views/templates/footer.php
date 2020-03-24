@@ -14,8 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <footer>
     <div class="main-content">
       <section class="section">
-    <section class="paymentwrap">
-      <div class="container">
         <div class="row">
             <div class="col-lg-12">
               <div class="paymentrow">
@@ -40,8 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
           </div>
-      </div>
-    </section>
   </section>
 </div>
 
