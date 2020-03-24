@@ -36,7 +36,7 @@
 
             <input class="btn" type="file" name="userfile" size="20" style="margin:20px;"/>
 
-            <input class="btn btn-lg rounded-button" type="submit" value="upload" />
+            <input class="btn btn-lg rounded-button" type="submit" value="Upload" />
 
             </form>
           </div>

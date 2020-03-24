@@ -30,24 +30,24 @@ class Upload extends CI_Controller {
 
                 if ( ! $this->upload->do_upload('userfile'))
                 {
-                        $data['error'] = array('error' => $this->upload->display_errors());
+                        $error = array('error' => $this->upload->display_errors());
 
-                        // $this->load->view('pages/upload_form', $error);
+                        $this->load->view('pages/upload_form', $error);
 
-
-                    			$this->load->view('templates/header', $data);
-                    	    $this->load->view('pages/account_settings', $data);
-                    	    $this->load->view('templates/footer');
+                          //
+                    			// $this->load->view('templates/header', $data);
+                    	    // $this->load->view('pages/account_settings', $data);
+                    	    // $this->load->view('templates/footer');
                 }
                 else
                 {
-                        $data['data'] = array('upload_data' => $this->upload->data());
+                        $data = array('upload_data' => $this->upload->data());
 
-                        // $this->load->view('pages/upload_success', $data);
-
-                        $this->load->view('templates/header', $data);
-                        $this->load->view('pages/account_settings', $data);
-                        $this->load->view('templates/footer');
+                        $this->load->view('pages/upload_success', $data);
+                        //
+                        // $this->load->view('templates/header', $data);
+                        // $this->load->view('pages/account_settings', $data);
+                        // $this->load->view('templates/footer');
 
                 }
         }
