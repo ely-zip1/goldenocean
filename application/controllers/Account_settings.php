@@ -12,6 +12,7 @@ class Account_settings extends CI_Controller
 						$this->load->model('Deposit_Options');
 						$this->load->model('Bank_model');
 						$this->load->model('Withdrawal_Mode_model');
+						$this->load->driver('cache');
 
             date_default_timezone_set('Asia/Manila');
         }
@@ -21,11 +22,8 @@ class Account_settings extends CI_Controller
 		$data = array(
 			'title' => "Account Settings"
 		);
-
-		redirect('account_settings', 'refresh');
-		redirect('account_settings', 'refresh');
-
-
+		$this->cache->clean();
+		
 		$member_data = $this->Members->get_member($this->session->username);
 
 		$data['account_name'] = $member_data->username;
