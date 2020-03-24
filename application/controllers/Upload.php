@@ -32,7 +32,10 @@ class Upload extends CI_Controller {
                 {
                         $error = array('error' => $this->upload->display_errors());
 
-                        $this->load->view('pages/upload_form', $error);
+                        $this->session->set_userdata($error);
+
+                        // $this->load->view('pages/upload_form', $error);
+                        redirect('account_settings','refresh');
 
                           //
                     			// $this->load->view('templates/header', $data);
@@ -41,9 +44,11 @@ class Upload extends CI_Controller {
                 }
                 else
                 {
-                        $data = array('upload_data' => $this->upload->data());
+                        $data['upload_data'] = array('upload_data' => $this->upload->data());
 
+                        $this->load->view('templates/header', $data);
                         $this->load->view('pages/upload_success', $data);
+                        $this->load->view('templates/footer');
                         //
                         // $this->load->view('templates/header', $data);
                         // $this->load->view('pages/account_settings', $data);
