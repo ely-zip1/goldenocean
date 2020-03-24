@@ -108,7 +108,7 @@ class Your_deposits extends CI_Controller
     $difference = $start_date->diff($end_date);
     $remaining_days = $contract_days - $difference->d;
 
-    return $remaining_days;
+    return abs($remaining_days);
   }
 
 }
