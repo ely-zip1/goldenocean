@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-</body>
       <!-- <footer class="main-footer">
         <div class="footer-left">
 
@@ -11,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </footer>
     </div>
   </div> -->
-  <footer>
+
       <section class="section">
         <div class="row">
             <div class="col-lg-12">
@@ -38,8 +37,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
   </section>
+  <footer>
 
   </footer>
+
+
+  </body>
 
 <?php $this->load->view('dist/_partials/js'); ?>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
