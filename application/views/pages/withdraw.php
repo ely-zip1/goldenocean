@@ -35,7 +35,7 @@
               <h4>Account Balance:  $ <?php echo $account_balance; ?></h4>
             </div>
               <div class="card-body">
-                <h6>Pending Withdrawals:  $ <?php echo $pending_withdrawal;; ?></h6>
+                <h6>Pending Withdrawals:  $ <?php echo $pending_withdrawal; ?></h6>
               </div>
           </div>
         </div>
