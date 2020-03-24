@@ -1,7 +1,7 @@
 <div class="main-content">
 	<section class="section">
 		<div class="section-header">
-			<h1>User Details</h1> 
+			<h1>User Details</h1>
 		</div>
 		<div class="container mt-5">
 			<div class="row">
@@ -19,8 +19,6 @@
 										<th>Name</th>
 										<th>Email Address</th>
 										<th>Date Joined</th>
-										<th>Address</th>
-										<th>Source of Income</th>
 									</tr>
 								</thead>
                                 <tbody>
@@ -28,9 +26,7 @@
 										<td><?php echo $member_data['name']; ?></td>
 										<td>$ <?php echo $member_data['email']; ?></td>
 										<td><?php echo $member_data['date']; ?></td>
-										<td><?php echo $member_data['address']; ?></td>
-										<td><?php echo $member_data['income']; ?></td>
-										
+
 									</tr>
 								</tbody>
 
@@ -41,7 +37,7 @@
 					</div>
 				</div>
             </div>
-            
+
 			<div class="row">
 				<div class="col-12 col-sm-12">
 					<div class="login-brand">
@@ -69,7 +65,7 @@
 										<td><?php echo $item['mode']; ?></td>
 										<td><?php echo $item['pending']; ?></td>
 										<td><?php echo $item['expired']; ?></td>
-										
+
 									</tr>
 									<?php } ?>
 								</tbody>
@@ -81,7 +77,7 @@
 					</div>
 				</div>
 			</div>
-            
+
 			<div class="row">
 				<div class="col-12 col-sm-12">
 					<div class="login-brand">
@@ -109,7 +105,7 @@
 										<td><?php echo $withdrawal['request_date']; ?></td>
 										<td><?php echo $withdrawal['approve_date']; ?></td>
 										<td><?php echo $withdrawal['pending']; ?></td>
-										
+
 									</tr>
 									<?php } ?>
 								</tbody>
@@ -121,7 +117,7 @@
 					</div>
 				</div>
             </div>
-            
+
 			<div class="row">
 				<div class="col-12 col-sm-12">
 					<div class="login-brand">
@@ -138,7 +134,6 @@
 										<th>Email address</th>
 										<th>Phone Number</th>
 										<th>Date Registered</th>
-										<th>Source of Income</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -148,8 +143,7 @@
 										<td><?php echo $referral['email']; ?></td>
 										<td><?php echo $referral['phone']; ?></td>
 										<td><?php echo $referral['date']; ?></td>
-										<td><?php echo $referral['income']; ?></td>
-										
+
 									</tr>
 									<?php } ?>
 								</tbody>
@@ -161,7 +155,7 @@
 					</div>
 				</div>
             </div>
-            
+
 
 		</div>
 </div>
