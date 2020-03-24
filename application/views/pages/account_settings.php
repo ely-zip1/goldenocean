@@ -285,6 +285,5 @@
 
 				<?php echo form_close(); ?>
 			</div>
-    </div>
-  </section>
-</div>
+
+    <?php $this->load->view('prefooter'); ?>
