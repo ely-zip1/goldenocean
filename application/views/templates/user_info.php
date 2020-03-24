@@ -3,7 +3,7 @@
     <div class="col-md-2 text-center">
       <!-- <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img"> -->
       <div class="circular--landscape">
-        <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" />
+        <img src="<?php echo base_url('uploads/ultra.jpg'); ?>" />
       </div>
     </div>
     <div class="col-md-7">
