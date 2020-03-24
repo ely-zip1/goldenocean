@@ -1,7 +1,10 @@
 <div class="col-12 user-basic-info">
   <div class="row">
     <div class="col-md-2 text-center">
-      <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img">
+      <!-- <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img"> -->
+      <div class="circular--landscape">
+        <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" />
+      </div>
     </div>
     <div class="col-md-7">
       <h4>WELCOME BACK, <?php echo strtoupper($this->session->userdata('username')); ?></h4>
