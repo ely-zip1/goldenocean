@@ -412,6 +412,7 @@ select option {
 footer {
   height: 100px;
   background: #00222e;
+  margin-top: 20px;
 }
 
 .deposit-row{
