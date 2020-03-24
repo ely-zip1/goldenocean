@@ -4,7 +4,6 @@
 			<h1>Update Account</h1>
 		</div> -->
 		<div class="container mt-5">
-			<!-- <?php print_r($deposit_data);?> -->
 			<div class="row">
 				<div class="col-12 col-sm-12">
 					<div class="login-brand">
@@ -12,7 +11,7 @@
 					</div>
 					<div class="">
 						<ul class="pagination">
-
+							print_r($total_pages);
 							<?php for ($i=1; $i <= $total_pages; $i++) {
 								echo '<li class="page-item">
 								<a class="page-link" href="'.base_url('manage_users/'.$i*10).'">'.$i.'</a></li>';
