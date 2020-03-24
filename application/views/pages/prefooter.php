@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row prefooter-row">
     <div class="col-lg-12">
       <div class="paymentrow">
         <div class="paybox"><img src="<?php echo base_url().'assets/img/'; ?>paymenticon1-min.png" alt=""></div>

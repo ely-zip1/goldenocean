@@ -408,8 +408,14 @@ select option {
   color: white !important;
 }
 
-.prefooter{
+.prefooter-row{
   display: flex;
+}
+.paybox{
+  width:10%;
+}
+.paybox img{
+  width: auto;
 }
 
 footer {
