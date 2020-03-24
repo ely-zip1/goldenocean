@@ -43,7 +43,7 @@ class Your_deposits extends CI_Controller
           $ultramax['date_approved'] = $deposit->date_approved;
           $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
 
-          array_push($ultramax_deposit_data,$ultramax);
+          array_push($ultramax_deposit_data, $ultramax);
         }
         else if($deposit->package_id == 2){
           $panamax = array();
@@ -56,9 +56,9 @@ class Your_deposits extends CI_Controller
           $panamax['date_approved'] = $deposit->date_approved;
           $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
 
-          array_push($panamax_deposit_data,$panamax);
+          array_push($panamax_deposit_data, $panamax);
         }
-        else if($deposit->package_id == 2){
+        else if($deposit->package_id == 3){
           $capesize = array();
           $capesize['amount'] = number_format($deposit->amount, 2, '.', ',');
 

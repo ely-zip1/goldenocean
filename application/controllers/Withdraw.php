@@ -25,8 +25,9 @@ class Withdraw extends CI_Controller
     $data['title'] = 'Withdraw';
 
     $member = $this->Members->get_member($this->session->username);
-    
-    $all_withdrawals = $this->WithdrawalModel->get_withdrawal_per_member($member->id);
+
+
+
     $withdrawals = $this->WithdrawalModel->get_total_withdrawal_per_member($member->id);
     $withdrawal_modes = $this->Withdrawal_Mode_model->get_per_member($member->id);
     $bank = $this->Bank_model->get_per_member_id($member->id);
@@ -41,6 +42,14 @@ class Withdraw extends CI_Controller
     $data['pending_withdrawal'] = $pending_withdrawal->total;
 
     $data['selected_mode'] = 'mode1';
+
+    $withdrawal_history = array();
+    $all_withdrawals = $this->WithdrawalModel->get_withdrawal_per_member($member->id);
+    foreach ($all_withdrawals as $withdrawal) {
+        $history = array();
+        $history['amount'] = $withdrawal->amount;
+        $history['mode'] = $withdrawal->payment_method_id == $;
+    }
 
     $this->form_validation->set_rules('plan_payment_mode', 'Payment Mode', 'required');
     $this->form_validation->set_rules('withdraw_amount', 'Withdraw Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_amount');
