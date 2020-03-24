@@ -30,13 +30,25 @@
                 </tr>
               </tbody>
             </table>
-            <?php if(isset($this->session->error)){echo $this->session->error;}?>
+            <?php
+            if(isset($this->session->error)){
+              echo '<div class="alert alert-danger alert-dismissible show fade">
+                      <div class="alert-body">
+                        <button class="close" data-dismiss="alert">
+                          <span>×</span>
+                        </button>
+                        '.$this->session->error.'
+                      </div>
+                    </div>';
+            }
+
+            ?>
 
             <?php echo form_open_multipart('upload/do_upload');?>
 
-            <input class="btn" type="file" name="userfile" size="20" style="margin:20px;"/>
+            <input class="btn" type="file" name="userfile" size="20" style="margin-right:20px;"/>
 
-            <input class="btn btn-lg rounded-button" type="submit" value="Upload" />
+            <input class="btn btn-lg rounded-button" type="submit" value="Upload" style="margin:20px;"/>
 
             </form>
           </div>
