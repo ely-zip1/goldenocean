@@ -132,7 +132,6 @@
 									<tr>
 										<th>Name</th>
 										<th>Email address</th>
-										<th>Phone Number</th>
 										<th>Date Registered</th>
 									</tr>
 								</thead>
@@ -141,7 +140,6 @@
 									<tr>
 										<td><?php echo $referral['name']; ?></td>
 										<td><?php echo $referral['email']; ?></td>
-										<td><?php echo $referral['phone']; ?></td>
 										<td><?php echo $referral['date']; ?></td>
 
 									</tr>
