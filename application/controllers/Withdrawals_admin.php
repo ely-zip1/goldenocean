@@ -37,29 +37,17 @@ class Withdrawals_admin extends CI_Controller
       $temp['member_id'] = $member_data->id;
       $temp['client_name'] = ucfirst($member_data->full_name);
 
-      $taxed_amount = $pending->amount - ($pending->amount * 0.10);
+      $taxed_amount = $pending->amount - ($pending->amount * 0.05);
       $temp['amount'] = number_format($taxed_amount, 2);
 
       $temp['email'] = $member_data->email_address;
-      $temp['phone'] = $member_data->contact_number;
       $temp['date'] = $pending->date;
 
-      $mode = $this->Withdrawal_Mode_model->get_by_id($pending->payment_method_id);
-
-      if($mode->description == 'bitcoin') {
-        $btc = $this->Bitcoin_model->get_per_member_id($member_data->id);
-
-        $temp['mode'] = ucfirst('Coins.ph');
-        $temp['pop_over_title'] = "Coins.ph";
-        $temp['pop_over_text'] = "<div class='form-group'>
-                                        <strong class='mr-4'>Coins.ph Address</strong></br>
-                                        <label>" . $btc->address . "</label>
-                                      </div>
-                                  ";
-      } else if($mode->description == 'bank') {
+      // $mode = $this->Withdrawal_Mode_model->get_by_id($pending->payment_method_id);
+      if($pending->payment_method == 'Bank'){
         $bank = $this->Bank_model->get_per_member_id($member_data->id);
 
-        $temp['mode'] = ucfirst($mode->description);
+        $temp['mode'] = 'Bank';
         $temp['pop_over_title'] = "Bank Account";
         $temp['pop_over_text'] = "<div class='form-group'>
                                         <strong class='mr-4'>Bank Name</strong></br>
@@ -74,50 +62,67 @@ class Withdrawals_admin extends CI_Controller
                                         <label>" . $bank->account_number . "</label>
                                       </div>
                                   ";
-      } else if($mode->description == 'gcash') {
-        $gc = $this->Gcash_model->get_per_member_id($member_data->id);
+      }else if($pending->payment_method == 'Bitcoin'){
+        $payment_mode = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
 
-        $temp['mode'] = ucfirst($mode->description);
-        $temp['pop_over_title'] = "GCash";
+        $temp['mode'] = $pending->payment_method;
+        $temp['pop_over_title'] = ucfirst($pending->payment_method);
         $temp['pop_over_text'] = "<div class='form-group'>
-                                        <strong class='mr-4'>GCash Number</strong></br>
-                                        <label>" . $gc->phone_number . "</label>
+                                        <strong class='mr-4'>".ucfirst($pending->payment_method)." Account</strong></br>
+                                        <label>" . $payment_mode->bitcoin . "</label>
                                       </div>
                                   ";
+      }else if($pending->payment_method == 'Ethereum'){
+        $payment_mode = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
 
+        $temp['mode'] = $pending->payment_method;
+        $temp['pop_over_title'] = ucfirst($pending->payment_method);
+        $temp['pop_over_text'] = "<div class='form-group'>
+                                        <strong class='mr-4'>".ucfirst($pending->payment_method)." Account</strong></br>
+                                        <label>" . $payment_mode->ethereum . "</label>
+                                      </div>
+                                  ";
+      }else if($pending->payment_method == 'Abra'){
+        $payment_mode = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
+
+        $temp['mode'] = $pending->payment_method;
+        $temp['pop_over_title'] = ucfirst($pending->payment_method);
+        $temp['pop_over_text'] = "<div class='form-group'>
+                                        <strong class='mr-4'>".ucfirst($pending->payment_method)." Account</strong></br>
+                                        <label>" . $payment_mode->abra . "</label>
+                                      </div>
+                                  ";
+      }else if($pending->payment_method == 'Neteller'){
+        $payment_mode = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
+
+        $temp['mode'] = $pending->payment_method;
+        $temp['pop_over_title'] = ucfirst($pending->payment_method);
+        $temp['pop_over_text'] = "<div class='form-group'>
+                                        <strong class='mr-4'>".ucfirst($pending->payment_method)." Account</strong></br>
+                                        <label>" . $payment_mode->neteller . "</label>
+                                      </div>
+                                  ";
+      }else if($pending->payment_method == 'Paypal'){
+        $payment_mode = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
+
+        $temp['mode'] = $pending->payment_method;
+        $temp['pop_over_title'] = ucfirst($pending->payment_method);
+        $temp['pop_over_text'] = "<div class='form-group'>
+                                        <strong class='mr-4'>".ucfirst($pending->payment_method)." Account</strong></br>
+                                        <label>" . $payment_mode->paypal . "</label>
+                                      </div>
+                                  ";
+      }else if($pending->payment_method == 'Advcash'){
+        $payment_mode = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
+
+        $temp['mode'] = $pending->payment_method;
+        $temp['pop_over_title'] = ucfirst($pending->payment_method);
+        $temp['pop_over_text'] = "<div class='form-group'>
+                                        <strong class='mr-4'>".ucfirst($pending->payment_method)." Account</strong></br>
+                                        <label>" . $payment_mode->advcash . "</label>
+                                      </div>
+                                  ";
       }
-      // else if($mode->description == 'remittance') {
-      //   $remit = $this->Remittance_model->get_per_member_id($member_data->id);
-      //
-      //   $temp['mode'] = ucfirst($mode->description);
-      //   $temp['pop_over_title'] = "Remittance";
-      //   $temp['pop_over_text'] = "<div class='form-group'>
-      //                                   <strong class='mr-4'>Remittance Center</strong></br>
-      //                                   <label>" . $remit->remittance_center . "</label>
-      //                                 </div>
-      //                                 <div class='form-group'>
-      //                                   <strong class='mr-4'>First Name</strong></br>
-      //                                   <label>" . $remit->first_name . "</label>
-      //                                 </div>
-      //                                 <div class='form-group'>
-      //                                   <strong class='mr-4'>Middle Name</strong></br>
-      //                                   <label>" . $remit->middle_name . "</label>
-      //                                 </div>
-      //                                 <div class='form-group'>
-      //                                   <strong class='mr-4'>Last Name</strong></br>
-      //                                   <label>" . $remit->last_name . "</label>
-      //                                 </div>
-      //                                 <div class='form-group'>
-      //                                   <strong class='mr-4'>Address</strong></br>
-      //                                   <label>" . $remit->address . "</label>
-      //                                 </div>
-      //                                 <div class='form-group'>
-      //                                   <strong class='mr-4'>Phone Number</strong></br>
-      //                                   <label>" . $remit->first_name . "</label>
-      //                                 </div>
-      //                             ";
-      //
-      // }
 
       array_push($withdrawal_data, $temp);
     }
