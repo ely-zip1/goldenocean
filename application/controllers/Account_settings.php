@@ -22,7 +22,9 @@ class Account_settings extends CI_Controller
 			'title' => "Account Settings"
 		);
 
-		$this->cache->clean();
+		$this->output->cache(1);
+		// $this->cache->clean();
+		$this->output->delete_cache();
 		redirect($_SERVER[base_url('account_settings')], 'refresh');
 
 
