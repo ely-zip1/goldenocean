@@ -110,7 +110,7 @@
 								<div class="form-group col-md-4">
 		              <label for="bank_account_name">Account Name
 		              </label>
-		              <input id="bank_account_name" type="text" value="<?= set_value('bank_account_name','',true)?>"
+		              <input id="bank_account_name" type="text" value="<?php if(set_value('bank_account_name','',true) == null){echo $bank_account_name;}else{ echo set_value('bank_account_name','',true);}?>"
 		                     class="form-control <?php if(strlen(form_error('bank_account_name')) > 0){echo "is-invalid";} ?>" name="bank_account_name"
 		                     autofocus />
 		              <div class="invalid-feedback">
@@ -120,7 +120,7 @@
 								<div class="form-group col-md-4">
 		              <label for="bank_account_number">Account Number
 		              </label>
-		              <input id="bank_account_number" type="text" value="<?= set_value('bank_account_number','',true)?>"
+		              <input id="bank_account_number" type="text" value="<?php if(set_value('bank_account_number','',true) == null){echo $bank_account_number;}else{ echo set_value('bank_account_number','',true);}?>"
 		                     class="form-control <?php if(strlen(form_error('bank_account_number')) > 0){echo "is-invalid";} ?>" name="bank_account_number"
 		                     autofocus />
 		              <div class="invalid-feedback">
@@ -145,7 +145,7 @@
 							<div class="form-group">
 								<label for="bitcoin_account">Bitcoin Account
 								</label>
-								<input id="bitcoin_account" type="text" value="<?= set_value('bitcoin_account','',true)?>"
+								<input id="bitcoin_account" type="text" value="<?php if(set_value('bitcoin_account','',true) == null){echo $bitcoin_account;}else{ echo set_value('bitcoin_account','',true);}?>"
 											 class="form-control <?php if(strlen(form_error('bitcoin_account')) > 0){echo "is-invalid";} ?>" name="bitcoin_account"
 											 autofocus />
 								<div class="invalid-feedback">
@@ -167,7 +167,7 @@
 							<div class="form-group">
 								<label for="ethereum_account">Ethereum Account
 								</label>
-								<input id="ethereum_account" type="text" value="<?= set_value('ethereum_account','',true)?>"
+								<input id="ethereum_account" type="text" value="<?php if(set_value('ethereum_account','',true) == null){echo $ethereum_account;}else{ echo set_value('ethereum_account','',true);}?>"
 											 class="form-control <?php if(strlen(form_error('ethereum_account')) > 0){echo "is-invalid";} ?>" name="ethereum_account"
 											 autofocus />
 								<div class="invalid-feedback">
@@ -189,7 +189,7 @@
 							<div class="form-group">
 								<label for="paypal_account">Paypal Account
 								</label>
-								<input id="paypal_account" type="text" value="<?= set_value('paypal_account','',true)?>"
+								<input id="paypal_account" type="text" value="<?php if(set_value('paypal_account','',true) == null){echo $paypal_account;}else{ echo set_value('paypal_account','',true);}?>"
 											 class="form-control <?php if(strlen(form_error('paypal_account')) > 0){echo "is-invalid";} ?>" name="paypal_account"
 											 autofocus />
 								<div class="invalid-feedback">
@@ -211,7 +211,7 @@
 							<div class="form-group">
 								<label for="abra_account">Abra Account
 								</label>
-								<input id="abra_account" type="text" value="<?= set_value('abra_account','',true)?>"
+								<input id="abra_account" type="text" value="<?php if(set_value('abra_account','',true) == null){echo $abra_account;}else{ echo set_value('abra_account','',true);}?>"
 											 class="form-control <?php if(strlen(form_error('abra_account')) > 0){echo "is-invalid";} ?>" name="abra_account"
 											 autofocus />
 								<div class="invalid-feedback">
@@ -233,7 +233,7 @@
 							<div class="form-group">
 								<label for="neteller_account">Neteller Account
 								</label>
-								<input id="neteller_account" type="text" value="<?= set_value('neteller_account','',true)?>"
+								<input id="neteller_account" type="text" value="<?php if(set_value('neteller_account','',true) == null){echo $neteller_account;}else{ echo set_value('neteller_account','',true);}?>"
 											 class="form-control <?php if(strlen(form_error('neteller_account')) > 0){echo "is-invalid";} ?>" name="neteller_account"
 											 autofocus />
 								<div class="invalid-feedback">
@@ -255,7 +255,7 @@
 							<div class="form-group">
 								<label for="advcash_account">Advcash Account
 								</label>
-								<input id="advcash_account" type="text" value="<?= set_value('advcash_account','',true)?>"
+								<input id="advcash_account" type="text" value="<?php if(set_value('advcash_account','',true) == null){echo $advcash_account;}else{ echo set_value('advcash_account','',true);}?>"
 											 class="form-control <?php if(strlen(form_error('advcash_account')) > 0){echo "is-invalid";} ?>" name="advcash_account"
 											 autofocus />
 								<div class="invalid-feedback">

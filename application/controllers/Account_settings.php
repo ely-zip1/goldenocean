@@ -32,8 +32,18 @@ class Account_settings extends CI_Controller
 		$bank = $this->Bank_model->get_per_member_id($member_data->id);
 
 		$data['bank_name'] = $bank->bank_name;
+
 		$data['bank_account_name'] = $bank->account_name;
 		$data['bank_account_number'] = $bank->account_number;
+		$withdrawal_account = $this->Withdrawal_Mode_model->get_per_member($member_data->id);
+
+		$data['bitcoin_account'] = $withdrawal_account->bitcoin;
+		$data['ethereum_account'] = $withdrawal_account->ethereum;
+		$data['abra_account'] = $withdrawal_account->abra;
+		$data['neteller_account'] = $withdrawal_account->neteller;
+		$data['paypal_account'] = $withdrawal_account->paypal;
+		$data['advcash_account'] = $withdrawal_account->advcash;
+
 
 		if(isset($_POST['account_submit'])){
 			if($_POST['account_submit'] == 'reset_password'){
