@@ -3,16 +3,21 @@
 <title>Upload Form</title>
 </head>
 <body> -->
+<div class="main-content">
+  <section class="section">
 
-<h3>Your file was successfully uploaded!</h3>
+    <h3>Your file was successfully uploaded!</h3>
 
-<!-- <ul>
-<?php foreach ($upload_data as $item => $value):?>
-<li><?php echo $item;?>: <?php echo $value;?></li>
-<?php endforeach; ?>
-</ul>
+    <ul>
+      <?php foreach ($upload_data as $item => $value):?>
+      <li><?php echo $item;?>: <?php echo $value;?></li>
+      <?php endforeach; ?>
+    </ul>
 
-<p><?php echo anchor('upload', 'Upload Another File!'); ?></p>
+  </section>
+</div>
+
+<!-- <p><?php echo anchor('upload', 'Upload Another File!'); ?></p>
 
 </body>
 </html> -->
