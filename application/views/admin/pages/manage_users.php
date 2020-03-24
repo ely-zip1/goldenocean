@@ -14,7 +14,7 @@
 						<ul class="pagination">
 
 							<?php for ($i=1; $i <= $total_pages; $i++) {
-								echo '<li class="page-item"><a class="page-link" href="'.base_url().'manage_users/'.$i*10'">'.$i.'</a></li>';
+								echo '<li class="page-item"><a class="page-link" href="'.base_url().'manage_users/'.$i*10.'">'.$i.'</a></li>';
 							} ?>
 
             </ul>
