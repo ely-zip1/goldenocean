@@ -408,14 +408,14 @@ select option {
   color: white !important;
 }
 
-.payment-row{
+.paymentrow{
   display: flex;
 }
 .paybox{
-  width:10%;
+  width:12%;
 }
 .paybox img{
-  width: auto;
+  width: 100%;
 }
 
 footer {
