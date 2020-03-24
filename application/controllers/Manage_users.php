@@ -21,10 +21,10 @@ class Manage_users extends CI_Controller
     $this->load->model('Referral_codes');
   }
 
-  public function index($offset,$limit)
+  public function index($offset = 0)
   {
     $my_offset = $offset;
-    $my_limit = $limit;
+    $my_limit = 10;
     $member_list = $this->Members->get_members_offset_limit($my_offset, $my_limit);
 
     $total_members = $this->Members->count_members;

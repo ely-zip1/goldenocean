@@ -52,3 +52,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'login';
 $route['my/ref/(:any)'] = 'registration/index/$1';
+$route['manage_users/(:any)'] = 'manage_users/index/$1';
