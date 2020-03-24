@@ -408,6 +408,10 @@ select option {
   color: white !important;
 }
 
+.prefooter{
+  display: flex;
+}
+
 footer {
   height: 100px;
   background: linear-gradient(90deg, #00222e, #005579);
