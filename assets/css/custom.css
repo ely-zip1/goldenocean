@@ -413,18 +413,18 @@ footer {
   background: linear-gradient(90deg, #00222e, #005579);
   margin-top: 20px;
 }
-.paymentrow {
-    margin: 5px 0;
+/* .paymentrow {
+    /* margin: 5px 0;
     width: 100%;
     float: left;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-content: center;
-}
-.paymentrow .paybox {
+    align-content: center; */
+} */
+/* .paymentrow .paybox {
     background: linear-gradient(90deg, rgba(213,230,248,1) 0%, rgba(255,255,255,1) 100%);
-}
+} */
 
 .deposit-row{
   margin-top: 20px !important;
