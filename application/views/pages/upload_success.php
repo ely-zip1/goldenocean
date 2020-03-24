@@ -11,12 +11,15 @@
 
     <h3>Your image was successfully uploaded!</h3>
 
-    <ul>
+    <!-- <ul>
       <?php foreach ($upload_data as $item => $value):?>
         <li><?php echo $item;?>: <?php echo $value;?></li>
       <?php endforeach; ?>
-    </ul>
+    </ul> -->
 
+    <a href="<?php echo base_url('account_settings'); ?>" class="btn btn-icon icon-left rounded-button">
+      <i class="fas fa-arrow-left"></i> Back to Account Settings
+    </a>
   </section>
 </div>
 
