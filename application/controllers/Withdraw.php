@@ -61,7 +61,7 @@ class Withdraw extends CI_Controller
     $data['withdrawal_history'] = $withdrawal_history;
 
     $this->form_validation->set_rules('plan_payment_mode', 'Payment Mode', 'required');
-    $this->form_validation->set_rules('withdraw_amount', 'Withdraw Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_amount|callback_has_pending');
+    $this->form_validation->set_rules('withdraw_amount', 'Withdraw Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|greater_than_equal_to[10]|callback_valid_amount|callback_has_pending');
 
     if ($this->form_validation->run() == FALSE) {
       if(isset($_POST['plan_payment_mode'])){
