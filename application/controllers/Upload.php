@@ -22,6 +22,7 @@ class Upload extends CI_Controller {
                 $config['max_height']           = 768;
 
                 $this->load->library('upload', $config);
+                $this->upload->initialize($config);
 
                 if ( ! $this->upload->do_upload('userfile'))
                 {
