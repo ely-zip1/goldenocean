@@ -117,8 +117,8 @@
 										<th scope="col">Status</th>
 									</tr>
 									<?php
-									if(isset($ultramax_deposit_data)){
-									foreach ($ultramax_deposit_data as $row){?>
+									if(isset($withdrawal_history)){
+									foreach ($withdrawal_history as $row){?>
 								  	<tr>
 											<td>$ <?php echo $row['amount']; ?></td>
 											<td><?php echo $row['mode']; ?></td>

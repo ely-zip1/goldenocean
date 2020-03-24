@@ -48,8 +48,13 @@ class Withdraw extends CI_Controller
     foreach ($all_withdrawals as $withdrawal) {
         $history = array();
         $history['amount'] = $withdrawal->amount;
-        // $history['mode'] = $withdrawal->payment_method == $;
+        $history['mode'] = $withdrawal->payment_method;
+        $history['date'] = $withdrawal->date;
+        $history['status'] = ($withdrawal->is_pending == 1)?'Pending':'Fulfilled';
+
+        array_push($withdrawal_history, $history);
     }
+    $data['withdrawal_history'] = $withdrawal_history;
 
     $this->form_validation->set_rules('plan_payment_mode', 'Payment Mode', 'required');
     $this->form_validation->set_rules('withdraw_amount', 'Withdraw Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_amount');
