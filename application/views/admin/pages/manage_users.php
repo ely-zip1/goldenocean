@@ -10,6 +10,15 @@
 					<div class="login-brand">
 						<h4>Registered Users</h4>
 					</div>
+					<div class="">
+						<ul class="pagination">
+
+							<?php for ($i=1; $i <= $total_pages; $i++) {
+								echo '<li class="page-item"><a class="page-link" href="'.base_url().'manage_users/'.$i*10'">'.$i.'</a></li>';
+							} ?>
+
+            </ul>
+					</div>
 					<div class="card card-info">
 						<div class="card-body">
                             <!-- <nav aria-label="Page navigation">

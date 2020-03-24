@@ -21,12 +21,20 @@ class Manage_users extends CI_Controller
     $this->load->model('Referral_codes');
   }
 
-  public function index()
+  public function index($offset,$limit)
   {
-    $offset = 0;
-    $limit = 0;
-    $member_list = $this->Members->get_members_offset_limit($offset, $limit);
+    $my_offset = $offset;
+    $my_limit = $limit;
+    $member_list = $this->Members->get_members_offset_limit($my_offset, $my_limit);
 
+    $total_members = $this->Members->count_members;
+    $total_pages = $total_members /10;
+
+    if(($total_members % 10) > 0){
+      $total_pages += 1;
+    }
+
+    $data['total_pages'] = $total_pages;
     $data['title'] = 'Manage Users';
 
     $users_data = array();
