@@ -51,10 +51,10 @@ class Your_deposits extends CI_Controller
 
           $payment_mode = $this->Deposit_Options->get_by_id($deposit->deposit_options_id);
           $panamax['mode'] = $payment_mode->name;
-          $ultramax['send_to'] = $payment_mode->account;
+          $panamax['send_to'] = $payment_mode->account;
           $panamax['date'] = $deposit->date;
           $panamax['date_approved'] = $deposit->date_approved;
-          $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          $panamax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
 
           array_push($panamax_deposit_data, $panamax);
         }
@@ -64,10 +64,10 @@ class Your_deposits extends CI_Controller
 
           $payment_mode = $this->Deposit_Options->get_by_id($deposit->deposit_options_id);
           $capesize['mode'] = $payment_mode->name;
-          $ultramax['send_to'] = $payment_mode->account;
+          $capesize['send_to'] = $payment_mode->account;
           $capesize['date'] = $deposit->date;
           $capesize['date_approved'] = $deposit->date_approved;
-          $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          $capesize['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
 
           array_push($capesize_deposit_data, $capesize);
         }
