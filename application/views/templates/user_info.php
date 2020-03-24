@@ -1,6 +1,6 @@
 <div class="col-12 user-basic-info">
   <div class="row">
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-left">
       <!-- <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img"> -->
       <?php
         if($this->session->image_orientation == 'landscape'){
