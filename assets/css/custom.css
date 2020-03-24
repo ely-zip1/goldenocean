@@ -413,7 +413,10 @@ footer {
   background: linear-gradient(90deg, #00222e, #005579);
   margin-top: 20px;
 }
-
+.paymentwrap{
+  text-align: center;
+  vertical-align: middle;
+}
 .paymentrow{
   margin: 20px 0px;
   display: flex;
