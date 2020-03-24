@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class Approved_withdrawals extends CI_Controller
 {
-    
+
   public function __construct()
   {
     parent::__construct();
@@ -26,16 +26,15 @@ class Approved_withdrawals extends CI_Controller
       if(!$this->Members->is_exist($approved->member_id)){
         continue;
       }
-      
+
       $member_data = $this->Members->get_member_by_id($approved->member_id);
 
       $temp = array();
       $temp['id'] = $approved->id;
-      $temp['client_name'] = ucfirst($member_data->first_name) . ' ' . ucfirst($member_data->last_name);
+      $temp['client_name'] = ucfirst($member_data->full_name);
       $temp['amount'] = $approved->amount;
-      $temp['amount_with_charges'] = $member_data->email_address;
       $temp['email'] = $member_data->email_address;
-      $temp['mode'] = 'Bitcoin';
+      $temp['mode'] = $approved->payment_method;
       $temp['date'] = $approved->date;
       $temp['date_approved'] = $approved->date_approved;
 
