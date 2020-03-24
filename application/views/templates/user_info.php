@@ -14,7 +14,7 @@
         }
        ?>
         <img src="<?php
-        if(strlen($this->session->image_name > 0)){
+        if(strlen($this->session->image_name) > 0){
           echo base_url().'uploads/'.$this->session->image_name;
         }else{
           echo base_url('assets/img/user-logo.png');
