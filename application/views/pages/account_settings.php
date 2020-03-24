@@ -100,7 +100,7 @@
 								<div class="form-group col-md-4">
 		              <label for="bank_name">Bank Name
 		              </label>
-		              <input id="bank_name" type="text" value="<?= set_value('bank_name','',true)?>"
+		              <input id="bank_name" type="text" value="<?= if(!isset(set_value('bank_name','',true)){echo $bank_name;}?>"
 		                     class="form-control <?php if(strlen(form_error('bank_name')) > 0){echo "is-invalid";} ?>" name="bank_name"
 		                     autofocus />
 		              <div class="invalid-feedback">
