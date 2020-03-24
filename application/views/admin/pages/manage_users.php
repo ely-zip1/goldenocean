@@ -27,7 +27,6 @@
 									<tr>
 										<th>Client Name</th>
 										<th>Email</th>
-										<th>Phone No.</th>
 										<th>Total Deposit</th>
 										<th>Date Joined</th>
 										<th>Referred By</th>
@@ -37,9 +36,8 @@
 								<tbody>
 									<?php foreach ($users as $user) { ?>
 									<tr>
-										<td><?php echo $user['fname']. ' ' .$user['lname']; ?></td>
+										<td><?php echo $user['full_name']; ?></td>
 										<td><?php echo $user['email']; ?></td>
-										<td><?php echo $user['phone']; ?></td>
 										<td>$ <?php echo number_format($user['total_deposit'],2); ?></td>
 										<td><?php echo $user['date_joined']; ?></td>
 										<td><?php echo $user['referred_by']; ?></td>
