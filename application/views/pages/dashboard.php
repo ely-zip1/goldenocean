@@ -111,10 +111,7 @@
           </div>
         </div>
       </div>
-		</div>
-
-	</section>
-</div>
+		<?php $this->load->view('pages/prefooter'); ?>
 
 <script type="text/javascript">
 	function copyToClipboard(element) {

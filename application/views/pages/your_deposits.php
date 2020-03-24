@@ -133,6 +133,4 @@
         </div>
       </div>
 
-    </div>
-	</section>
-</div>
+    <?php $this->load->view('pages/prefooter'); ?>
