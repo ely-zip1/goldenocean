@@ -35,7 +35,7 @@ class Withdrawals_admin extends CI_Controller
       $temp = array();
       $temp['id'] = $pending->id;
       $temp['member_id'] = $member_data->id;
-      $temp['client_name'] = ucfirst($member_data->first_name) . ' ' . ucfirst($member_data->last_name);
+      $temp['client_name'] = ucfirst($member_data->full_name);
 
       $taxed_amount = $pending->amount - ($pending->amount * 0.10);
       $temp['amount'] = number_format($taxed_amount, 2);
@@ -85,38 +85,39 @@ class Withdrawals_admin extends CI_Controller
                                       </div>
                                   ";
 
-      } else if($mode->description == 'remittance') {
-        $remit = $this->Remittance_model->get_per_member_id($member_data->id);
-
-        $temp['mode'] = ucfirst($mode->description);
-        $temp['pop_over_title'] = "Remittance";
-        $temp['pop_over_text'] = "<div class='form-group'>
-                                        <strong class='mr-4'>Remittance Center</strong></br>
-                                        <label>" . $remit->remittance_center . "</label>
-                                      </div>
-                                      <div class='form-group'>
-                                        <strong class='mr-4'>First Name</strong></br>
-                                        <label>" . $remit->first_name . "</label>
-                                      </div>
-                                      <div class='form-group'>
-                                        <strong class='mr-4'>Middle Name</strong></br>
-                                        <label>" . $remit->middle_name . "</label>
-                                      </div>
-                                      <div class='form-group'>
-                                        <strong class='mr-4'>Last Name</strong></br>
-                                        <label>" . $remit->last_name . "</label>
-                                      </div>
-                                      <div class='form-group'>
-                                        <strong class='mr-4'>Address</strong></br>
-                                        <label>" . $remit->address . "</label>
-                                      </div>
-                                      <div class='form-group'>
-                                        <strong class='mr-4'>Phone Number</strong></br>
-                                        <label>" . $remit->first_name . "</label>
-                                      </div>
-                                  ";
-
       }
+      // else if($mode->description == 'remittance') {
+      //   $remit = $this->Remittance_model->get_per_member_id($member_data->id);
+      //
+      //   $temp['mode'] = ucfirst($mode->description);
+      //   $temp['pop_over_title'] = "Remittance";
+      //   $temp['pop_over_text'] = "<div class='form-group'>
+      //                                   <strong class='mr-4'>Remittance Center</strong></br>
+      //                                   <label>" . $remit->remittance_center . "</label>
+      //                                 </div>
+      //                                 <div class='form-group'>
+      //                                   <strong class='mr-4'>First Name</strong></br>
+      //                                   <label>" . $remit->first_name . "</label>
+      //                                 </div>
+      //                                 <div class='form-group'>
+      //                                   <strong class='mr-4'>Middle Name</strong></br>
+      //                                   <label>" . $remit->middle_name . "</label>
+      //                                 </div>
+      //                                 <div class='form-group'>
+      //                                   <strong class='mr-4'>Last Name</strong></br>
+      //                                   <label>" . $remit->last_name . "</label>
+      //                                 </div>
+      //                                 <div class='form-group'>
+      //                                   <strong class='mr-4'>Address</strong></br>
+      //                                   <label>" . $remit->address . "</label>
+      //                                 </div>
+      //                                 <div class='form-group'>
+      //                                   <strong class='mr-4'>Phone Number</strong></br>
+      //                                   <label>" . $remit->first_name . "</label>
+      //                                 </div>
+      //                             ";
+      //
+      // }
 
       array_push($withdrawal_data, $temp);
     }
