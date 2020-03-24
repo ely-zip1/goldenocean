@@ -428,8 +428,8 @@ footer {
 .circular--landscape {
   display: inline-block;
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
   border-radius: 50%;
 }
