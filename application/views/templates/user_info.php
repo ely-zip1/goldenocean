@@ -13,7 +13,12 @@
           echo '<div class="circular--square">';
         }
        ?>
-        <img src="<?php echo base_url('uploads/'); echo $this->session->image_name;?>" />
+        <img src="<?php
+        if(strlen($this->session->image_name > 0)){
+          echo base_url().'uploads/'.$this->session->image_name;
+        }else{
+          echo base_url('assets/img/user-logo.png');
+        }?>" />
       </div>
     </div>
     <div class="col-md-6">
