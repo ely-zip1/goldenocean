@@ -1,6 +1,6 @@
 <div class="col-12 user-basic-info">
   <div class="row">
-    <div class="col-md-3 text-left">
+    <div class="col-md-3 text-center">
       <!-- <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img"> -->
       <?php
         if($this->session->image_orientation == 'landscape'){
@@ -21,7 +21,7 @@
         }?>" />
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 text-center">
       <h4>WELCOME BACK, <?php echo strtoupper($this->session->userdata('username')); ?></h4>
       <p>
         Signup Date: <span class="bold-text"> <?php echo strtoupper($this->session->userdata('date_registered')); ?></span><br>
