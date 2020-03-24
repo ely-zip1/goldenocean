@@ -411,7 +411,7 @@ select option {
 
 footer {
   height: 100px;
-  background: #00222e;
+  background: linear-gradient(90deg, #00222e, #005579);
   margin-top: 20px;
 }
 
