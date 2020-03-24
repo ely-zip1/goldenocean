@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+print_r($this->session->all_userdata());
 
 if(!isset($this->session->username)){
   redirect('login');
