@@ -286,4 +286,4 @@
 				<?php echo form_close(); ?>
 			</div>
 
-    <?php $this->load->view('prefooter'); ?>
+    <?php $this->load->view('pages/prefooter'); ?>
