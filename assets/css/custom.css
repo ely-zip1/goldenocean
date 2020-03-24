@@ -447,6 +447,7 @@ footer {
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
+  border: 5px solid white;
 }
 
 .circular--portrait img {
@@ -456,4 +457,5 @@ footer {
 
 .circular--square img{
   border-radius: 50%;
+  border: 5px solid white;
 }
