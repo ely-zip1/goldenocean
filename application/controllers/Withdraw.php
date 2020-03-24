@@ -38,8 +38,8 @@ class Withdraw extends CI_Controller
     $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
 
     $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
-    $data['account_balance'] = $account_balance;
-    $data['pending_withdrawal'] = $pending_withdrawal->total;
+    $data['account_balance'] = number_format($account_balance, 2, '.', ',');
+    $data['pending_withdrawal'] = number_format($pending_withdrawal->total, 2, '.', ',');
 
     $data['selected_mode'] = 'mode1';
 
