@@ -422,11 +422,11 @@ select option {
   width: 100%;
 }
 
-footer {
+/* footer {
   height: 100px;
   background: linear-gradient(90deg, #00222e, #005579);
   margin-top: 20px;
-}
+} */
 
 
 .deposit-row{
