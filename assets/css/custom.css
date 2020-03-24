@@ -408,6 +408,10 @@ select option {
   color: white !important;
 }
 
+.prefooter-row{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .paymentrow{
   display: flex;
 }
