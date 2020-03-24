@@ -27,7 +27,7 @@ class Manage_users extends CI_Controller
     $my_limit = 10;
     $member_list = $this->Members->get_members_offset_limit($my_offset, $my_limit);
 
-    $total_members = $this->Members->count_members;
+    $total_members = $this->Members->count_members();
     $total_pages = $total_members /10;
 
     if(($total_members % 10) > 0){
