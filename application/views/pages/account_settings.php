@@ -30,7 +30,7 @@
                 </tr>
               </tbody>
             </table>
-            <?php isset($error)? echo $error; : echo '';?>
+            <?php if(isset($error)){echo $error;}?>
 
             <?php echo form_open_multipart('upload/do_upload');?>
 
