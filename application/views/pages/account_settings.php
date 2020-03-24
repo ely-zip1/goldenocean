@@ -48,7 +48,7 @@
 						<div class="form-group">
 							<label for="new_password" class="form-label">New Password</label>
 							<input type="password" name="new_password"
-								class="form-control <?php if(strlen(form_error('new_password')) > 0){echo "is-invalid";} ?>">
+								class="form-control <?php if(strlen(form_error('new_password')) > 0){echo "is-invalid";} ?>" autofocus>
 							<div class="invalid-feedback">
 								<?php echo form_error('new_password');?>
 							</div>
