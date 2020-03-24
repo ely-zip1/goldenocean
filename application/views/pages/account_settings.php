@@ -34,11 +34,10 @@
 
             <?php echo form_open_multipart('upload/do_upload');?>
 
-            <input class="form-control" type="file" name="userfile" size="20" />
+            <input class="btn" type="file" name="userfile" size="20" style="margin:20px;"/>
 
-            <br /><br />
 
-            <input class="form-control" type="submit" value="upload" />
+            <input class="btn btn-lg rounded-button" type="submit" value="upload" />
 
             </form>
           </div>
