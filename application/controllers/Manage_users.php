@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Manage_users extends CI_Controller
 {
-    
+
   public function __construct()
   {
     parent::__construct();
@@ -29,7 +29,7 @@ class Manage_users extends CI_Controller
     $data['title'] = 'Manage Users';
 
     $users_data = array();
-    
+
     foreach($member_list as $member){
       if($member->account_type_id != '2'){
         continue;
@@ -45,13 +45,11 @@ class Manage_users extends CI_Controller
       }
 
       $temp['id'] = $member->id;
-      $temp['fname'] = $member->first_name;
-      $temp['lname'] = $member->last_name;
+      $temp['full_name'] = $member->full_name;
       $temp['email'] = $member->email_address;
-      $temp['phone'] = $member->contact_number;
       $temp['date_joined'] = $member->date;
       $temp['total_deposit'] = $total_deposit;
-      $temp['referred_by'] = $referrer->first_name. ' '. $referrer->last_name;
+      $temp['referred_by'] = $referrer->full_name;
 
       array_push($users_data, $temp);
     }
