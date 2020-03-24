@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+</body>
       <!-- <footer class="main-footer">
         <div class="footer-left">
 
@@ -43,6 +44,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url('assets/js/clipboard.js-master/dist/clipboard.min.js'); ?>"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"></script>
-
-</body>
-</html>
