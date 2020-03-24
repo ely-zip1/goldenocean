@@ -413,12 +413,14 @@ select option {
   background: linear-gradient(90deg, #00222e, #005579);
   margin-top: 20px;
 } */
+.prefooter-content{
+  height: 100px !important;
+}
 .paymentwrap{
-  text-align: center;
   vertical-align: middle;
 }
 .paymentrow{
-  margin: 20px 0px;
+  margin: 0px;
   display: flex;
 }
 .paybox{
@@ -426,6 +428,10 @@ select option {
   width: 10%;
   background: linear-gradient(90deg, rgba(213,230,248,1) 0%, rgba(255,255,255,1) 100%);
 }
+.paybox img{
+  width: 100%;
+}
+
 .deposit-row{
   margin-top: 20px !important;
 }
