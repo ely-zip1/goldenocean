@@ -5,8 +5,11 @@
 <body> -->
 <div class="main-content">
   <section class="section">
+    <div class="section-header section-header-custom">
+      <h1>Image Upload</h1>
+    </div>
 
-    <h3>Your file was successfully uploaded!</h3>
+    <h3>Your image was successfully uploaded!</h3>
 
     <ul>
       <?php foreach ($upload_data as $item => $value):?>
