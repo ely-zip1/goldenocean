@@ -18,6 +18,7 @@ class Manage_users extends CI_Controller
     $this->load->model('Remittance_model');
     $this->load->model('DepositModel');
     $this->load->model('ReferralModel');
+    $this->load->model('Referral_codes');
   }
 
   public function index()
@@ -38,6 +39,7 @@ class Manage_users extends CI_Controller
       $deposit_data = $this->DepositModel->get_deposit_per_member($member->id);
       $referred_by = $this->ReferralModel->get_referrer($member->id);
       $referrer = $this->Members->get_member_by_id($referred_by->referrer_id);
+      $referral_code = $this->Referral_codes->get_members_code($member->referral_code_id);
 
       $total_deposit = 0;
       foreach($deposit_data as $deposit){
@@ -50,6 +52,7 @@ class Manage_users extends CI_Controller
       $temp['date_joined'] = $member->date;
       $temp['total_deposit'] = $total_deposit;
       $temp['referred_by'] = $referrer->full_name;
+      $temp['referral_code'] = $referral_code->code;
 
       array_push($users_data, $temp);
     }
