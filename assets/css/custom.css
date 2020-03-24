@@ -432,8 +432,7 @@ footer {
   height: 150px;
   overflow: hidden;
   border-radius: 50%;
-  border-width: thin;
-  border-color: white;
+  border: 5px solid white;
 }
 
 .circular--landscape img {
