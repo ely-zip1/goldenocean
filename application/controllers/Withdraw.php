@@ -38,6 +38,10 @@ class Withdraw extends CI_Controller
     $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
 
     $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
+    if($account_balance < 10){
+      $data['withdrawable'] = 'not withdrawable';
+    }
+
     $data['account_balance'] = number_format($account_balance, 2, '.', ',');
     $data['pending_withdrawal'] = number_format($pending_withdrawal->total, 2, '.', ',');
 
