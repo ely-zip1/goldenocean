@@ -75,6 +75,8 @@ class Upload extends CI_Controller
       $member = $this->Members->get_member($this->session->username);
       $this->Members->update_member($image_data, $member->id);
 
+      $this->session->set_userdata('image_name','orig_name');
+      
       $this->load->view('templates/header', $data);
       $this->load->view('pages/upload_success', $data);
       $this->load->view('templates/footer');
