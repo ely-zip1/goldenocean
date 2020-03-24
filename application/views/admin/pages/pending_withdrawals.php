@@ -21,7 +21,6 @@
 										<th>Amount Requested</th>
 										<th>Payment Mode</th>
 										<th>Clients's Email</th>
-										<th>Phone No.</th>
 										<th>Date</th>
 										<th>Action</th>
 									</tr>
@@ -35,7 +34,6 @@
 										<td>$ <?php echo $item['amount']; ?></td>
 										<td><?php echo $item['mode']; ?></td>
 										<td><?php echo $item['email']; ?></td>
-										<td><?php echo $item['phone']; ?></td>
 										<td><?php
                                                 $date=date_create($item['date']);
                                                 echo date_format($date,"M d, Y h:i A"); ?></td>
