@@ -137,7 +137,7 @@ class Withdraw extends CI_Controller
 
   public function has_pending(){
     $member = $this->Members->get_member($this->session->username);
-    $pending_amount = $this->WithdrawalModel->get_pending_withdrawal($member->id);
+    $pending_amount = $this->WithdrawalModel->get_pending_withdrawal($member->id)->total;
 
     $total_growth = $this->DepositModel->get_total_growth($member->id);
     $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
