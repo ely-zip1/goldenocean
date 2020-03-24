@@ -455,6 +455,10 @@ footer {
   height: auto;
 }
 
+.circular--square {
+  width: 150px;
+  height: 150px;
+}
 .circular--square img{
   border-radius: 50%;
   border: 5px solid white;
