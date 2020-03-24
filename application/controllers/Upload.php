@@ -44,7 +44,8 @@ class Upload extends CI_Controller {
                 }
                 else
                 {
-                        $data['upload_data'] = array('upload_data' => $this->upload->data());
+                  // $data['upload_data'] = array('upload_data' => $this->upload->data());
+                  $data['upload_data'] = $this->upload->data();
 
                         $this->load->view('templates/header', $data);
                         $this->load->view('pages/upload_success', $data);
