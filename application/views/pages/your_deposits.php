@@ -53,6 +53,7 @@
 										<th scope="col">Send to</th>
 										<th scope="col">Date Created</th>
 										<th scope="col">Status</th>
+										<th scope="col">Remaining days</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -65,6 +66,7 @@
 											<td><?php echo $row['send_to']; ?></td>
 											<td><?php echo $row['date']; ?></td>
 											<td><?php echo $row['status']; ?></td>
+											<td><?php echo $row['days_remaining']; ?></td>
 										</tr>
 									<?php }}?>
 								</tbody>
@@ -89,6 +91,7 @@
 										<th scope="col">Send to</th>
 										<th scope="col">Date Created</th>
 										<th scope="col">Status</th>
+										<th scope="col">Remaining days</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -101,6 +104,7 @@
 											<td><?php echo $row['send_to']; ?></td>
 											<td><?php echo $row['date']; ?></td>
 											<td><?php echo $row['status']; ?></td>
+											<td><?php echo $row['days_remaining']; ?></td>
 										</tr>
 									<?php }}?>
 								</tbody>
@@ -125,6 +129,7 @@
 										<th scope="col">Send to</th>
 										<th scope="col">Date Created</th>
 										<th scope="col">Status</th>
+										<th scope="col">Remaining days</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -137,6 +142,7 @@
 											<td><?php echo $row['send_to']; ?></td>
 											<td><?php echo $row['date']; ?></td>
 											<td><?php echo $row['status']; ?></td>
+											<td><?php echo $row['days_remaining']; ?></td>
 										</tr>
 									<?php }}?>
 								</tbody>

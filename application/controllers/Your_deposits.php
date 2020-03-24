@@ -26,6 +26,9 @@ class Your_deposits extends CI_Controller
     $ultramax_deposit_data = array();
     $panamax_deposit_data = array();
     $capesize_deposit_data = array();
+    $ultramax_days = 120;
+    $panamax_days = 90;
+    $capesize_days = 60;
 
     foreach ($deposits as $deposit) {
       if($deposit->is_pending == 0){
@@ -42,6 +45,11 @@ class Your_deposits extends CI_Controller
           $ultramax['date'] = $deposit->date;
           $ultramax['date_approved'] = $deposit->date_approved;
           $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          if($deposit->is_pending == 1){
+            $ultramax['days_remaining'] = 'n/a';
+          }else{
+            $ultramax['days_remaining'] = calculate_remaining_days($ultramax_days, $deposit->date_approved);
+          }
 
           array_push($ultramax_deposit_data, $ultramax);
         }
@@ -55,6 +63,11 @@ class Your_deposits extends CI_Controller
           $panamax['date'] = $deposit->date;
           $panamax['date_approved'] = $deposit->date_approved;
           $panamax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          if($deposit->is_pending == 1){
+            $panamax['days_remaining'] = 'n/a';
+          }else{
+            $panamax['days_remaining'] = calculate_remaining_days($panamax_days, $deposit->date_approved);
+          }
 
           array_push($panamax_deposit_data, $panamax);
         }
@@ -68,6 +81,11 @@ class Your_deposits extends CI_Controller
           $capesize['date'] = $deposit->date;
           $capesize['date_approved'] = $deposit->date_approved;
           $capesize['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          if($deposit->is_pending == 1){
+            $capesize['days_remaining'] = 'n/a';
+          }else{
+            $capesize['days_remaining'] = calculate_remaining_days($capesize_days, $deposit->date_approved);
+          }
 
           array_push($capesize_deposit_data, $capesize);
         }
@@ -81,6 +99,16 @@ class Your_deposits extends CI_Controller
     $this->load->view('templates/header', $data);
     $this->load->view('pages/your_deposits', $data);
     $this->load->view('templates/footer');
+  }
+
+  public function calculate_remaining_days($contract_days, $date_approved){
+    $start_date = new DateTime($date_approved);
+    $end_date = DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+
+    $difference = $start_date->diff($end_date);
+    $remaining_days = $contract_days - $difference->d;
+
+    return $remaining_days;
   }
 
 }
