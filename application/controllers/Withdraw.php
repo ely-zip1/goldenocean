@@ -107,6 +107,8 @@ class Withdraw extends CI_Controller
         $withdrawal_data['is_pending'] = 1;
 
         $this->WithdrawalModel->add_new_withdrawal($withdrawal_data);
+
+        redirect('withdraw','refresh');
     }
 
   }
