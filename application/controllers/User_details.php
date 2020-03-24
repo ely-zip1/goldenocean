@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User_details extends CI_Controller
 {
-    
+
   public function __construct()
   {
     parent::__construct();
@@ -23,7 +23,7 @@ class User_details extends CI_Controller
 
   public function index()
   {
-    // 
+    //
   }
 
   public function show($member_id){
@@ -37,11 +37,9 @@ class User_details extends CI_Controller
     $remittance_acc = array();
 
     $member_data = array(
-      'name' => $member->first_name . ' ' . $member->last_name,
+      'name' => $member->full_name,
       'email' => $member->email_address,
-      'date' => $member->date,
-      'address' => $member->street.', '.$member->barangay.', '.$member->city.', '.$member->province.', '.$member->zipcode.', '.$member->country,
-      'income' => $member->source_of_income
+      'date' => $member->date
     );
 
     $data['member_data'] = $member_data;
@@ -53,15 +51,11 @@ class User_details extends CI_Controller
     foreach($deposit_data as $deposit){
       $deposit_option = $this->Deposit_Options->get_by_id($deposit->deposit_options_id);
       $package = $this->PackageModel->get_package_by_id($deposit->package_id);
-      
+
       $deposit_temp = array();
       $deposit_temp['package'] = $package->package_name;
       $deposit_temp['amount'] = number_format($deposit->amount,2);
-      if($deposit_option->name == 'Bitcoin'){
-        $deposit_temp['mode'] = 'Coins.ph';
-      }else{
-        $deposit_temp['mode'] = $deposit_option->name;
-      }
+      $deposit_temp['mode'] = $deposit_option->name;
       $deposit_temp['pending'] = $deposit->is_pending == '0'?'Fulfilled':'Pending';
       $deposit_temp['expired'] = $deposit->is_expired == '0'?'No':'Yes';
 
@@ -77,7 +71,6 @@ class User_details extends CI_Controller
 
     $withdrawals = array();
     foreach($withdrawal_data as $withdrawal){
-      $payment_method = $this->Withdrawal_Mode_model->get_by_id($withdrawal->payment_method_id);
 
       $withdrawal_temp = array(
         'amount' => number_format($withdrawal->amount,2),
@@ -85,12 +78,8 @@ class User_details extends CI_Controller
         'approve_date' => $withdrawal->date_approved,
         'pending' => $withdrawal->is_pending == '1'?'Pending':'Fulfilled'
       );
-      
-      if($payment_method->description == 'bitcoin'){
-        $withdrawal_temp['method'] = 'Coins.ph';
-      }else{
-        $withdrawal_temp['method'] = ucfirst($payment_method->description);
-      }
+
+      $withdrawal_temp['method'] = ucfirst($withdrawal->payment_method);
 
       array_push($withdrawals, $withdrawal_temp);
     }
@@ -105,11 +94,9 @@ class User_details extends CI_Controller
     foreach($referee_data as $referee){
       $downline_data = $this->Members->get_member_by_id($referee->referee_id);
       $downline = array(
-        'name' => $downline_data->first_name . ' ' . $downline_data->last_name,
+        'name' => $downline_data->full_name,
         'email' => $downline_data->email_address,
-        'phone' => $downline_data->contact_number,
-        'date' => $downline_data->date,
-        'income' => $downline_data->source_of_income
+        'date' => $downline_data->date
       );
       array_push($referrals, $downline);
     }
