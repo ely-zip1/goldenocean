@@ -32,7 +32,7 @@ class Upload extends CI_Controller {
                 {
                         $error = array('error' => $this->upload->display_errors());
 
-                        $this->session->set_userdata($error);
+                        $this->session->set_flashdata($error);
 
                         // $this->load->view('pages/upload_form', $error);
                         redirect('account_settings','refresh');
