@@ -1,12 +1,12 @@
 <div class="col-12 user-basic-info">
   <div class="row">
-    <div class="col-md-2 text-center">
+    <div class="col-md-3 text-center">
       <!-- <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img"> -->
       <div class="circular--landscape">
         <img src="<?php echo base_url('uploads/ultra.jpg'); ?>" />
       </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6">
       <h4>WELCOME BACK, <?php echo strtoupper($this->session->userdata('username')); ?></h4>
       <p>
         Signup Date: <span class="bold-text"> <?php echo strtoupper($this->session->userdata('date_registered')); ?></span><br>
