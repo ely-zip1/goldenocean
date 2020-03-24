@@ -29,6 +29,12 @@ class Account_settings extends CI_Controller
 		$data['email_address'] = $member_data->email_address;
 		$data['full_name'] = $member_data->full_name;
 
+		$bank = $this->Bank_model->get_per_member_id($member_data->id);
+
+		$data['bank_name'] = $bank->bank_name;
+		$data['bank_account_name'] = $bank->account_name;
+		$data['bank_account_number'] = $bank->account_number;
+
 		if(isset($_POST['account_submit'])){
 			if($_POST['account_submit'] == 'reset_password'){
 				$this->form_validation->set_rules('new_password', 'New Password', 'required|min_length[6]');
