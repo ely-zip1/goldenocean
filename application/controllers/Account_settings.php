@@ -21,7 +21,8 @@ class Account_settings extends CI_Controller
 		$data = array(
 			'title' => "Account Settings"
 		);
-		$this->output->clear_all_cache();
+		
+		$this->output->delete_cache();
 		redirect($_SERVER[base_url('account_settings')], 'refresh');
 
 
