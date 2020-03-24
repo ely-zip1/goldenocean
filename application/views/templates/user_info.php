@@ -2,8 +2,18 @@
   <div class="row">
     <div class="col-md-3 text-center">
       <!-- <img src="<?php echo base_url('assets/img/user-logo.png'); ?>" alt="" class="user-img"> -->
-      <div class="circular--landscape">
-        <img src="<?php echo base_url('uploads/ultra.jpg'); ?>" />
+      <?php
+        if($this->session->image_orientation == 'landscape'){
+          echo '<div class="circular--landscape">';
+        }
+        else if($this->session->image_orientation == 'portrait'){
+          echo '<div class="circular--portrait">';
+        }
+        else{
+          echo '<div class="circular--square">';
+        }
+       ?>
+        <img src="<?php echo base_url('uploads/'); echo $this->session->image_name;?>" />
       </div>
     </div>
     <div class="col-md-6">

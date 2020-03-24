@@ -130,6 +130,11 @@
             $this->db->where('email_address', $email);
             $this->db->update('td_members');
         }
+
+        public function update_member($data, $member_id){
+          $this->db->where('member_id', $member_id);
+          $this->db->update('td_members', $data);
+        }
     }
 
 
