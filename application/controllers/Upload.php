@@ -33,6 +33,7 @@ class Upload extends CI_Controller
     $config['max_width']     = 1024;
     $config['max_height']    = 768;
     $config['file_name']     = $this->session->username;
+    $config['overwrite']     = true;
 
     $this->load->library('upload', $config);
     $this->upload->initialize($config);
