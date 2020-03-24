@@ -48,7 +48,7 @@ class Withdraw extends CI_Controller
     foreach ($all_withdrawals as $withdrawal) {
         $history = array();
         $history['amount'] = $withdrawal->amount;
-        $history['mode'] = $withdrawal->payment_method_id == $;
+        // $history['mode'] = $withdrawal->payment_method_id == $;
     }
 
     $this->form_validation->set_rules('plan_payment_mode', 'Payment Mode', 'required');

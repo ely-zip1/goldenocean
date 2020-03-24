@@ -25,10 +25,11 @@
         public function has_deposit($member_id){
             $this->db->where('member_id',$member_id);
             $query = $this->db->get('td_deposits',1);
-            if($query->row()->amount > 0){
-                return true;
+
+            if($query->num_rows() > 0){
+              return true;
             }else{
-                return false;
+              return false;
             }
         }
 
