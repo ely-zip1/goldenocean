@@ -16,7 +16,7 @@ class Upload extends CI_Controller {
         public function do_upload()
         {
           $data= array(
-            'title' = 'Account Settings';
+            'title' = 'Account Settings'
           );
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
