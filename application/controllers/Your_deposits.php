@@ -48,7 +48,7 @@ class Your_deposits extends CI_Controller
           if($deposit->is_pending == 1){
             $ultramax['days_remaining'] = 'n/a';
           }else{
-            $ultramax['days_remaining'] = calculate_remaining_days($ultramax_days, $deposit->date_approved);
+            $ultramax['days_remaining'] = $this->calculate_remaining_days($ultramax_days, $deposit->date_approved);
           }
 
           array_push($ultramax_deposit_data, $ultramax);
@@ -66,7 +66,7 @@ class Your_deposits extends CI_Controller
           if($deposit->is_pending == 1){
             $panamax['days_remaining'] = 'n/a';
           }else{
-            $panamax['days_remaining'] = calculate_remaining_days($panamax_days, $deposit->date_approved);
+            $panamax['days_remaining'] = $this->calculate_remaining_days($panamax_days, $deposit->date_approved);
           }
 
           array_push($panamax_deposit_data, $panamax);
@@ -84,7 +84,7 @@ class Your_deposits extends CI_Controller
           if($deposit->is_pending == 1){
             $capesize['days_remaining'] = 'n/a';
           }else{
-            $capesize['days_remaining'] = calculate_remaining_days($capesize_days, $deposit->date_approved);
+            $capesize['days_remaining'] = $this->calculate_remaining_days($capesize_days, $deposit->date_approved);
           }
 
           array_push($capesize_deposit_data, $capesize);
