@@ -416,10 +416,12 @@ footer {
 
 .paymentrow{
   margin: 20px 0px;
+  display: flex;
 }
 .paybox{
   margin: 0px;
   width: 10%;
+  background: linear-gradient(90deg, rgba(213,230,248,1) 0%, rgba(255,255,255,1) 100%);
 }
 .paybox img{
   margin: 0px;
