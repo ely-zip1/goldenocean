@@ -11,8 +11,11 @@
 					</div>
 					<div class="">
 						<ul class="pagination">
-							print_r($total_pages);
-							<?php for ($i=1; $i <= $total_pages; $i++) {
+							<?php
+
+								print_r($total_pages);
+								
+							for ($i=1; $i <= $total_pages; $i++) {
 								echo '<li class="page-item">
 								<a class="page-link" href="'.base_url('manage_users/'.$i*10).'">'.$i.'</a></li>';
 							} ?>
