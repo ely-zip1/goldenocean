@@ -21,11 +21,6 @@ class Account_settings extends CI_Controller
 		$data = array(
 			'title' => "Account Settings"
 		);
-		$this->output->cache(1);
-		$this->output->delete_cache();
-
-
-		redirect($this->uri->uri_string());
 
 		$member_data = $this->Members->get_member($this->session->username);
 

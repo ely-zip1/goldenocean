@@ -17,7 +17,7 @@
       <?php endforeach; ?>
     </ul> -->
 
-    <a href="<?php echo base_url('account_settings'); ?>" class="btn btn-icon icon-left rounded-button">
+    <a href="<?php echo base_url('upload_success'); ?>" class="btn btn-icon icon-left rounded-button">
       <i class="fas fa-arrow-left"></i> Back to Account Settings
     </a>
   </section>
