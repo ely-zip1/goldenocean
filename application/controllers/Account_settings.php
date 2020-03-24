@@ -21,7 +21,9 @@ class Account_settings extends CI_Controller
 		$data = array(
 			'title' => "Account Settings"
 		);
-		redirect($_SERVER[base_url('account_settings')], 'refresh'); 
+		$this->output->clear_all_cache();
+		redirect($_SERVER[base_url('account_settings')], 'refresh');
+
 
 		$member_data = $this->Members->get_member($this->session->username);
 
