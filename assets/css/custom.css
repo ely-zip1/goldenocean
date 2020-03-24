@@ -438,7 +438,7 @@ footer {
 .circular--landscape img {
   width: auto;
   height: 100%;
-  margin-left: -50px;
+  margin-left: 0px;
 }
 
 .circular--portrait {
