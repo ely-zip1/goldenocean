@@ -73,7 +73,7 @@
 }
 
 .account-summary-1 {
-  margin-top: 20px;
+  margin-top: 0px;
   margin-right: 0px;
   padding-right: 0px;
 }
@@ -256,8 +256,7 @@
 }
 
 .interest-info {
-  /* font-weight: bolder; */
-  /* margin-bottom: 10px !important; */
+  margin-top: -10px;
 }
 
 .icon-container {
