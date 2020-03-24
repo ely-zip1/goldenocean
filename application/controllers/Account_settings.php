@@ -13,6 +13,8 @@ class Account_settings extends CI_Controller
 						$this->load->model('Bank_model');
 						$this->load->model('Withdrawal_Mode_model');
 
+						$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+
             date_default_timezone_set('Asia/Manila');
         }
 
