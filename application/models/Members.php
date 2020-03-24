@@ -132,7 +132,7 @@
         }
 
         public function update_member($data, $member_id){
-          $this->db->where('member_id', $member_id);
+          $this->db->where('id', $member_id);
           $this->db->update('td_members', $data);
         }
     }
