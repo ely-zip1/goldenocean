@@ -413,6 +413,18 @@ footer {
   background: linear-gradient(90deg, #00222e, #005579);
   margin-top: 20px;
 }
+
+.paymentrow{
+  margin: 20px 0px;
+}
+.paybox{
+  margin: 0px;
+  width: 10%;
+}
+.paybox .img{
+  margin: 0px;
+  width: 100%;
+}
 /* .paymentwrap {
     padding: 30px 0;
     background: #17516a;
