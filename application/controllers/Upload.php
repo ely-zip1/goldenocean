@@ -15,6 +15,9 @@ class Upload extends CI_Controller {
 
         public function do_upload()
         {
+          $data= array(
+            'title' = 'Account Settings';
+          );
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100;
@@ -27,15 +30,25 @@ class Upload extends CI_Controller {
 
                 if ( ! $this->upload->do_upload('userfile'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
+                        $data['error'] = array('error' => $this->upload->display_errors());
 
-                        $this->load->view('pages/upload_form', $error);
+                        // $this->load->view('pages/upload_form', $error);
+
+
+                    			$this->load->view('templates/header', $data);
+                    	    $this->load->view('pages/account_settings', $data);
+                    	    $this->load->view('templates/footer');
                 }
                 else
                 {
-                        $data = array('upload_data' => $this->upload->data());
+                        $data['data'] = array('upload_data' => $this->upload->data());
 
-                        $this->load->view('pages/upload_success', $data);
+                        // $this->load->view('pages/upload_success', $data);
+
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('pages/account_settings', $data);
+                        $this->load->view('templates/footer');
+
                 }
         }
 }
