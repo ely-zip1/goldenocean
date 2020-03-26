@@ -44,7 +44,13 @@ class Your_deposits extends CI_Controller
           $ultramax['send_to'] = $payment_mode->account;
           $ultramax['date'] = $deposit->date;
           $ultramax['date_approved'] = $deposit->date_approved;
-          $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+
+          if($deposit->deposit_options_id == 7){
+            $ultramax['status'] = 'Fulfilled';
+          }else{
+            $ultramax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          }
+
           if($deposit->is_pending == 1){
             $ultramax['days_remaining'] = 'n/a';
           }else{
@@ -62,7 +68,13 @@ class Your_deposits extends CI_Controller
           $panamax['send_to'] = $payment_mode->account;
           $panamax['date'] = $deposit->date;
           $panamax['date_approved'] = $deposit->date_approved;
-          $panamax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+
+          if($deposit->deposit_options_id == 7){
+            $panamax['status'] = 'Fulfilled';
+          }else{
+            $panamax['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          }
+
           if($deposit->is_pending == 1){
             $panamax['days_remaining'] = 'n/a';
           }else{
@@ -80,7 +92,13 @@ class Your_deposits extends CI_Controller
           $capesize['send_to'] = $payment_mode->account;
           $capesize['date'] = $deposit->date;
           $capesize['date_approved'] = $deposit->date_approved;
-          $capesize['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+
+          if($deposit->deposit_options_id == 7){
+            $capesize['status'] = 'Fulfilled';
+          }else{
+            $capesize['status'] = ($deposit->is_pending == 1) ? 'Pending' : 'Fulfilled';
+          }
+
           if($deposit->is_pending == 1){
             $capesize['days_remaining'] = 'n/a';
           }else{

@@ -23,7 +23,8 @@ class Registration extends CI_Controller{
             if($this->Referral_codes->is_valid_code($referral_code)){
                 $data['referral_code'] = $referral_code;
             }else{
-                $data['referral_code'] = $this->Referral_codes->get_root_code();
+              $data['referral_code'] = '';
+                // $data['referral_code'] = $this->Referral_codes->get_root_code();
             }
         }
 
@@ -33,7 +34,7 @@ class Registration extends CI_Controller{
         $this->form_validation->set_rules('confirm_email', 'Email Confirmation', 'required|matches[email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
         $this->form_validation->set_rules('confirm_password', 'Password Confirmation', 'required|min_length[6]|matches[password]');
-        $this->form_validation->set_rules('referral', 'Referral Code', 'required');
+        $this->form_validation->set_rules('referral', 'Referral Code', 'required|callback_verify_referral');
 
 
       	if ($this->form_validation->run() == FALSE) {
@@ -117,5 +118,16 @@ class Registration extends CI_Controller{
     	}else{
     		return true;
     	}
+    }
+
+    public function verify_referral(){
+      $valid = $this->Referral_codes->verify_member_code($_POST['referral']);
+      if($valid){
+        return true;
+      }else{
+    		$this->form_validation->set_message('verify_referral', 'Invalid referral code.');
+
+        return false;
+      }
     }
 }

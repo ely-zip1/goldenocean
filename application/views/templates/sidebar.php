@@ -37,7 +37,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<!-- </li> -->
 
 			<li class="dropdown <?php echo $this->uri->segment(1) == 'your_referrals' ? 'active' : ''; ?>"> <a
-					href="your_referrals" class="nav-link"><i class="fas fa-comments-dollar"></i><span>Your Referrals</span></a>
+					href="<?= base_url();?>your_referrals" class="nav-link"><i class="fas fa-comments-dollar"></i><span>Your Referrals</span></a>
+			</li>
+			<li class="dropdown <?php echo $this->uri->segment(1) == 'fund_transfer' ? 'active' : ''; ?>"> <a
+					href="<?= base_url();?>fund_transfer" class="nav-link"><i class="fas fa-exchange-alt"></i><span>Fund Transfer</span></a>
 			</li>
 		</ul>
 	</aside>

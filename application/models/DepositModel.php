@@ -71,9 +71,13 @@
             foreach($deposit_query->result() as $deposit){
                 if($deposit->is_expired){
                     continue;
-                }if($deposit->is_pending){
-                    continue;
                 }
+                if($deposit->deposit_options_id != 7){
+                  if($deposit->is_pending){
+                      continue;
+                  }
+                }
+
                 $start_date = new DateTime($deposit->date_approved);
                 $end_date = DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
 
@@ -123,10 +127,39 @@
           return $query->row();
         }
 
+        public function get_latest_deposit($member_id){
+          $this->db->select("*");
+          $this->db->from("td_deposits");
+          $this->db->where('member_id', $member_id);
+          $this->db->limit(1);
+          $this->db->order_by('id',"DESC");
+          $query = $this->db->get();
+
+          return $query->row();
+        }
+
         public function get_total_deposit($member_id){
           $this->db->select_sum('amount');
           $this->db->where('member_id',$member_id);
-          $this->db->where('is_pending','0');
+          $query = $this->db->get('td_deposits');
+
+          return $query->row();
+        }
+
+        public function get_member_reinvestment($member_id){
+          $this->db->where('member_id', $member_id);
+          // $this->db->where('is_pending', 0);
+          $this->db->where('deposit_options_id', 7);
+          $query = $this->db->get('td_deposits');
+
+          return $query->result();
+        }
+
+        public function get_total_member_reinvestment($member_id){
+          $this->db->select_sum('amount');
+          $this->db->where('member_id', $member_id);
+          // $this->db->where('is_pending', 0);
+          $this->db->where('deposit_options_id', 11);
           $query = $this->db->get('td_deposits');
 
           return $query->row();

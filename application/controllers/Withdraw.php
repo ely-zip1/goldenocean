@@ -16,6 +16,7 @@ class Withdraw extends CI_Controller
     $this->load->model('ReferralModel');
     $this->load->model('Withdrawal_Mode_model');
     $this->load->model('Bank_model');
+    $this->load->model('Fund_transfer_model');
 
     date_default_timezone_set('Asia/Manila');
   }
@@ -36,8 +37,11 @@ class Withdraw extends CI_Controller
     $total_growth = $this->DepositModel->get_total_growth($member->id);
     $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
     $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
+		$total_reinvestment = $this->DepositModel->get_total_member_reinvestment($member->id);
+    $total_sent = $this->Fund_transfer_model->get_total_sent($member->id);
+    $total_received = $this->Fund_transfer_model->get_total_received($member->id);
 
-    $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
+    $account_balance = ($total_growth + $total_bonus + $total_received) - $total_withdrawn - $total_reinvestment->amount - $total_sent;
     if($account_balance < 10){
       $data['withdrawable'] = 'not withdrawable';
     }

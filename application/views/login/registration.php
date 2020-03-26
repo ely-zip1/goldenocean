@@ -110,7 +110,7 @@
                   <input id="referral" name="referral" value="<?= set_value('referral',$referral_code,true)?>"
                          type="text"
                          class="form-control <?php if(strlen(form_error('referral')) > 0){echo "is-invalid";} ?>"
-                         placeholder="Referrer's code" readonly>
+                         placeholder="Referrer's code">
                 </div>
                 <div class="invalid-feedback">
                   <?php echo form_error('referral');?>

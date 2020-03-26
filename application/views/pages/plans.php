@@ -106,6 +106,14 @@
         </div>
       </div>
 
+			<div class="row deposit-row">
+        <div class="col-12">
+          <div class="alert bg-primary text-white">
+          	<h4>Account Balance:  $ <?php echo $account_balance; ?></h4>
+          </div>
+        </div>
+      </div>
+
 			<div class="row row-deposit">
 				<div class="col-md-1 text-center">
 					<img src="<?php echo base_url('assets/img/calculatoricon-min.png'); ?>" alt="deposit">
@@ -135,6 +143,7 @@
 								<option <?php if($selected_mode == 'mode4') {echo 'selected';} ?> value="mode4">Paypal</option>
 								<option <?php if($selected_mode == 'mode5') {echo 'selected';} ?> value="mode5">Mastercard</option>
 								<option <?php if($selected_mode == 'mode6') {echo 'selected';} ?> value="mode6">Skrill</option>
+								<option <?php if($selected_mode == 'mode7') {echo 'selected';} ?> value="mode7">Reinvestment</option>
 							</select>
 							<div class="invalid-feedback">
 										<?php echo form_error('plan_payment_mode');?>
@@ -143,7 +152,7 @@
 
             <div class="form-group col-md-4  deposit-form">
 	            <label for="deposit_amount">Amount</label>
-	            <input type="text" class="form-control <?php if(strlen(form_error('deposit_amount')) > 0){echo "is-invalid";} ?>"
+	            <input type="text" class="deposit-amount form-control <?php if(strlen(form_error('deposit_amount')) > 0){echo "is-invalid";} ?>"
 								name="deposit_amount" id="deposit-amount" placeholder="Amount" value="<?php set_value('deposit_amount','',true); ?>">
 							<div class="invalid-feedback deposit-error">
 										<?php echo form_error('deposit_amount');?>

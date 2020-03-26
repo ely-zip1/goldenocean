@@ -2,7 +2,7 @@
 
 	<section class="section">
 		<div class="section-header section-header-custom">
-			<h1>Make a Deposit</h1>
+			<h1>Deposit Details</h1>
 		</div>
     <div class="section-body">
       <div class="row ">
@@ -53,7 +53,7 @@
               </tr>
               <tr>
                 <th>Payment Status:</th>
-                <td>Pending</td>
+                <td><?php if(isset($deposit_status) ){echo $deposit_status;} ?></td>
               </tr>
               </tbody>
             </table>

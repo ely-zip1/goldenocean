@@ -92,7 +92,7 @@
         <div class="col-lg-12 affiliate-row">
           <div class="card card-primary text-center affiliate-program-card">
             <div class="card-body">
-              <h5 class="card-title">AFFILIATE PROGRAM</h5>
+              <h5 class="card-title">Referral Link</h5>
 											<div class="alert alert-light">
 												<a class="affiliate-alert" id="referral-link" href="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>">
 													<input type="text" value="https://office-goldenocean.com/my/ref/<?php echo $referral_code; ?>" readonly id="link" class="span12"

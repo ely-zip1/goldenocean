@@ -34,7 +34,7 @@
             $tempCode = $code;
             $this->db->where('code',$tempCode);
             $query = $this->db->get('td_referral_codes',1);
-            
+
             foreach ($query->result() as $row)
             {
                 if(isset($row->code)){
@@ -65,7 +65,7 @@
         }
 
         public function get_members_code($id){
-            
+
             $this->db->where('id',$id);
             $query = $this->db->get('td_referral_codes',1);
 
@@ -86,6 +86,22 @@
             );
 
             $this->db->insert('td_referral_codes',$data);
+        }
+
+        public function verify_member_code($code){
+          $this->db->where('code', $code);
+          $this->db->where('is_taken', 1);
+          $query = $this->db->get('td_referral_codes');
+
+          if(isset($query->code)){
+            if(strlen($query->code) > 0){
+              return true;
+            }else {
+              return false;
+            }
+          }else {
+            return false;
+          }
         }
     }
 

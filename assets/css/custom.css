@@ -308,7 +308,7 @@
   color: white;
 }
 
-.deposit-form input {
+.deposit-form .deposit-amount {
   text-align: right;
 }
 
