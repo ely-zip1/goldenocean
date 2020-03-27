@@ -25,7 +25,7 @@
 
         public function add($transfer_data)
         {
-          print_r($transfer_data);
+          // print_r($transfer_data);
           $this->db->insert('td_fund_transfer', $transfer_data);
         }
 
@@ -43,5 +43,11 @@
           $query = $this->db->get('td_fund_transfer');
 
           return $query->row()->amount;
+        }
+
+        public function get_all(){
+          $query = $this->db->get('td_fund_transfer');
+
+          return $query->result();
         }
     }
