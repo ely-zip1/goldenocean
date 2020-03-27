@@ -49,7 +49,7 @@ class Fund_transfer  extends CI_Controller
       $transfer_data = array();
       $transfer_data['sender_member_id'] = $member_data->id;
 
-      $referral_code_data = $this->Referral_codes->get_by_code($_POST['referral']);
+      $referral_code_data = $this->Referral_codes->get_by_code($_POST['receiver_code']);
       $receiver_data = $this->Members->get_member_by_referral_id($referral_code_data->id);
 
       $transfer_data['receiver_member_id'] = $receiver_data->id;
@@ -58,7 +58,7 @@ class Fund_transfer  extends CI_Controller
 
       $this->Fund_transfer_model->add($transfer_data);
 
-      $this->session->set_flashdata('transfer_success', "You successfuly transfered $ ".number_format($_POST['transfer_amount'], 2, '.', ',')." to ".$_POST['referral']."!" );
+      $this->session->set_flashdata('transfer_success', "You successfuly transfered $ ".number_format($_POST['transfer_amount'], 2, '.', ',')." to ".$_POST['receiver_code']."!" );
 
       redirect('fund_transfer', 'refresh');
     }
@@ -66,7 +66,7 @@ class Fund_transfer  extends CI_Controller
 
   public function validate_code()
   {
-    $is_code_valid = $this->Referral_codes->verify_member_code($_POST['referral']);
+    $is_code_valid = $this->Referral_codes->verify_member_code($_POST['receiver_code']);
 
     if($is_code_valid){
       return true;
