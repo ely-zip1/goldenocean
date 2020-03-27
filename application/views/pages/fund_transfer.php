@@ -68,9 +68,9 @@
 				</div>
 			</div>
 
-			<div class="row deposit-row row-deposit">
+			<div class="row deposit-row">
 				<div class="col-md-6">
-				  <div class="card bg-transparent text-white text-white">
+				  <div class="card bg-primary text-white text-white">
 						<div class="card-header">
             	<h4>SENT FUNDS</h4>
             </div>
@@ -98,7 +98,7 @@
         </div>
 
 				<div class="col-md-6">
-				  <div class="card bg-transparent text-white text-white">
+				  <div class="card bg-primary text-white text-white">
 						<div class="card-header">
             	<h4>RECEIVED FUNDS</h4>
             </div>
