@@ -17,6 +17,18 @@
         </div>
       </div>
 
+			<?php if($this->session->flashdata('transfer_success') != null){
+				echo '<div class="alert alert-success alert-dismissible show fade">
+	        <div class="alert-body">
+	          <button class="close" data-dismiss="alert">
+	            <span>×</span>
+	          </button>
+						'.$this->session->flashdata('transfer_success').'
+	        </div>
+	      </div>';
+			} ?>
+
+
 			<div class="row row-deposit">
 				<div class="col-md-1 text-center">
 					<img src="<?php echo base_url('assets/img/plan6-min.png'); ?>" alt="deposit">

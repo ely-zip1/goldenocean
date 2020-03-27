@@ -93,8 +93,8 @@
           $this->db->where('is_taken', 1);
           $query = $this->db->get('td_referral_codes');
 
-          if(isset($query->code)){
-            if(strlen($query->code) > 0){
+          if(isset($query->row()->code)){
+            if(strlen($query->row()->code) > 0){  
               return true;
             }else {
               return false;

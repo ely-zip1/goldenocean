@@ -15,15 +15,18 @@
           return $query->result();
         }
 
-        public function sent_per_member($member_id){
+        public function sent_per_member($member_id)
+        {
           $this->db->where('sender_member_id', $member_id);
           $query = $this->db->get('td_fund_transfer');
 
           return $query->result();
         }
 
-        public function add($transfer_data){
-          $this->db->insert('td_fund_transfer',$transfer_data);
+        public function add($transfer_data)
+        {
+          print_r($transfer_data);
+          $this->db->insert('td_fund_transfer', $transfer_data);
         }
 
         public function get_total_received($member_id){
