@@ -37,7 +37,7 @@ class Fund_transfer  extends CI_Controller
 
     $data['account_balance'] = $account_balance;
 
-    $this->form_validation->set_rules('receiver_code', 'Code', 'required|callback_validate_transfer');
+    $this->form_validation->set_rules('receiver_code', 'Code', 'required|callback_validate_code');
     $this->form_validation->set_rules('username', 'Username', 'required|regex_match[/^(\d*\.)?\d+$/]|less_than_equal_to['.$account_balance.']');
 
     if($this->form_validation->run() == FALSE){
