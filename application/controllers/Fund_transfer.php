@@ -23,8 +23,41 @@ class Fund_transfer  extends CI_Controller
     $data = array(
       'title' => 'Fund Transfer'
     );
+		$member_data = $this->Members->get_member($this->session->username);
 
-    $member_data = $this->Members->get_member($this->session->username);
+		$sent_funds = $this->Fund_transfer_model->sent_per_member($member_data->id);
+
+		$sent_fund_history = array();
+		foreach ($sent_funds as $sent_fund) {
+			$sent = array();
+			$sent['amount'] = $sent_fund->amount;
+
+			$recipient_data  = $this->Members->get_member_by_id($sent_fund->receiver_member_id);
+			$sent['recipient'] = $recipient_data->full_name;
+			$sent['date'] = $sent_fund->date;
+
+			array_push($sent_fund_history, $sent);
+		}
+
+		$data['sent_fund_history'] = $sent_fund_history;
+
+
+		$received_funds = $this->Fund_transfer_model->received_per_member($member_data->id);
+
+		$received_fund_history = array();
+		foreach ($received_funds as $received_fund) {
+			$received = array();
+			$received['amount'] = $received_fund->amount;
+
+			$sender_data  = $this->Members->get_member_by_id($received_fund->sender_member_id);
+			$received['sender'] = $sender_data->full_name;
+			$received['date'] = $received_fund->date;
+
+			array_push($received_fund_history, $received);
+		}
+
+		$data['received_fund_history'] = $received_fund_history;
+
 
 		$total_growth = $this->DepositModel->get_total_growth($member_data->id);
     $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member_data->id);

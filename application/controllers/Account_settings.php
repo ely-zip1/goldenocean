@@ -100,7 +100,7 @@ class Account_settings extends CI_Controller
 				$this->Bank_model->update($new_bank_details);
 			}
 			else if($_POST['account_submit'] == 'bitcoin'){
-				$this->Withdrawal_Mode_model->update_bitcoin($member_data->id, $_POST['bitcoint_account']);
+				$this->Withdrawal_Mode_model->update_bitcoin($member_data->id, $_POST['bitcoin_account']);
 			}
 			else if($_POST['account_submit'] == 'ethereum'){
 				$this->Withdrawal_Mode_model->update_ethereum($member_data->id, $_POST['ethereum_account']);

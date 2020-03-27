@@ -11,7 +11,7 @@ class Deposit_details extends CI_Controller {
 						$this->load->model('Members');
 						$this->load->model('WithdrawalModel');
 						$this->load->model('Referral_bonus_model');
-						$this->load->model('ReferralModel');
+						$this->load->model('Referralmodel');
 						$this->load->model('Referral_codes');
 						$this->load->model('Indirect_bonus_model');
         }

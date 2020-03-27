@@ -25,7 +25,7 @@
 
         public function add($transfer_data)
         {
-          // print_r($transfer_data);
+          print_r($transfer_data);
           $this->db->insert('td_fund_transfer', $transfer_data);
         }
 

@@ -68,6 +68,64 @@
 				</div>
 			</div>
 
+			<div class="row deposit-row row-deposit">
+				<div class="col-md-6">
+				  <div class="card bg-transparent text-white text-white">
+						<div class="card-header">
+            	<h4>SENT FUNDS</h4>
+            </div>
+				    <div class="card-body table-responsive">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<th scope="col">Amount</th>
+										<th scope="col">Recipient</th>
+										<th scope="col">Date</th>
+									</tr>
+									<?php
+									if(isset($sent_fund_history)){
+									foreach ($sent_fund_history as $row){?>
+								  	<tr>
+											<td>$ <?php echo $row['amount']; ?></td>
+											<td><?php echo $row['recipient']; ?></td>
+											<td><?php echo $row['date']; ?></td>
+										</tr>
+									<?php }}?>
+								</tbody>
+							</table>
+						</div>
+				  </div>
+        </div>
+
+				<div class="col-md-6">
+				  <div class="card bg-transparent text-white text-white">
+						<div class="card-header">
+            	<h4>RECEIVED FUNDS</h4>
+            </div>
+				    <div class="card-body table-responsive">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<th scope="col">Amount</th>
+										<th scope="col">Sender</th>
+										<th scope="col">Date</th>
+									</tr>
+									<?php
+									if(isset($received_fund_history)){
+									foreach ($received_fund_history as $row){?>
+								  	<tr>
+											<td>$ <?php echo $row['amount']; ?></td>
+											<td><?php echo $row['sender']; ?></td>
+											<td><?php echo $row['date']; ?></td>
+										</tr>
+									<?php }}?>
+								</tbody>
+							</table>
+						</div>
+				  </div>
+        </div>
+      </div>
+
       <?php $this->load->view('pages/prefooter'); ?>
 
     </div>
