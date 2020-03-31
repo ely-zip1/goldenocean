@@ -43,9 +43,11 @@ class Dashboard extends CI_Controller {
 			$total_reinvestment = $this->DepositModel->get_total_member_reinvestment($member_data->id);
 	    $total_sent = $this->Fund_transfer_model->get_total_sent($member_data->id);
 	    $total_received = $this->Fund_transfer_model->get_total_received($member_data->id);
+			$active_deposit = $this->DepositModel->get_total_approved_deposit_per_member($member_data->id);
 
 	    $account_balance = ($total_growth + $total_bonus + $total_received) - $total_withdrawal->amount - $total_reinvestment->amount - $total_sent;
 
+			$data['active_deposit'] = '$ '.number_format($active_deposit, 2, '.', ',');
 			$data['account_balance'] = '$ '.number_format($account_balance, 2, '.', ',');
 			$data['pending_withdrawals'] = '$ '.number_format($pending_withdrawal->total, 2, '.', ',');
 			$data['total_withdrawals'] = '$ '.number_format($total_withdrawal->amount, 2, '.', ',');
