@@ -72,8 +72,8 @@
                 if($deposit->is_expired){
                     continue;
                 }
-                if($deposit->deposit_options_id != 7){
-                  if($deposit->is_pending){
+                if($deposit->deposit_options_id != 11){
+                  if($deposit->is_pending == 1){
                       continue;
                   }
                 }
