@@ -57,7 +57,7 @@ class Plans extends CI_Controller
 
 		$this->form_validation->set_rules('chosen_plan', 'Plan', 'required');
 		$this->form_validation->set_rules('plan_payment_mode', 'Payment Mode', 'required');
-		$this->form_validation->set_rules('deposit_amount', 'Deposit Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_deposit');
+		$this->form_validation->set_rules('deposit_amount', 'Deposit Amount', 'required|regex_match[/^(\d*\.)?\d+$/]|callback_valid_deposit|callback_validate_reinvestment');
 
 		if ($this->form_validation->run() == FALSE) {
 			if(isset($_POST['chosen_plan'])){
