@@ -23,6 +23,9 @@ class Plans extends CI_Controller
 			'title' => "Plans"
 		);
 
+if($_POST != null){
+	print_r($_POST);
+}
 		$packages = $this->PackageModel->get_packages();
 
 		$data['plan1'] = strtoupper($packages[0]->package_name);
@@ -185,8 +188,10 @@ class Plans extends CI_Controller
 			if($_POST['chosen_plan'] == 'plan1'){
 				if($_POST['deposit_amount'] >= 80 && $_POST['deposit_amount'] <= 799){
 					if($account_balance < 80 && $account_balance > 799){
-						$this->form_validation->set_message('validate_reinvestment', 'Account Balance does not meet your selected plan.');
+						$this->form_validation->set_message('validate_reinvestment', 'Insufficient Account Balance.');
 						return false;
+					}else{
+						return true;
 					}
 				}else {
 	    		$this->form_validation->set_message('validate_reinvestment', 'Reinvestment Amount does not match your selected plan.');
@@ -196,8 +201,10 @@ class Plans extends CI_Controller
 			else if($_POST['chosen_plan'] == 'plan2'){
 				if($_POST['deposit_amount'] >= 800 && $_POST['deposit_amount'] <= 3999){
 					if($account_balance < 800 && $account_balance > 3999){
-						$this->form_validation->set_message('validate_reinvestment', 'Account Balance does not meet your selected plan.');
+						$this->form_validation->set_message('validate_reinvestment', 'Insufficient Account Balance.');
 						return false;
+					}else{
+						return true;
 					}
 				}else {
 	    		$this->form_validation->set_message('validate_reinvestment', 'Reinvestment Amount does not match your selected plan.');
@@ -207,14 +214,20 @@ class Plans extends CI_Controller
 			else if($_POST['chosen_plan'] == 'plan3'){
 				if($_POST['deposit_amount'] >= 4000 && $_POST['deposit_amount'] <= 8000){
 					if($account_balance < 4000 && $account_balance > 8000){
-						$this->form_validation->set_message('validate_reinvestment', 'Account Balance does not meet your selected plan.');
+						$this->form_validation->set_message('validate_reinvestment', 'Insufficient Account Balance.');
 						return false;
+					}else{
+						return true;
 					}
 				}else {
 	    		$this->form_validation->set_message('validate_reinvestment', 'Reinvestment Amount does not match your selected plan.');
 					return false;
 				}
+			}else{
+				return true;
 			}
+		}else{
+			return true;
 		}
 	}
 
