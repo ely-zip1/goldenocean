@@ -82,7 +82,7 @@
         </div>
       </div>
 
-			<!-- <div class="row deposit-row">
+			<div class="row deposit-row">
         <div class="col-12">
 				  <div class="card bg-primary text-white text-white">
 						<div class="card-header">
@@ -97,8 +97,8 @@
 										<th scope="col">Level</th>
 									</tr>
 									<?php
-									if(isset($referral_list)){
-									foreach ($referral_list as $row){?>
+									if(isset($inactive_referral_list)){
+									foreach ($inactive_referral_list as $row){?>
 								  	<tr>
 											<td><?php echo $row['username']; ?></td>
 											<td><?php echo $row['email']; ?></td>
@@ -110,7 +110,7 @@
 						</div>
 				  </div>
         </div>
-      </div> -->
+      </div>
 
 
 		<?php $this->load->view('pages/prefooter'); ?>
