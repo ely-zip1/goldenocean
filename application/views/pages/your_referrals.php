@@ -82,7 +82,7 @@
         </div>
       </div>
 
-			<div class="row deposit-row">
+			<!-- <div class="row deposit-row">
         <div class="col-12">
 				  <div class="card bg-primary text-white text-white">
 						<div class="card-header">
@@ -110,7 +110,7 @@
 						</div>
 				  </div>
         </div>
-      </div>
+      </div> -->
 
 
 		<?php $this->load->view('pages/prefooter'); ?>
