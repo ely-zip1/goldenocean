@@ -162,7 +162,7 @@
 				</div>
 
 				<div class="col-md-2">
-					<button type="submit" class="rounded-button submit-deposit" name="deposit-submit-button">SPEND</button>
+					<button type="submit" class="rounded-button submit-deposit" name="deposit-submit-button" onclick="this.disabled=true;this.value='Submitting...'; this.form.submit();">SPEND</button>
 					<?php echo form_close(); ?>
 				</div>
 			</div>
