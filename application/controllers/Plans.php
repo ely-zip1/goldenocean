@@ -23,9 +23,10 @@ class Plans extends CI_Controller
 			'title' => "Plans"
 		);
 
-if($_POST != null){
-	print_r($_POST);
-}
+		// if($_POST != null){
+		// 	print_r($_POST);
+		// }
+		
 		$packages = $this->PackageModel->get_packages();
 
 		$data['plan1'] = strtoupper($packages[0]->package_name);
