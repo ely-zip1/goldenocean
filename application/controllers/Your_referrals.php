@@ -27,6 +27,7 @@ class Your_referrals extends CI_Controller
     $total_active = 0;
 
     $referral_list = array();
+    $inactive_referral_list = array();
 
     foreach ($level_1_list as $level_1) {
       $total_downline++;
@@ -87,16 +88,48 @@ class Your_referrals extends CI_Controller
                     $referral3['level'] = 'Level 3';
 
                     array_push($referral_list, $referral3);
+                  }else{
+                    $inactive_referral3 = array();
+
+                    $inactive_3_data = $this->Members->get_member_by_id($level_3->referee_id);
+
+                    $inactive_referral3['username'] = $inactive_3_data->username;
+                    $inactive_referral3['email'] = $inactive_3_data->email_address;
+                    $inactive_referral3['level'] = 'Level 3';
+
+                    array_push($inactive_referral_list, $inactive_referral3);
                   }
                 }
               }
+            }else{
+              $inactive_referral2 = array();
+
+              $inactive_2_data = $this->Members->get_member_by_id($level_2->referee_id);
+
+              $inactive_referral2['username'] = $inactive_2_data->username;
+              $inactive_referral2['email'] = $inactive_2_data->email_address;
+              $inactive_referral2['level'] = 'Level 2';
+
+              array_push($inactive_referral_list, $inactive_referral2);
             }
           }
         }
+      }else{
+        $inactive_referral1 = array();
+
+        $inactive_1_data = $this->Members->get_member_by_id($level_1->referee_id);
+
+        $inactive_referral1['username'] = $inactive_1_data->username;
+        $inactive_referral1['email'] = $inactive_1_data->email_address;
+        $inactive_referral1['level'] = 'Level 1';
+
+        array_push($inactive_referral_list, $inactive_referral1);
       }
     }
 
     $data['referral_list'] = $referral_list;
+
+    $data['inactive_referral_list'] = $inactive_referral_list;
 
     $data['total_bonus'] = '$'. number_format($referral_bonus, '2', '.', ',');
     $data['total_referrals'] = $total_downline;

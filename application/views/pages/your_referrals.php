@@ -82,5 +82,35 @@
         </div>
       </div>
 
+			<div class="row deposit-row">
+        <div class="col-12">
+				  <div class="card bg-primary text-white text-white">
+						<div class="card-header">
+            	<h4>INACTIVE REFERRALS</h4>
+            </div>
+				    <div class="card-body table-responsive">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<th scope="col">Username</th>
+										<th scope="col">Email</th>
+										<th scope="col">Level</th>
+									</tr>
+									<?php
+									if(isset($referral_list)){
+									foreach ($referral_list as $row){?>
+								  	<tr>
+											<td><?php echo $row['username']; ?></td>
+											<td><?php echo $row['email']; ?></td>
+											<td><?php echo $row['level']; ?></td>
+										</tr>
+									<?php }}?>
+								</tbody>
+							</table>
+						</div>
+				  </div>
+        </div>
+      </div>
+
 
 		<?php $this->load->view('pages/prefooter'); ?>
