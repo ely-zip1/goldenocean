@@ -13,6 +13,7 @@ class Plans extends CI_Controller
 						$this->load->model('WithdrawalModel');
 						$this->load->model('Referral_bonus_model');
 						$this->load->model('Fund_transfer_model');
+						$this->load->model('ReferralModel');
 
             date_default_timezone_set('Asia/Manila');
         }
@@ -26,7 +27,6 @@ class Plans extends CI_Controller
 		// if($_POST != null){
 		// 	print_r($_POST);
 		// }
-		
 		$packages = $this->PackageModel->get_packages();
 
 		$data['plan1'] = strtoupper($packages[0]->package_name);
@@ -135,13 +135,11 @@ class Plans extends CI_Controller
 
 			$this->DepositModel->add_deposit($deposit_data);
 
-			$data['deposit_date'] = date('Y-m-d H:i:s');
-			$data['deposit_amount'] = '$'.number_format($_POST['deposit_amount'], 2, '.', ',');
+			$last_deposit = $this->DepositModel->get_latest_deposit($member_data->id);
+
+			$this->credit_referral_bonus($last_deposit->id);
 
 			redirect('deposit_details', 'refresh');
-			// $this->load->view('templates/header', $data);
-			// $this->load->view('pages/deposit_details', $data);
-			// $this->load->view('templates/footer');
 		}
 	}
 
@@ -231,5 +229,52 @@ class Plans extends CI_Controller
 			return true;
 		}
 	}
+
+	public function credit_referral_bonus($deposit_id){
+
+    $root_member = $this->Members->get_root();
+    $deposit = $this->DepositModel->get_by_id($deposit_id);
+    $member = $this->Members->get_member_by_id($deposit->member_id);
+
+    $x = $this->ReferralModel->get_referrer($member->id);
+    // print_r($x);
+
+    if($this->ReferralModel->get_referrer($member->id)->referrer_id != 1){
+      $level_1 = $this->ReferralModel->get_referrer($member->id);
+      // print_r($level_1);
+      $bonus_1 = $deposit->amount * 0.05;
+      $bonus_1_data = array(
+        'deposit_id' => $deposit->id,
+        'referrer_id' => $level_1->referrer_id,
+        'amount' => $bonus_1
+      );
+      $this->Referral_bonus_model->add($bonus_1_data);
+
+      if($this->ReferralModel->get_referrer($level_1->referrer_id)->referrer_id != 1){
+        $level_2 = $this->ReferralModel->get_referrer($level_1->referrer_id);
+        // print_r($level_2);
+        $bonus_2 = $deposit->amount * 0.03;
+        $bonus_2_data = array(
+          'deposit_id' => $deposit->id,
+          'referrer_id' => $level_2->referrer_id,
+          'amount' => $bonus_2
+        );
+        $this->Referral_bonus_model->add($bonus_2_data);
+
+        if($this->ReferralModel->get_referrer($level_2->referrer_id)->referrer_id != 1){
+          $level_3 = $this->ReferralModel->get_referrer($level_2->referrer_id);
+          // print_r($level_3);
+          $bonus_3 = $deposit->amount * 0.02;
+          $bonus_3_data = array(
+            'deposit_id' => $deposit->id,
+            'referrer_id' => $level_3->referrer_id,
+            'amount' => $bonus_3
+          );
+          $this->Referral_bonus_model->add($bonus_3_data);
+        }
+      }
+    }
+
+  }
 
 }

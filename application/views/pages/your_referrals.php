@@ -49,48 +49,38 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row">
+
+			<div class="row deposit-row">
         <div class="col-12">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="right">
-                <div class="top-dash">
-                  <h1><?php echo $total_bonus; ?></h1>
-                </div>
-                <div class="bottom1-dash">
-                  <h6>TOTAL REFERRAL COMMISSION</h6>
-                </div>
-              </div>
+				  <div class="card bg-primary text-white text-white">
+						<div class="card-header">
+            	<h4>ACTIVE REFERRALS</h4>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="right">
-                <div class="top-dash">
-                  <h1><?php echo $total_referrals; ?></h1>
-                </div>
-                <div class="bottom2-dash">
-                  <h6>REFERRALS</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="right">
-                <div class="top-dash">
-                  <h1><?php echo $active_referrals; ?></h1>
-                </div>
-                <div class="bottom2-dash">
-                  <h6>ACTIVE REFERRALS</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div> -->
+				    <div class="card-body table-responsive">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<th scope="col">Username</th>
+										<th scope="col">Email</th>
+										<th scope="col">Total Deposit</th>
+										<th scope="col">Level</th>
+									</tr>
+									<?php
+									if(isset($referral_list)){
+									foreach ($referral_list as $row){?>
+								  	<tr>
+											<td><?php echo $row['username']; ?></td>
+											<td><?php echo $row['email']; ?></td>
+											<td><?php echo $row['total_deposit']; ?></td>
+											<td><?php echo $row['level']; ?></td>
+										</tr>
+									<?php }}?>
+								</tbody>
+							</table>
+						</div>
+				  </div>
+        </div>
+      </div>
 
 
 		<?php $this->load->view('pages/prefooter'); ?>
