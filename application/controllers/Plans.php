@@ -135,9 +135,11 @@ class Plans extends CI_Controller
 
 			$this->DepositModel->add_deposit($deposit_data);
 
-			$last_deposit = $this->DepositModel->get_latest_deposit($member_data->id);
 
-			$this->credit_referral_bonus($last_deposit->id);
+			if($_POST['plan_payment_mode'] == 'mode7'){
+				$last_deposit = $this->DepositModel->get_latest_deposit($member_data->id);
+				$this->credit_referral_bonus($last_deposit->id);
+			}
 
 			redirect('deposit_details', 'refresh');
 		}
