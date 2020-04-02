@@ -84,10 +84,15 @@ class Account_settings extends CI_Controller
 		}
 		else{
 			if($_POST['account_submit'] == 'reset_password'){
-				$data['password_update_success'] = 'Password updated!';
-			}
-			else{
-				$data['account_update_success'] = 'Account updated!';
+
+				$email = $this->session->email;
+				$password = $_POST['new_password'];
+
+				$this->Members->update_password($email, $password);
+
+				if($this->Members->verify_member($this->session->username, $password)){
+					$data['password_update_success'] = 'Password updated!';
+				}
 			}
 
 			if($_POST['account_submit'] == 'bank'){
