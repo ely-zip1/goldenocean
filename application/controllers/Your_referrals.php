@@ -33,19 +33,22 @@ class Your_referrals extends CI_Controller
       $total_downline++;
 
       if($this->DepositModel->has_active_deposit($level_1->referee_id)){
-        $total_active++;
+        if($this->Members->get_member_by_id($level_1->referee_id) != null){
+          $total_active++;
 
-        $referral1 = array();
+          $referral1 = array();
 
-        $level_1_data = $this->Members->get_member_by_id($level_1->referee_id);
-        $total_deposit_1 = $this->DepositModel->get_total_deposit($level_1->referee_id);
 
-        $referral1['username'] = $level_1_data->username;
-        $referral1['email'] = $level_1_data->email_address;
-        $referral1['total_deposit'] = '$ '.number_format($total_deposit_1->amount, '2', '.', ',');
-        $referral1['level'] = 'Level 1';
+          $level_1_data = $this->Members->get_member_by_id($level_1->referee_id);
+          $total_deposit_1 = $this->DepositModel->get_total_deposit($level_1->referee_id);
 
-        array_push($referral_list, $referral1);
+          $referral1['username'] = $level_1_data->username;
+          $referral1['email'] = $level_1_data->email_address;
+          $referral1['total_deposit'] = '$ '.number_format($total_deposit_1->amount, '2', '.', ',');
+          $referral1['level'] = 'Level 1';
+
+          array_push($referral_list, $referral1);
+        }
 
         if($this->ReferralModel->count_referrals($level_1_data->id) > 0){
           $level_2_list = $this->ReferralModel->get_referees($level_1->referee_id);
@@ -54,19 +57,21 @@ class Your_referrals extends CI_Controller
             $total_downline++;
 
             if($this->DepositModel->has_active_deposit($level_2->referee_id)){
-              $total_active++;
+              if($this->Members->get_member_by_id($level_2->referee_id) != null){
+                $total_active++;
 
-              $referral2 = array();
+                $referral2 = array();
 
-              $level_2_data = $this->Members->get_member_by_id($level_2->referee_id);
-              $total_deposit_2 = $this->DepositModel->get_total_deposit($level_2->referee_id);
+                $level_2_data = $this->Members->get_member_by_id($level_2->referee_id);
+                $total_deposit_2 = $this->DepositModel->get_total_deposit($level_2->referee_id);
 
-              $referral2['username'] = $level_2_data->username;
-              $referral2['email'] = $level_2_data->email_address;
-              $referral2['total_deposit'] = '$ '.number_format($total_deposit_2->amount, '2', '.', ',');
-              $referral2['level'] = 'Level 2';
+                $referral2['username'] = $level_2_data->username;
+                $referral2['email'] = $level_2_data->email_address;
+                $referral2['total_deposit'] = '$ '.number_format($total_deposit_2->amount, '2', '.', ',');
+                $referral2['level'] = 'Level 2';
 
-              array_push($referral_list, $referral2);
+                array_push($referral_list, $referral2);
+              }
 
               if($this->ReferralModel->count_referrals($level_2_data->id) > 0){
                 $level_3_list = $this->ReferralModel->get_referees($level_2->referee_id);
@@ -75,19 +80,21 @@ class Your_referrals extends CI_Controller
                   $total_downline++;
 
                   if($this->DepositModel->has_active_deposit($level_3->referee_id)){
-                    $total_active++;
+                    if($this->Members->get_member_by_id($level_3->referee_id) != null){
+                      $total_active++;
 
-                    $referral3 = array();
+                      $referral3 = array();
 
-                    $level_3_data = $this->Members->get_member_by_id($level_3->referee_id);
-                    $total_deposit_3 = $this->DepositModel->get_total_deposit($level_3->referee_id);
+                      $level_3_data = $this->Members->get_member_by_id($level_3->referee_id);
+                      $total_deposit_3 = $this->DepositModel->get_total_deposit($level_3->referee_id);
 
-                    $referral3['username'] = $level_3_data->username;
-                    $referral3['email'] = $level_3_data->email_address;
-                    $referral3['total_deposit'] = '$ '.number_format($total_deposit_3->amount, '2', '.', ',');
-                    $referral3['level'] = 'Level 3';
+                      $referral3['username'] = $level_3_data->username;
+                      $referral3['email'] = $level_3_data->email_address;
+                      $referral3['total_deposit'] = '$ '.number_format($total_deposit_3->amount, '2', '.', ',');
+                      $referral3['level'] = 'Level 3';
 
-                    array_push($referral_list, $referral3);
+                      array_push($referral_list, $referral3);
+                    }
                   }else{
                     $inactive_referral3 = array();
 
