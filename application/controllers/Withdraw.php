@@ -128,12 +128,17 @@ class Withdraw extends CI_Controller
 
   public function valid_amount()
   {
-    $member = $this->Members->get_member($this->session->username);
+        $member = $this->Members->get_member($this->session->username);
 
-    $total_growth = $this->DepositModel->get_total_growth($member->id);
-    $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
-    $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
-    $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
+        $pending_withdrawal = $this->WithdrawalModel->get_pending_withdrawal($member->id);
+        $total_growth = $this->DepositModel->get_total_growth($member->id);
+        $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
+        $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
+    		$total_reinvestment = $this->DepositModel->get_total_member_reinvestment($member->id);
+        $total_sent = $this->Fund_transfer_model->get_total_sent($member->id);
+        $total_received = $this->Fund_transfer_model->get_total_received($member->id);
+
+        $account_balance = ($total_growth + $total_bonus + $total_received) - $total_withdrawn - $total_reinvestment->amount - $total_sent;
 
     if($_POST['withdraw_amount'] > $account_balance){
       $this->form_validation->set_message('valid_amount', 'Invalid amount.');
@@ -144,13 +149,18 @@ class Withdraw extends CI_Controller
   }
 
   public function has_pending(){
-    $member = $this->Members->get_member($this->session->username);
-    $pending_amount = $this->WithdrawalModel->get_pending_withdrawal($member->id)->total;
 
-    $total_growth = $this->DepositModel->get_total_growth($member->id);
-    $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
-    $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
-    $account_balance = ($total_growth + $total_bonus) - $total_withdrawn;
+        $member = $this->Members->get_member($this->session->username);
+
+        $pending_withdrawal = $this->WithdrawalModel->get_pending_withdrawal($member->id);
+        $total_growth = $this->DepositModel->get_total_growth($member->id);
+        $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member->id);
+        $total_bonus = $this->Referral_bonus_model->get_total_bonus($member->id);
+    		$total_reinvestment = $this->DepositModel->get_total_member_reinvestment($member->id);
+        $total_sent = $this->Fund_transfer_model->get_total_sent($member->id);
+        $total_received = $this->Fund_transfer_model->get_total_received($member->id);
+
+        $account_balance = ($total_growth + $total_bonus + $total_received) - $total_withdrawn - $total_reinvestment->amount - $total_sent;
 
     if(($pending_amount + $_POST['withdraw_amount']) > $account_balance){
       $this->form_validation->set_message('has_pending', 'Pending withdrawal will be more than account balance.');
