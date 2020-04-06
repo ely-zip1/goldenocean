@@ -179,12 +179,14 @@ class Plans extends CI_Controller
 			$member_data = $this->Members->get_member($this->session->username);
 
 			$total_growth = $this->DepositModel->get_total_growth($member_data->id);
-			$total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member_data->id);
-			$total_bonus = $this->Referral_bonus_model->get_total_bonus($member_data->id);
+	    $total_withdrawn = $this->WithdrawalModel->compute_total_withdrawn ($member_data->id);
+	    $total_bonus = $this->Referral_bonus_model->get_total_bonus($member_data->id);
 			$total_reinvestment = $this->DepositModel->get_total_member_reinvestment($member_data->id);
+	    $total_sent = $this->Fund_transfer_model->get_total_sent($member_data->id);
+	    $total_received = $this->Fund_transfer_model->get_total_received($member_data->id);
 
-			$account_balance = ($total_growth + $total_bonus) - $total_withdrawn - $total_reinvestment->amount;
-			
+	    $account_balance = ($total_growth + $total_bonus + $total_received) - $total_withdrawn - $total_reinvestment->amount - $total_sent;
+
 			if($_POST['chosen_plan'] == 'plan1'){
 				if($_POST['deposit_amount'] >= 80 && $_POST['deposit_amount'] <= 799){
 					if($account_balance < 80 && $account_balance > 799){
