@@ -10,7 +10,7 @@
 						<h5>Personal Details</h5>
 					</div>
 					<div class="card card-info">
-						<div class="card-body">
+						<div class="card-body table-responsive">
 							<table class="table table-bordered table-sm">
 
 
@@ -44,7 +44,7 @@
 						<h5>Deposit Details</h5>
 					</div>
 					<div class="card card-info">
-						<div class="card-body">
+						<div class="card-body table-responsive">
 							<table class="table table-bordered table-sm">
 
 
@@ -84,7 +84,7 @@
 						<h5>Withdrawal Details</h5>
 					</div>
 					<div class="card card-info">
-						<div class="card-body">
+						<div class="card-body table-responsive">
 							<table class="table table-bordered table-sm">
 
 
@@ -124,7 +124,7 @@
 						<h5>Referral Details</h5>
 					</div>
 					<div class="card card-info">
-						<div class="card-body">
+						<div class="card-body table-responsive">
 							<table class="table table-bordered table-sm">
 
 

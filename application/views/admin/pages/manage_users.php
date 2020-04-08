@@ -14,7 +14,7 @@
 							<?php
 
 								print_r($total_pages);
-								
+
 							for ($i=1; $i <= $total_pages; $i++) {
 								echo '<li class="page-item">
 								<a class="page-link" href="'.base_url('manage_users/'.$i*10).'">'.$i.'</a></li>';
@@ -23,7 +23,7 @@
             </ul>
 					</div>
 					<div class="card card-info">
-						<div class="card-body">
+						<div class="card-body table-responsive">
                             <!-- <nav aria-label="Page navigation">
                                 <ul class="pagination">
                                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>

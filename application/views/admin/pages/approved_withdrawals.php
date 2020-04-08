@@ -11,7 +11,7 @@
 						<h4>Approved Withdrawals</h4>
 					</div>
 					<div class="card card-info">
-						<div class="card-body">
+						<div class="card-body table-responsive">
 							<table class="table table-hover table-bordered table-sm">
 
 
