@@ -145,7 +145,7 @@ class Withdrawals_admin extends CI_Controller
   public function delete_withdrawal($withdrawal_id)
   {
 
-    $this->withdrawalModel->delete_withdrawal($withdrawal_id);
+    $this->WithdrawalModel->delete_withdrawal($withdrawal_id);
     redirect('withdrawals_admin', 'refresh');
   }
 
