@@ -104,7 +104,7 @@ class Deposits_admin extends CI_Controller
 
     $this->DepositModel->Approve_pending($deposit_id);
 
-    // redirect('deposits_admin', 'refresh');
+    redirect('deposits_admin', 'refresh');
 
   }
 
