@@ -129,6 +129,7 @@ class Plans extends CI_Controller
 
 			if($_POST['plan_payment_mode'] == 'mode7'){
 				$deposit_data['is_pending'] = '0';
+				$deposit_data['date_approved'] = date('Y-m-d H:i:s');
 			}else{
 				$deposit_data['is_pending'] = '1';
 			}
