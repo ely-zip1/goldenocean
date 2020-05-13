@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 }?>
                                 <?php echo form_open('Forgot_password'); ?>
                                     <div class="form-group">
-                                        <label for="email">Email or Username</label>
+                                        <label for="email">Email</label>
                                         <input id="email" type="email" class="form-control <?php if(strlen(form_error('email')) > 0){echo "is-invalid";} ?>"
                                          name="email" tabindex="1" autofocus
                                           value="<?= set_value('email','',true)?>">

@@ -36,11 +36,11 @@ class Forgot_password  extends CI_Controller
         }
 
     }
-    
+
     function set_new_password($email){
         $temporary_password = random_string('alnum', 8);
         $this->Members->update_password($email, $temporary_password);
-        
+
         return $temporary_password;
     }
 
@@ -48,14 +48,14 @@ class Forgot_password  extends CI_Controller
         
         ini_set( 'display_errors', 1 );
         error_reporting( E_ALL );
-        $from = "support@mp-diamonds.com";
-          
+        $from = "support@office-goldenocean.com";
+
         //$to = "elisha.lapiz@gmail.com";
         $to = $email;
         $subject = "Password Reset";
         $message = "Your temporary password is: $password .";
         $headers = "From:" . $from;
-        
+
 
         if(mail($to,$subject,$message, $headers)){
             return true;
@@ -72,5 +72,5 @@ class Forgot_password  extends CI_Controller
             return false;
         }
     }
-	
+
 }
